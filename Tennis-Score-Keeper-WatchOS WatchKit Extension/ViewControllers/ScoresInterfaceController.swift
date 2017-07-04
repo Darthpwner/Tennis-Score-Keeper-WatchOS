@@ -12,6 +12,9 @@ import Foundation
 
 class ScoresInterfaceController: WKInterfaceController {
 
+    var player_1_points = 0
+    var player_2_points = 0
+    
     //Outlets
     /* Set Scores */
     @IBOutlet var player_1_set_1_score: WKInterfaceLabel!
@@ -31,10 +34,11 @@ class ScoresInterfaceController: WKInterfaceController {
     
     /* Increment Scores */
     @IBAction func incrementPlayerOneScore() {
-    
+        player_1_game_score.setText("15")
     }
     
     @IBAction func incrementPlayerTwoScore() {
+        player_2_game_score.setText("40")
     }
     
     
