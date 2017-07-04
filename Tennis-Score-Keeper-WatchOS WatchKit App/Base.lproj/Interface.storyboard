@@ -29,54 +29,87 @@
             </objects>
             <point key="canvasLocation" x="482" y="340"/>
         </scene>
-        <!--Match Length-->
+        <!--10S Scores-->
         <scene sceneID="FeO-1y-n5t">
             <objects>
-                <controller identifier="MatchLengthInterfaceController" title="Match Length" id="TBo-J6-kkh" customClass="MatchLengthInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
+                <controller identifier="MatchLengthInterfaceController" title="10S Scores" id="TBo-J6-kkh" customClass="MatchLengthInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Number of Sets?" id="rqY-GV-bHD"/>
-                        <button width="1" alignment="left" title="Best of 1" id="4yK-ei-94e"/>
-                        <button width="1" alignment="left" title="Best of 3" id="aDv-Sb-fsx"/>
-                        <button width="1" alignment="left" title="Best of 5" id="bGS-dL-fS0"/>
+                        <label width="1" height="0.10000000000000001" alignment="left" text="Number of Sets?" id="rqY-GV-bHD"/>
+                        <button width="1" height="0.20000000000000001" alignment="left" title="Best of 1" id="4yK-ei-94e">
+                            <connections>
+                                <action selector="bestOfOneButton" destination="TBo-J6-kkh" id="5XP-1X-Z3R"/>
+                            </connections>
+                        </button>
+                        <imageView width="1" height="0.5" alignment="left" image="tennis-court" id="705-on-5MB"/>
+                        <button width="1" height="0.20000000000000001" alignment="left" title="Best of 3" id="aDv-Sb-fsx">
+                            <connections>
+                                <action selector="bestOfThreeButton" destination="TBo-J6-kkh" id="vFU-H1-Icq"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="772" y="337"/>
+            <point key="canvasLocation" x="772" y="339"/>
         </scene>
-        <!--Scores-->
+        <!--10S Scores-->
         <scene sceneID="YQv-Jn-T6M">
             <objects>
-                <controller identifier="ScoresInterfaceController" title="Scores" id="27U-IZ-SVF" customClass="ScoresInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
+                <controller identifier="ScoresInterfaceController" title="10S Scores" id="27U-IZ-SVF" customClass="ScoresInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Set Score:" id="OAJ-La-qRw"/>
                         <group width="1" alignment="left" id="uft-q1-XFS" userLabel="Set Score Group">
                             <items>
-                                <label alignment="left" text="0-0" textAlignment="left" id="ls1-x2-gnE" userLabel="Set 1"/>
-                                <label alignment="left" hidden="YES" text="0-0" id="yQX-GX-P56" userLabel="Set 2"/>
-                                <label alignment="left" hidden="YES" text="0-0" id="OO8-IM-mn6" userLabel="Set 3"/>
-                                <label alignment="left" hidden="YES" text="0-0" id="fZt-Z0-Q96" userLabel="Set 4"/>
-                                <label alignment="left" hidden="YES" text="0-0" id="h73-fs-u1d" userLabel="Set 5"/>
+                                <label width="0.090999999999999998" alignment="left" text="0" textAlignment="center" id="ls1-x2-gnE" userLabel="Player 1 Set 1 Score"/>
+                                <label width="0.090999999999999998" alignment="left" text="-" textAlignment="center" id="yQX-GX-P56" userLabel="Set 1 Dash"/>
+                                <label width="0.090999999999999998" alignment="left" text="0" textAlignment="center" id="OO8-IM-mn6" userLabel="Player 2 Set 1 Score"/>
+                                <label width="0.090999999999999998" alignment="left" text="," id="Knt-zv-alb" userLabel="Comma Between Set 1 and 2"/>
+                                <label width="0.090999999999999998" alignment="left" text="0" textAlignment="center" id="fZt-Z0-Q96" userLabel="Player 1 Set 2 Score"/>
+                                <label width="0.090999999999999998" alignment="left" text="-" textAlignment="center" id="h73-fs-u1d" userLabel="Set 2 Dash"/>
+                                <label width="0.090999999999999998" alignment="left" text="0" textAlignment="center" id="Qgc-qL-gmI" userLabel="Player 2 Set 2 Score"/>
+                                <label width="0.090999999999999998" alignment="left" text="," id="jzF-ix-jvM" userLabel="Comma Between Set 2 and 3"/>
+                                <label width="0.090999999999999998" alignment="left" text="0" id="2FV-vB-Jd9" userLabel="Player 1 Set 3 Score"/>
+                                <label width="0.090999999999999998" alignment="left" text="-" id="jel-ZH-vm0" userLabel="Set 3 Dash"/>
+                                <label width="0.090999999999999998" alignment="left" text="0" id="WPo-aC-ocM" userLabel="Player 2 Set 3 Score"/>
                             </items>
                         </group>
                         <label alignment="left" text="Game Score:" id="5lZ-TT-6Ai"/>
                         <group width="1" alignment="left" id="oG9-3d-pqh" userLabel="Game Score Group">
                             <items>
-                                <button width="0.33000000000000002" height="1" alignment="left" enabled="NO" backgroundImage="tennis-ball" id="bgs-2I-tf6" userLabel="Player 1 Serving Button">
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </button>
-                                <label alignment="left" text="0-0" id="v8j-wz-9jh" userLabel="Game Score"/>
-                                <button width="0.33000000000000002" height="1" alignment="left" hidden="YES" title="Player 2 Serving Button" backgroundImage="tennis-ball" id="Ic6-Mw-7dE">
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </button>
+                                <imageView width="0.20000000000000001" height="1" alignment="left" image="tennis-ball" id="3AC-45-h4d" userLabel="Player 1 Serving Image"/>
+                                <label width="0.20000000000000001" alignment="left" text="0" textAlignment="center" id="v8j-wz-9jh" userLabel="Player 1 Game Score"/>
+                                <label width="0.20000000000000001" alignment="left" text="-" textAlignment="center" id="351-GF-u8M" userLabel="Game Score Dash"/>
+                                <label width="0.20000000000000001" alignment="left" text="0" textAlignment="center" id="Noe-Ts-KoF" userLabel="Player 2 Game Score"/>
+                                <imageView width="0.20000000000000001" height="1" alignment="left" image="tennis-ball" id="DsS-GH-g7w" userLabel="Player 2 Serving Image"/>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="Ac3-hj-8Sr">
+                        <group width="1" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
                             <items>
-                                <button width="0.5" height="1" alignment="left" backgroundImage="increment-score" id="Sgx-1n-ui0" userLabel="Increment Player 1 Score"/>
-                                <button alignment="left" backgroundImage="increment-score" id="APn-AI-lhh" userLabel="Increment Player 2 Score"/>
+                                <button width="0.25" height="0.5" alignment="left" backgroundImage="increment-score" id="Sgx-1n-ui0" userLabel="Increment Player 1 Score">
+                                    <connections>
+                                        <action selector="incrementPlayerOneScore" destination="27U-IZ-SVF" id="gcD-bJ-ldF"/>
+                                    </connections>
+                                </button>
+                                <imageView width="0.5" height="0.67000000000000004" alignment="left" image="tennis-court" id="A9Q-tW-68M"/>
+                                <button width="0.25" height="0.5" alignment="left" backgroundImage="increment-score" id="APn-AI-lhh" userLabel="Increment Player 2 Score">
+                                    <connections>
+                                        <action selector="incrementPlayerTwoScore" destination="27U-IZ-SVF" id="6Ms-qM-CEc"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="player_1_game_score" destination="v8j-wz-9jh" id="04x-k5-9sE"/>
+                        <outlet property="player_1_serving_image" destination="3AC-45-h4d" id="Mii-pO-VTv"/>
+                        <outlet property="player_1_set_1_score" destination="ls1-x2-gnE" id="oVE-FM-ech"/>
+                        <outlet property="player_1_set_2_score" destination="fZt-Z0-Q96" id="faK-7f-3nS"/>
+                        <outlet property="player_1_set_3_score" destination="2FV-vB-Jd9" id="8b2-XJ-GSJ"/>
+                        <outlet property="player_2_game_score" destination="Noe-Ts-KoF" id="tOe-hz-Wbu"/>
+                        <outlet property="player_2_serving_image" destination="DsS-GH-g7w" id="nqZ-97-RCT"/>
+                        <outlet property="player_2_set_1_score" destination="OO8-IM-mn6" id="NfU-56-Yi3"/>
+                        <outlet property="player_2_set_2_score" destination="Qgc-qL-gmI" id="oWL-n2-H3B"/>
+                        <outlet property="player_2_set_3_score" destination="WPo-aC-ocM" id="r6n-dD-qzW"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="1062" y="247.5"/>

@@ -11,7 +11,15 @@ import Foundation
 
 
 class MatchLengthInterfaceController: WKInterfaceController {
+    @IBAction func bestOfOneButton() {
+    
+    }
+    
+    @IBAction func bestOfThreeButton() {
+    
+    }
 
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         

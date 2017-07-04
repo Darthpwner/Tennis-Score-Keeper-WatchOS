@@ -12,6 +12,32 @@ import Foundation
 
 class ScoresInterfaceController: WKInterfaceController {
 
+    //Outlets
+    /* Set Scores */
+    @IBOutlet var player_1_set_1_score: WKInterfaceLabel!
+    @IBOutlet var player_2_set_1_score: WKInterfaceLabel!
+    @IBOutlet var player_1_set_2_score: WKInterfaceLabel!
+    @IBOutlet var player_2_set_2_score: WKInterfaceLabel!
+    @IBOutlet var player_1_set_3_score: WKInterfaceLabel!
+    @IBOutlet var player_2_set_3_score: WKInterfaceLabel!
+    
+    /* Game Scores */
+    @IBOutlet var player_1_game_score: WKInterfaceLabel!
+    @IBOutlet var player_2_game_score: WKInterfaceLabel!
+    
+    /* Player Serving Images */
+    @IBOutlet var player_1_serving_image: WKInterfaceImage!
+    @IBOutlet var player_2_serving_image: WKInterfaceImage!
+    
+    /* Increment Scores */
+    @IBAction func incrementPlayerOneScore() {
+    
+    }
+    
+    @IBAction func incrementPlayerTwoScore() {
+    }
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
