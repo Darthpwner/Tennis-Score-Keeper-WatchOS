@@ -56,6 +56,7 @@
             <objects>
                 <controller identifier="ScoresInterfaceController" title="10S Scores" id="27U-IZ-SVF" customClass="ScoresInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
+                        <label width="1" alignment="left" textAlignment="center" id="ygT-ij-Fde" userLabel="Announcement Label"/>
                         <label alignment="left" text="Set Score:" id="OAJ-La-qRw"/>
                         <group width="1" alignment="left" id="uft-q1-XFS" userLabel="Set Score Group">
                             <items>
@@ -99,6 +100,7 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="announcement_label" destination="ygT-ij-Fde" id="IlS-Kr-dzh"/>
                         <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
                         <outlet property="player_1_serving_image" destination="3AC-45-h4d" id="Mii-pO-VTv"/>
                         <outlet property="player_1_set_1_score_label" destination="ls1-x2-gnE" id="6Vs-dc-djU"/>

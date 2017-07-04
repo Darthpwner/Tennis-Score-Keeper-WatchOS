@@ -12,6 +12,12 @@ import Foundation
 
 class ScoresInterfaceController: WKInterfaceController {
 
+    // TODO?
+    @IBOutlet var announcement_label: WKInterfaceLabel!
+    
+    // Current set [1, 3]
+    var current_set = 1
+    
     // Game score values
     var player_1_points_won_this_game = 0
     var player_2_points_won_this_game = 0
@@ -46,12 +52,36 @@ class ScoresInterfaceController: WKInterfaceController {
         if(player_1_points_won_this_game >= 3 && player_1_points_won_this_game - player_2_points_won_this_game >= 1) {    //Game: Player 1
             player_1_game_score_label.setText("0")
             player_2_game_score_label.setText("0")
+            
             player_1_points_won_this_game = 0
             player_2_points_won_this_game = 0
             
             print("GAME P1")
             print(player_1_points_won_this_game)
             print(player_2_points_won_this_game)
+            
+            // Update set score
+            if(current_set == 1) {
+                // Player 1 won Set 1
+                if(player_1_set_1_score == 5 && player_2_set_1_score <= 5) {
+                    current_set += 1
+                } else if(1 == 1) {
+                    return;
+                }
+                
+                player_1_set_1_score += 1
+                player_1_set_1_score_label.setText(String(player_1_set_1_score))
+            } else if(current_set == 2) {
+                player_1_set_2_score += 1
+                player_1_set_2_score_label.setText(String(player_1_set_2_score))
+            } else {
+                player_1_set_3_score += 1
+                player_1_set_3_score_label.setText(String(player_1_set_3_score))
+            }
+            
+            
+//            announcement_label.setText("Game: Player 1")
+//            announcement_label.setHidden(false)
             
             return
         } else if(player_1_points_won_this_game == 0) {
@@ -76,12 +106,28 @@ class ScoresInterfaceController: WKInterfaceController {
         if(player_2_points_won_this_game >= 3 && player_2_points_won_this_game - player_1_points_won_this_game >= 1) {    //Game: Player 2
             player_1_game_score_label.setText("0")
             player_2_game_score_label.setText("0")
+            
             player_1_points_won_this_game = 0
             player_2_points_won_this_game = 0
             
             print("GAME P2")
             print(player_1_points_won_this_game)
             print(player_2_points_won_this_game)
+
+            // Update set score
+            if(current_set == 1) {
+                player_2_set_1_score += 1
+                player_2_set_1_score_label.setText(String(player_2_set_1_score))
+            } else if(current_set == 2) {
+                player_2_set_2_score += 1
+                player_2_set_2_score_label.setText(String(player_2_set_2_score))
+            } else {
+                player_2_set_3_score += 1
+                player_2_set_3_score_label.setText(String(player_2_set_3_score))
+            }
+            
+//            announcement_label.setText("Game: Player 2")
+//            announcement_label.setHidden(false)
             
             return
         } else if(player_2_points_won_this_game == 0) {
