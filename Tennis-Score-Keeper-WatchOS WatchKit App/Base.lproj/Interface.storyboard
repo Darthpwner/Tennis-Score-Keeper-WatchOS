@@ -99,16 +99,16 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="player_1_game_score" destination="v8j-wz-9jh" id="04x-k5-9sE"/>
+                        <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
                         <outlet property="player_1_serving_image" destination="3AC-45-h4d" id="Mii-pO-VTv"/>
-                        <outlet property="player_1_set_1_score" destination="ls1-x2-gnE" id="oVE-FM-ech"/>
-                        <outlet property="player_1_set_2_score" destination="fZt-Z0-Q96" id="faK-7f-3nS"/>
-                        <outlet property="player_1_set_3_score" destination="2FV-vB-Jd9" id="8b2-XJ-GSJ"/>
-                        <outlet property="player_2_game_score" destination="Noe-Ts-KoF" id="tOe-hz-Wbu"/>
+                        <outlet property="player_1_set_1_score_label" destination="ls1-x2-gnE" id="6Vs-dc-djU"/>
+                        <outlet property="player_1_set_2_score_label" destination="fZt-Z0-Q96" id="N6P-um-XyB"/>
+                        <outlet property="player_1_set_3_score_label" destination="2FV-vB-Jd9" id="IQ8-Qf-MnY"/>
+                        <outlet property="player_2_game_score_label" destination="Noe-Ts-KoF" id="7ML-ug-GOu"/>
                         <outlet property="player_2_serving_image" destination="DsS-GH-g7w" id="nqZ-97-RCT"/>
-                        <outlet property="player_2_set_1_score" destination="OO8-IM-mn6" id="NfU-56-Yi3"/>
-                        <outlet property="player_2_set_2_score" destination="Qgc-qL-gmI" id="oWL-n2-H3B"/>
-                        <outlet property="player_2_set_3_score" destination="WPo-aC-ocM" id="r6n-dD-qzW"/>
+                        <outlet property="player_2_set_1_score_label" destination="OO8-IM-mn6" id="EO6-fO-93h"/>
+                        <outlet property="player_2_set_2_score_label" destination="Qgc-qL-gmI" id="e2F-eh-glk"/>
+                        <outlet property="player_2_set_3_score_label" destination="WPo-aC-ocM" id="Jol-y0-rKM"/>
                     </connections>
                 </controller>
             </objects>
