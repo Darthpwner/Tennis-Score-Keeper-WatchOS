@@ -60,28 +60,49 @@ class ScoresInterfaceController: WKInterfaceController {
             print(player_1_points_won_this_game)
             print(player_2_points_won_this_game)
             
+            
             // Update set score
             if(current_set == 1) {
-                // Player 1 won Set 1
-                if(player_1_set_1_score == 5 && player_2_set_1_score <= 5) {
-                    current_set += 1
-                } else if(1 == 1) {
-                    return;
-                }
-                
                 player_1_set_1_score += 1
                 player_1_set_1_score_label.setText(String(player_1_set_1_score))
+
+                // Player 1 won Set 1
+                if(player_1_set_1_score == 6 && player_2_set_1_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
+                    print("P1 Set 1 with 6")
+
+                    current_set += 1
+                } else if(player_1_set_1_score == 7 && (player_2_set_1_score == 5 || player_2_set_1_score == 6)) {  //7-5, 7-6
+                    print("P1 Set 1 with 7")
+                    
+                    current_set += 1
+                }
             } else if(current_set == 2) {
                 player_1_set_2_score += 1
                 player_1_set_2_score_label.setText(String(player_1_set_2_score))
+
+                // Player 1 won Set 2
+                if(player_1_set_2_score == 6 && player_2_set_2_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
+                    current_set += 1
+                } else if(player_1_set_2_score == 7 && (player_2_set_2_score == 5 || player_2_set_2_score == 6)) { //7-5, 7-6
+                    current_set += 1
+                }
             } else {
                 player_1_set_3_score += 1
                 player_1_set_3_score_label.setText(String(player_1_set_3_score))
+                
+                // Player 1 won Set 3
+                if(player_1_set_3_score == 6 && player_2_set_3_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
+                    current_set += 1
+                    
+                    announcement_label.setText("Player 1 wins")
+                    announcement_label.setHidden(false)
+                } else if(player_1_set_3_score == 7 && (player_2_set_3_score == 5 || player_2_set_3_score == 6)) {  //7-5, 7-6
+                    current_set += 1
+                    
+                    announcement_label.setText("Player 1 wins")
+                    announcement_label.setHidden(false)
+                }
             }
-            
-            
-//            announcement_label.setText("Game: Player 1")
-//            announcement_label.setHidden(false)
             
             return
         } else if(player_1_points_won_this_game == 0) {
@@ -118,17 +139,45 @@ class ScoresInterfaceController: WKInterfaceController {
             if(current_set == 1) {
                 player_2_set_1_score += 1
                 player_2_set_1_score_label.setText(String(player_2_set_1_score))
+                
+                // Player 2 won Set 1
+                if(player_2_set_1_score == 6 && player_1_set_1_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
+                    print("P2 Set 1 with 6")
+                    
+                    current_set += 1
+                } else if(player_2_set_1_score == 7 && (player_1_set_1_score == 5 || player_1_set_1_score == 6)) {  //7-5, 7-6
+                    print("P2 Set 1 with 6")
+                    
+                    current_set += 1
+                }
             } else if(current_set == 2) {
                 player_2_set_2_score += 1
                 player_2_set_2_score_label.setText(String(player_2_set_2_score))
+                
+                // Player 2 won Set 2
+                if(player_2_set_2_score == 6 && player_1_set_2_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
+                    current_set += 1
+                } else if(player_2_set_2_score == 7 && (player_1_set_2_score == 5 || player_1_set_2_score == 6)) { //7-5, 7-6
+                    current_set += 1
+                }
             } else {
                 player_2_set_3_score += 1
                 player_2_set_3_score_label.setText(String(player_2_set_3_score))
+                
+                // Player 2 won Set 3
+                if(player_2_set_3_score == 6 && player_1_set_3_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
+                    current_set += 1
+                    
+                    announcement_label.setText("Player 2 wins")
+                    announcement_label.setHidden(false)
+                } else if(player_2_set_3_score == 7 && (player_1_set_3_score == 5 || player_1_set_3_score == 6)) {  //7-5, 7-6
+                    current_set += 1
+                    
+                    announcement_label.setText("Player 2 wins")
+                    announcement_label.setHidden(false)
+                }
             }
-            
-//            announcement_label.setText("Game: Player 2")
-//            announcement_label.setHidden(false)
-            
+                
             return
         } else if(player_2_points_won_this_game == 0) {
             player_2_game_score_label.setText("15")
