@@ -133,7 +133,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 1 wins the match
                             announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match: P1")
+                            announcement_label.setText("Game, Set, Match")
                             preventButtonSelection()
                             delayGameSetMatch()
                             return
@@ -152,7 +152,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 1 wins the match
                             announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match: P1")
+                            announcement_label.setText("Game, Set, Match")
                             preventButtonSelection()
                             delayGameSetMatch()
                             return
@@ -178,7 +178,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Set 3: P1"
                         announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match: P1")
+                        announcement_label.setText("Game, Set, Match")
                         preventButtonSelection()
                         delayGameSetMatch()
                         return
@@ -189,7 +189,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Set 3: P1"
                         announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match: P1")
+                        announcement_label.setText("Game, Set, Match")
                         preventButtonSelection()
                         delayGameSetMatch()
                         return
@@ -244,7 +244,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     if(set_winners[0] == set_winners[1]) {  //Player 1 wins
                         announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match: P1")
+                        announcement_label.setText("Game, Set, Match")
                         preventButtonSelection()
                         delayGameSetMatch()
                         return
@@ -263,7 +263,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     // Announce "Set 3: P1"
                     announcement_label.setHidden(false)
-                    announcement_label.setText("Game, Set, Match: P1")
+                    announcement_label.setText("Game, Set, Match")
                     preventButtonSelection()
                     delayGameSetMatch()
                 }
@@ -344,7 +344,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 2 wins
                             announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match: P2")
+                            announcement_label.setText("Game, Set, Match")
                             preventButtonSelection()
                             delayGameSetMatch()
                             return
@@ -363,7 +363,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 2 wins
                             announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match: P2")
+                            announcement_label.setText("Game, Set, Match")
                             preventButtonSelection()
                             delayGameSetMatch()
                             return
@@ -391,7 +391,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Set 3: P2"
                         announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match: P2")
+                        announcement_label.setText("Game, Set, Match")
                         preventButtonSelection()
                         delayGameSetMatch()
                         
@@ -402,7 +402,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Set 3: P2"
                         announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match: P2")
+                        announcement_label.setText("Game, Set, Match")
                         preventButtonSelection()
                         delayGameSetMatch()
                         
@@ -453,7 +453,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     if(set_winners[0] == set_winners[1]) {  //Player 2 wins
                         announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match: P2")
+                        announcement_label.setText("Game, Set, Match")
                         preventButtonSelection()
                         delayGameSetMatch()
                         return
@@ -472,7 +472,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     // Announce "Set 3: P2"
                     announcement_label.setHidden(false)
-                    announcement_label.setText("Game, Set, Match: P2")
+                    announcement_label.setText("Game, Set, Match")
                     preventButtonSelection()
                     delayGameSetMatch()
                     
