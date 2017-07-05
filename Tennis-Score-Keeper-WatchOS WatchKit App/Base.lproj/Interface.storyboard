@@ -56,16 +56,18 @@
             <objects>
                 <controller identifier="ScoresInterfaceController" title="10S Scores" id="27U-IZ-SVF" userLabel="Tennis Scores" customClass="ScoresInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
-                        <group width="1" height="0.25" alignment="left" id="i1F-8Y-9ZH" userLabel="Reset/Undo Group">
+                        <group width="1" height="0.14999999999999999" alignment="left" id="i1F-8Y-9ZH" userLabel="Reset/Undo Group">
                             <items>
-                                <button width="0.5" alignment="left" title="Reset" id="k7U-Ab-h8k" userLabel="Reset Button">
+                                <button width="0.5" height="1" alignment="left" title="Reset" id="k7U-Ab-h8k" userLabel="Reset Button">
                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
                                     <connections>
                                         <action selector="reset" destination="27U-IZ-SVF" id="goz-Zf-J1X"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" alignment="left" title="Undo" id="fXX-1b-9ua" userLabel="Undo Button">
+                                <button width="0.5" height="1" alignment="left" title="Undo" id="fXX-1b-9ua" userLabel="Undo Button">
                                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
                                 </button>
                             </items>
                         </group>
@@ -111,6 +113,7 @@
                                 </button>
                             </items>
                         </group>
+                        <label height="0.10000000000000001" alignment="left" hidden="YES" text="Game Player 1" id="QyL-zO-QcS" userLabel="Announcement Label"/>
                     </items>
                     <connections>
                         <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
