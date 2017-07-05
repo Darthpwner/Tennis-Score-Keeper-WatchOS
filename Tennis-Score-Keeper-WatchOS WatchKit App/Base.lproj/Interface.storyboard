@@ -113,9 +113,10 @@
                                 </button>
                             </items>
                         </group>
-                        <label height="0.10000000000000001" alignment="left" hidden="YES" text="Game Player 1" id="QyL-zO-QcS" userLabel="Announcement Label"/>
+                        <label height="0.10000000000000001" alignment="left" hidden="YES" id="QyL-zO-QcS" userLabel="Announcement Label"/>
                     </items>
                     <connections>
+                        <outlet property="announcement_label" destination="QyL-zO-QcS" id="HUZ-Tz-g1R"/>
                         <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
                         <outlet property="player_1_label" destination="Olw-1T-7iS" id="tVa-qN-C4h"/>
                         <outlet property="player_1_serving_image" destination="3AC-45-h4d" id="Mii-pO-VTv"/>

@@ -53,6 +53,8 @@ class ScoresInterfaceController: WKInterfaceController {
     @IBOutlet var player_1_label: WKInterfaceLabel!
     @IBOutlet var player_2_label: WKInterfaceLabel!
     
+    @IBOutlet var announcement_label: WKInterfaceLabel!
+    
     /* Increment Scores */
     @IBAction func incrementPlayerOneScore() {
         player_1_points_won_this_game += 1
@@ -66,6 +68,15 @@ class ScoresInterfaceController: WKInterfaceController {
                 
                 player_1_points_won_this_game = 0
                 player_2_points_won_this_game = 0
+                
+                announcement_label.setHidden(false)
+                announcement_label.setText("Game: P1")
+                
+                // Delay the dismissal by 5 seconds
+                let when = DispatchTime.now() + 5 // change 5 to desired number of seconds
+                DispatchQueue.main.asyncAfter(deadline: when) {
+                    self.announcement_label.setHidden(true)
+                }
                 
                 print("GAME P1")
                 print(player_1_points_won_this_game)
