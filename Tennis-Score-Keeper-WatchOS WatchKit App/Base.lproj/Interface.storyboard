@@ -90,7 +90,8 @@
                                         <action selector="incrementPlayerOneScore" destination="27U-IZ-SVF" id="gcD-bJ-ldF"/>
                                     </connections>
                                 </button>
-                                <imageView width="0.5" height="0.67000000000000004" alignment="left" image="tennis-court" id="A9Q-tW-68M"/>
+                                <label width="0.25" height="0.67000000000000004" alignment="left" text="P1" textAlignment="center" id="Olw-1T-7iS" userLabel="Player 1 Label"/>
+                                <label width="0.25" height="0.67000000000000004" alignment="left" text="P2" textAlignment="center" id="yrW-LF-gzk" userLabel="Player 2 Label"/>
                                 <button width="0.25" height="0.5" alignment="left" backgroundImage="increment-score" id="APn-AI-lhh" userLabel="Increment Player 2 Score">
                                     <connections>
                                         <action selector="incrementPlayerTwoScore" destination="27U-IZ-SVF" id="6Ms-qM-CEc"/>
@@ -102,11 +103,13 @@
                     <connections>
                         <outlet property="announcement_label" destination="ygT-ij-Fde" id="IlS-Kr-dzh"/>
                         <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
+                        <outlet property="player_1_label" destination="Olw-1T-7iS" id="tVa-qN-C4h"/>
                         <outlet property="player_1_serving_image" destination="3AC-45-h4d" id="Mii-pO-VTv"/>
                         <outlet property="player_1_set_1_score_label" destination="ls1-x2-gnE" id="6Vs-dc-djU"/>
                         <outlet property="player_1_set_2_score_label" destination="fZt-Z0-Q96" id="N6P-um-XyB"/>
                         <outlet property="player_1_set_3_score_label" destination="2FV-vB-Jd9" id="IQ8-Qf-MnY"/>
                         <outlet property="player_2_game_score_label" destination="Noe-Ts-KoF" id="7ML-ug-GOu"/>
+                        <outlet property="player_2_label" destination="yrW-LF-gzk" id="ydb-Nw-xGJ"/>
                         <outlet property="player_2_serving_image" destination="DsS-GH-g7w" id="nqZ-97-RCT"/>
                         <outlet property="player_2_set_1_score_label" destination="OO8-IM-mn6" id="EO6-fO-93h"/>
                         <outlet property="player_2_set_2_score_label" destination="Qgc-qL-gmI" id="e2F-eh-glk"/>
