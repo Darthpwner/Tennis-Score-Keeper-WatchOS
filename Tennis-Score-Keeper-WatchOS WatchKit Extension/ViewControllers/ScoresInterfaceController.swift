@@ -33,9 +33,6 @@ class ScoresInterfaceController: WKInterfaceController {
     var player_2_set_3_score = 0
     
     //Outlets
-    // TODO?
-    @IBOutlet var announcement_label: WKInterfaceLabel!
-    
     /* Set Scores */
     @IBOutlet var player_1_set_1_score_label: WKInterfaceLabel!
     @IBOutlet var player_2_set_1_score_label: WKInterfaceLabel!
@@ -111,14 +108,8 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Player 1 won Set 3
                     if(player_1_set_3_score == 6 && player_2_set_3_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         current_set += 1
-                        
-                        announcement_label.setText("Player 1 wins")
-                        announcement_label.setHidden(false)
                     } else if(player_1_set_3_score == 7 && player_2_set_3_score == 5) {  //7-5
                         current_set += 1
-                        
-                        announcement_label.setText("Player 1 wins")
-                        announcement_label.setHidden(false)
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                     }
@@ -224,14 +215,8 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Player 2 won Set 3
                     if(player_2_set_3_score == 6 && player_1_set_3_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         current_set += 1
-                        
-                        announcement_label.setText("Player 2 wins")
-                        announcement_label.setHidden(false)
                     } else if(player_2_set_3_score == 7 && player_1_set_3_score == 5) {  //7-5
                         current_set += 1
-                        
-                        announcement_label.setText("Player 2 wins")
-                        announcement_label.setHidden(false)
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                     }
@@ -267,8 +252,6 @@ class ScoresInterfaceController: WKInterfaceController {
                     player_2_set_3_score_label.setText(String(player_2_set_3_score))
                 }
                 
-                
-                
                 player_1_game_score_label.setText("0")
                 player_2_game_score_label.setText("0")
                 
@@ -286,6 +269,37 @@ class ScoresInterfaceController: WKInterfaceController {
         print(player_2_points_won_this_game)
     }
     
+    /* Reset */
+    @IBAction func reset() {
+        // Reset game score
+        player_1_game_score_label.setText("0")
+        player_2_game_score_label.setText("0")
+        
+        player_1_points_won_this_game = 0
+        player_2_points_won_this_game = 0
+        
+        // Reset set scores 
+        player_1_set_1_score = 0
+        player_1_set_1_score_label.setText("0")
+        
+        player_2_set_1_score = 0
+        player_2_set_1_score_label.setText("0")
+        
+        player_1_set_2_score = 0
+        player_1_set_2_score_label.setText("0")
+        
+        player_2_set_2_score = 0
+        player_2_set_2_score_label.setText("0")
+        
+        player_1_set_3_score = 0
+        player_1_set_3_score_label.setText("0")
+        
+        player_2_set_3_score = 0
+        player_2_set_3_score_label.setText("0")
+    }
+    
+    
+    /* Undo */
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)

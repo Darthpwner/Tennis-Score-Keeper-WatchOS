@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="482" y="340"/>
         </scene>
-        <!--10S Scores-->
+        <!--Match Length-->
         <scene sceneID="FeO-1y-n5t">
             <objects>
-                <controller identifier="MatchLengthInterfaceController" title="10S Scores" id="TBo-J6-kkh" customClass="MatchLengthInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
+                <controller identifier="MatchLengthInterfaceController" title="10S Scores" id="TBo-J6-kkh" userLabel="Match Length" customClass="MatchLengthInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
                         <label width="1" height="0.10000000000000001" alignment="left" text="Number of Sets?" id="rqY-GV-bHD"/>
                         <button width="1" height="0.20000000000000001" alignment="left" title="Best of 1" id="4yK-ei-94e">
@@ -51,14 +51,26 @@
             </objects>
             <point key="canvasLocation" x="772" y="339"/>
         </scene>
-        <!--10S Scores-->
+        <!--Tennis Scores-->
         <scene sceneID="YQv-Jn-T6M">
             <objects>
-                <controller identifier="ScoresInterfaceController" title="10S Scores" id="27U-IZ-SVF" customClass="ScoresInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
+                <controller identifier="ScoresInterfaceController" title="10S Scores" id="27U-IZ-SVF" userLabel="Tennis Scores" customClass="ScoresInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
-                        <label width="1" alignment="left" textAlignment="center" id="ygT-ij-Fde" userLabel="Announcement Label"/>
-                        <label alignment="left" text="Set Score:" id="OAJ-La-qRw"/>
-                        <group width="1" alignment="left" id="uft-q1-XFS" userLabel="Set Score Group">
+                        <group width="1" height="0.25" alignment="left" id="i1F-8Y-9ZH" userLabel="Reset/Undo Group">
+                            <items>
+                                <button width="0.5" alignment="left" title="Reset" id="k7U-Ab-h8k" userLabel="Reset Button">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="reset" destination="27U-IZ-SVF" id="goz-Zf-J1X"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Undo" id="fXX-1b-9ua" userLabel="Undo Button">
+                                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </button>
+                            </items>
+                        </group>
+                        <label height="0.125" alignment="left" text="Set Score:" id="OAJ-La-qRw"/>
+                        <group width="1" height="0.125" alignment="left" id="uft-q1-XFS" userLabel="Set Score Group">
                             <items>
                                 <label width="0.090999999999999998" alignment="left" text="0" textAlignment="center" id="ls1-x2-gnE" userLabel="Player 1 Set 1 Score"/>
                                 <label width="0.090999999999999998" alignment="left" text="-" textAlignment="center" id="yQX-GX-P56" userLabel="Set 1 Dash"/>
@@ -73,8 +85,8 @@
                                 <label width="0.090999999999999998" alignment="left" text="0" id="WPo-aC-ocM" userLabel="Player 2 Set 3 Score"/>
                             </items>
                         </group>
-                        <label alignment="left" text="Game Score:" id="5lZ-TT-6Ai"/>
-                        <group width="1" alignment="left" id="oG9-3d-pqh" userLabel="Game Score Group">
+                        <label height="0.125" alignment="left" text="Game Score:" id="5lZ-TT-6Ai"/>
+                        <group width="1" height="0.125" alignment="left" id="oG9-3d-pqh" userLabel="Game Score Group">
                             <items>
                                 <imageView width="0.20000000000000001" height="1" alignment="left" image="tennis-ball" id="3AC-45-h4d" userLabel="Player 1 Serving Image"/>
                                 <label width="0.20000000000000001" alignment="left" text="0" textAlignment="center" id="v8j-wz-9jh" userLabel="Player 1 Game Score"/>
@@ -83,16 +95,16 @@
                                 <imageView width="0.20000000000000001" height="1" alignment="left" image="tennis-ball" id="DsS-GH-g7w" userLabel="Player 2 Serving Image"/>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
+                        <group width="1" height="0.25" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
                             <items>
-                                <button width="0.25" height="0.5" alignment="left" backgroundImage="increment-score" id="Sgx-1n-ui0" userLabel="Increment Player 1 Score">
+                                <button width="0.25" height="0.75" alignment="left" backgroundImage="increment-score" id="Sgx-1n-ui0" userLabel="Increment Player 1 Score">
                                     <connections>
                                         <action selector="incrementPlayerOneScore" destination="27U-IZ-SVF" id="gcD-bJ-ldF"/>
                                     </connections>
                                 </button>
                                 <label width="0.25" height="0.67000000000000004" alignment="left" text="P1" textAlignment="center" id="Olw-1T-7iS" userLabel="Player 1 Label"/>
                                 <label width="0.25" height="0.67000000000000004" alignment="left" text="P2" textAlignment="center" id="yrW-LF-gzk" userLabel="Player 2 Label"/>
-                                <button width="0.25" height="0.5" alignment="left" backgroundImage="increment-score" id="APn-AI-lhh" userLabel="Increment Player 2 Score">
+                                <button width="0.25" height="0.75" alignment="left" backgroundImage="increment-score" id="APn-AI-lhh" userLabel="Increment Player 2 Score">
                                     <connections>
                                         <action selector="incrementPlayerTwoScore" destination="27U-IZ-SVF" id="6Ms-qM-CEc"/>
                                     </connections>
@@ -101,7 +113,6 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="announcement_label" destination="ygT-ij-Fde" id="IlS-Kr-dzh"/>
                         <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
                         <outlet property="player_1_label" destination="Olw-1T-7iS" id="tVa-qN-C4h"/>
                         <outlet property="player_1_serving_image" destination="3AC-45-h4d" id="Mii-pO-VTv"/>
