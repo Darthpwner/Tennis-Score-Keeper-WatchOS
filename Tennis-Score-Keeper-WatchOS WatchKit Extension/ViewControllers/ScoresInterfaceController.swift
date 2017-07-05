@@ -519,6 +519,8 @@ class ScoresInterfaceController: WKInterfaceController {
         player_2_set_3_score = 0
         player_2_set_3_score_label.setText("0")
         
+        current_set = 1
+        
         //Allow the player to use increment buttons if they hit reset at the end of match
         self.increment_player_one_score_outlet.setEnabled(true)
         self.increment_player_two_score_outlet.setEnabled(true)
@@ -547,6 +549,9 @@ class ScoresInterfaceController: WKInterfaceController {
             self.reset_button_outlet.setEnabled(true)
             self.home_button_outlet.setEnabled(true)
         }
+        
+        self.increment_player_one_score_outlet.setEnabled(false)
+        self.increment_player_two_score_outlet.setEnabled(false)
     }
     
     func preventButtonSelection() {
