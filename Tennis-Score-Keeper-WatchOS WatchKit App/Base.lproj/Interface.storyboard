@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="okk-KT-xBP">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TBo-J6-kkh">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,12 +38,14 @@
                         <button width="1" height="0.20000000000000001" alignment="left" title="Best of 1" id="4yK-ei-94e">
                             <connections>
                                 <action selector="bestOfOneButton" destination="TBo-J6-kkh" id="5XP-1X-Z3R"/>
+                                <segue destination="27U-IZ-SVF" kind="push" id="iUF-eZ-2vA"/>
                             </connections>
                         </button>
                         <imageView width="1" height="0.5" alignment="left" image="tennis-court" id="705-on-5MB"/>
                         <button width="1" height="0.20000000000000001" alignment="left" title="Best of 3" id="aDv-Sb-fsx">
                             <connections>
                                 <action selector="bestOfThreeButton" destination="TBo-J6-kkh" id="vFU-H1-Icq"/>
+                                <segue destination="okk-KT-xBP" kind="push" id="1KK-ar-mTT"/>
                             </connections>
                         </button>
                     </items>
@@ -57,9 +59,17 @@
                 <controller id="okk-KT-xBP">
                     <items>
                         <label width="1" height="0.10000000000000001" alignment="left" text="10-pt tiebreak for 3rd set?" minimumScaleFactor="0.5" id="HPP-Ux-k3F"/>
-                        <button width="1" height="0.20000000000000001" alignment="left" title="Yes" id="Mc4-0q-Mlu"/>
+                        <button width="1" height="0.20000000000000001" alignment="left" title="Yes" id="Mc4-0q-Mlu">
+                            <connections>
+                                <segue destination="27U-IZ-SVF" kind="push" id="mjh-LY-W2d"/>
+                            </connections>
+                        </button>
                         <imageView width="1" height="0.5" alignment="left" image="tennis-court" id="MQh-qq-J9R"/>
-                        <button width="1" height="0.20000000000000001" alignment="left" title="No" id="0EG-kE-DSr"/>
+                        <button width="1" height="0.20000000000000001" alignment="left" title="No" id="0EG-kE-DSr">
+                            <connections>
+                                <segue destination="27U-IZ-SVF" kind="push" id="5ni-bC-5zS"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -79,9 +89,12 @@
                                         <action selector="reset" destination="27U-IZ-SVF" id="goz-Zf-J1X"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="1" alignment="left" title="Undo" id="fXX-1b-9ua" userLabel="Undo Button">
-                                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <button width="0.5" height="1" alignment="left" title="Home" id="fXX-1b-9ua" userLabel="Home Button">
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="12"/>
+                                    <connections>
+                                        <segue destination="TBo-J6-kkh" kind="push" id="n7g-PN-YaJ"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
@@ -131,6 +144,7 @@
                     </items>
                     <connections>
                         <outlet property="announcement_label" destination="QyL-zO-QcS" id="HUZ-Tz-g1R"/>
+                        <outlet property="home_button_outlet" destination="fXX-1b-9ua" id="EBC-cB-VPS"/>
                         <outlet property="increment_player_one_score_outlet" destination="Sgx-1n-ui0" id="epj-mR-URp"/>
                         <outlet property="increment_player_two_score_outlet" destination="APn-AI-lhh" id="wDe-iU-tIP"/>
                         <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
@@ -146,7 +160,6 @@
                         <outlet property="player_2_set_2_score_label" destination="Qgc-qL-gmI" id="e2F-eh-glk"/>
                         <outlet property="player_2_set_3_score_label" destination="WPo-aC-ocM" id="Jol-y0-rKM"/>
                         <outlet property="reset_button_outlet" destination="k7U-Ab-h8k" id="4A7-lx-v1G"/>
-                        <outlet property="undo_button_outlet" destination="fXX-1b-9ua" id="EBC-cB-VPS"/>
                     </connections>
                 </controller>
             </objects>
@@ -176,4 +189,7 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iUF-eZ-2vA"/>
+    </inferredMetricsTieBreakers>
 </document>

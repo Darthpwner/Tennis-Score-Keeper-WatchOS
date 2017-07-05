@@ -35,7 +35,7 @@ class ScoresInterfaceController: WKInterfaceController {
     //Outlets
     /* Reset/Undo Group */
     @IBOutlet var reset_button_outlet: WKInterfaceButton!
-    @IBOutlet var undo_button_outlet: WKInterfaceButton!
+    @IBOutlet var home_button_outlet: WKInterfaceButton!
     
     /* Set Scores */
     @IBOutlet var player_1_set_1_score_label: WKInterfaceLabel!
@@ -434,7 +434,7 @@ class ScoresInterfaceController: WKInterfaceController {
             
             // Allow selection of buttons after the delay
             self.reset_button_outlet.setEnabled(true)
-            self.undo_button_outlet.setEnabled(true)
+            self.home_button_outlet.setEnabled(true)
             self.increment_player_one_score_outlet.setEnabled(true)
             self.increment_player_two_score_outlet.setEnabled(true)
         }
@@ -443,7 +443,7 @@ class ScoresInterfaceController: WKInterfaceController {
     func preventButtonSelection() {
         // Prevent selection of buttons during the delay
         self.reset_button_outlet.setEnabled(false)
-        self.undo_button_outlet.setEnabled(false)
+        self.home_button_outlet.setEnabled(false)
         self.increment_player_one_score_outlet.setEnabled(false)
         self.increment_player_two_score_outlet.setEnabled(false)
     }
