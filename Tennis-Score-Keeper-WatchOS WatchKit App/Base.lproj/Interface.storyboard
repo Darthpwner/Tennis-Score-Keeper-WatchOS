@@ -97,7 +97,7 @@
                                 <imageView width="0.20000000000000001" height="1" alignment="left" image="tennis-ball" id="DsS-GH-g7w" userLabel="Player 2 Serving Image"/>
                             </items>
                         </group>
-                        <group width="1" height="0.25" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
+                        <group width="1" height="0.20000000000000001" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
                             <items>
                                 <button width="0.25" height="0.75" alignment="left" backgroundImage="increment-score" id="Sgx-1n-ui0" userLabel="Increment Player 1 Score">
                                     <connections>
@@ -117,6 +117,8 @@
                     </items>
                     <connections>
                         <outlet property="announcement_label" destination="QyL-zO-QcS" id="HUZ-Tz-g1R"/>
+                        <outlet property="increment_player_one_score_outlet" destination="Sgx-1n-ui0" id="epj-mR-URp"/>
+                        <outlet property="increment_player_two_score_outlet" destination="APn-AI-lhh" id="wDe-iU-tIP"/>
                         <outlet property="player_1_game_score_label" destination="v8j-wz-9jh" id="jha-Bo-6tv"/>
                         <outlet property="player_1_label" destination="Olw-1T-7iS" id="tVa-qN-C4h"/>
                         <outlet property="player_1_serving_image" destination="3AC-45-h4d" id="Mii-pO-VTv"/>
@@ -129,6 +131,8 @@
                         <outlet property="player_2_set_1_score_label" destination="OO8-IM-mn6" id="EO6-fO-93h"/>
                         <outlet property="player_2_set_2_score_label" destination="Qgc-qL-gmI" id="e2F-eh-glk"/>
                         <outlet property="player_2_set_3_score_label" destination="WPo-aC-ocM" id="Jol-y0-rKM"/>
+                        <outlet property="reset_button_outlet" destination="k7U-Ab-h8k" id="4A7-lx-v1G"/>
+                        <outlet property="undo_button_outlet" destination="fXX-1b-9ua" id="EBC-cB-VPS"/>
                     </connections>
                 </controller>
             </objects>

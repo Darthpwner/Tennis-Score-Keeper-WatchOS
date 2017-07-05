@@ -33,6 +33,10 @@ class ScoresInterfaceController: WKInterfaceController {
     var player_2_set_3_score = 0
     
     //Outlets
+    /* Reset/Undo Group */
+    @IBOutlet var reset_button_outlet: WKInterfaceButton!
+    @IBOutlet var undo_button_outlet: WKInterfaceButton!
+    
     /* Set Scores */
     @IBOutlet var player_1_set_1_score_label: WKInterfaceLabel!
     @IBOutlet var player_2_set_1_score_label: WKInterfaceLabel!
@@ -48,6 +52,10 @@ class ScoresInterfaceController: WKInterfaceController {
     /* Player Serving Images */
     @IBOutlet var player_1_serving_image: WKInterfaceImage!
     @IBOutlet var player_2_serving_image: WKInterfaceImage!
+    
+    /* Increment Scores Labels */
+    @IBOutlet var increment_player_one_score_outlet: WKInterfaceButton!
+    @IBOutlet var increment_player_two_score_outlet: WKInterfaceButton!
     
     /* Player Labels */
     @IBOutlet var player_1_label: WKInterfaceLabel!
@@ -72,6 +80,7 @@ class ScoresInterfaceController: WKInterfaceController {
                 // Announce "Game: P1"
                 announcement_label.setHidden(false)
                 announcement_label.setText("Game: P1")
+                preventButtonSelection()
                 delayAnnouncement()
                 
                 print("GAME P1")
@@ -90,6 +99,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 1: P1"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 1: P1")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -98,6 +108,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 1: P1"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 1: P1")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -113,6 +124,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 2: P1"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 2: P1")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -120,6 +132,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 2: P1"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 2: P1")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -135,6 +148,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 3: P1"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 3: P1")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -142,6 +156,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 3: P1"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 3: P1")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -176,6 +191,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Announce "Set 1: P1"
                     announcement_label.setHidden(false)
                     announcement_label.setText("Set 1: P1")
+                    preventButtonSelection()
                     delayAnnouncement()
                 } else if (current_set == 2) {
                     player_1_set_2_score += 1
@@ -184,6 +200,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Announce "Set 2: P1"
                     announcement_label.setHidden(false)
                     announcement_label.setText("Set 2: P1")
+                    preventButtonSelection()
                     delayAnnouncement()
                 } else {    //Set 3
                     player_1_set_3_score += 1
@@ -192,6 +209,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Announce "Set 3: P1"
                     announcement_label.setHidden(false)
                     announcement_label.setText("Set 3: P1")
+                    preventButtonSelection()
                     delayAnnouncement()
                 }
                 
@@ -226,6 +244,7 @@ class ScoresInterfaceController: WKInterfaceController {
                 // Announce "Game: P2"
                 announcement_label.setHidden(false)
                 announcement_label.setText("Game: P2")
+                preventButtonSelection()
                 delayAnnouncement()
                 
                 print("GAME P2")
@@ -243,6 +262,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 1: P2"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 1: P2")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -251,6 +271,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 1: P2"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 1: P2")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -266,6 +287,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 2: P2"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 2: P2")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -273,6 +295,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 2: P2"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 2: P2")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -289,6 +312,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 3: P2"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 3: P2")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -296,6 +320,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 3: P2"
                         announcement_label.setHidden(false)
                         announcement_label.setText("Set 3: P2")
+                        preventButtonSelection()
                         delayAnnouncement()
                         
                         current_set += 1
@@ -327,6 +352,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Announce "Set 1: P2"
                     announcement_label.setHidden(false)
                     announcement_label.setText("Set 1: P2")
+                    preventButtonSelection()
                     delayAnnouncement()
                     
                     player_2_set_1_score += 1
@@ -335,6 +361,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Announce "Set 2: P2"
                     announcement_label.setHidden(false)
                     announcement_label.setText("Set 2: P2")
+                    preventButtonSelection()
                     delayAnnouncement()
                     
                     player_2_set_2_score += 1
@@ -343,6 +370,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Announce "Set 3: P2"
                     announcement_label.setHidden(false)
                     announcement_label.setText("Set 3: P2")
+                    preventButtonSelection()
                     delayAnnouncement()
                     
                     player_2_set_3_score += 1
@@ -398,11 +426,26 @@ class ScoresInterfaceController: WKInterfaceController {
     /* Undo */
     
     func delayAnnouncement() {
-        // Delay the dismissal by 3 seconds
-        let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
+        // Delay the dismissal by 2 seconds
+        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
             self.announcement_label.setHidden(true)
+            
+            // Allow selection of buttons after the delay
+            self.reset_button_outlet.setEnabled(true)
+            self.undo_button_outlet.setEnabled(true)
+            self.increment_player_one_score_outlet.setEnabled(true)
+            self.increment_player_two_score_outlet.setEnabled(true)
         }
+    }
+    
+    func preventButtonSelection() {
+        // Prevent selection of buttons during the delay
+        self.reset_button_outlet.setEnabled(false)
+        self.undo_button_outlet.setEnabled(false)
+        self.increment_player_one_score_outlet.setEnabled(false)
+        self.increment_player_two_score_outlet.setEnabled(false)
     }
     
     override func awake(withContext context: Any?) {
