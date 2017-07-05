@@ -49,7 +49,9 @@ class ScoresInterfaceController: WKInterfaceController {
     
     /* Increment Scores */
     @IBAction func incrementPlayerOneScore() {
-        if(player_1_points_won_this_game >= 3 && player_1_points_won_this_game - player_2_points_won_this_game >= 1) {    //Game: Player 1
+        player_1_points_won_this_game += 1
+        
+        if(player_1_points_won_this_game >= 4 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {    //Game: Player 1
             player_1_game_score_label.setText("0")
             player_2_game_score_label.setText("0")
             
@@ -105,26 +107,27 @@ class ScoresInterfaceController: WKInterfaceController {
             }
             
             return
-        } else if(player_1_points_won_this_game == 0) {
-            player_1_game_score_label.setText("15")
         } else if(player_1_points_won_this_game == 1) {
-            player_1_game_score_label.setText("30")
+            player_1_game_score_label.setText("15")
         } else if(player_1_points_won_this_game == 2) {
+            player_1_game_score_label.setText("30")
+        } else if(player_1_points_won_this_game == 3) {
             player_1_game_score_label.setText("40")
-        } else if(player_2_points_won_this_game - player_1_points_won_this_game == 0) {
-            player_1_game_score_label.setText("A")  //Won the deuce point
-        } else if(player_2_points_won_this_game - player_1_points_won_this_game == 1) {
-            player_2_game_score_label.setText("40") //Won the point on opponent's ad
+        } else if(player_1_points_won_this_game - player_2_points_won_this_game == 0) {
+            player_1_game_score_label.setText("40")  //Deuce
+            player_2_game_score_label.setText("40")
+        } else if(player_1_points_won_this_game - player_2_points_won_this_game == 1) {
+            player_1_game_score_label.setText("AD") //Advantage: Player 1
         }
-            
-        player_1_points_won_this_game += 1
         
         print(player_1_points_won_this_game)
         print(player_2_points_won_this_game)
     }
     
     @IBAction func incrementPlayerTwoScore() {
-        if(player_2_points_won_this_game >= 3 && player_2_points_won_this_game - player_1_points_won_this_game >= 1) {    //Game: Player 2
+        player_2_points_won_this_game += 1
+        
+        if(player_2_points_won_this_game >= 4 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {    //Game: Player 2
             player_1_game_score_label.setText("0")
             player_2_game_score_label.setText("0")
             
@@ -179,19 +182,18 @@ class ScoresInterfaceController: WKInterfaceController {
             }
                 
             return
-        } else if(player_2_points_won_this_game == 0) {
-            player_2_game_score_label.setText("15")
         } else if(player_2_points_won_this_game == 1) {
-            player_2_game_score_label.setText("30")
+            player_2_game_score_label.setText("15")
         } else if(player_2_points_won_this_game == 2) {
+            player_2_game_score_label.setText("30")
+        } else if(player_2_points_won_this_game == 3) {
             player_2_game_score_label.setText("40")
         } else if(player_1_points_won_this_game - player_2_points_won_this_game == 0) {
-            player_2_game_score_label.setText("A")  //Won the deuce point
-        } else if(player_1_points_won_this_game - player_2_points_won_this_game == 1) {
-            player_1_game_score_label.setText("40") //Won the point on opponent's ad
+            player_2_game_score_label.setText("40")  //Deuce
+            player_1_game_score_label.setText("40")
+        } else if(player_2_points_won_this_game - player_1_points_won_this_game == 1) {
+            player_2_game_score_label.setText("AD") //Advantage: Player 2
         }
-        
-        player_2_points_won_this_game += 1
         
         print(player_1_points_won_this_game)
         print(player_2_points_won_this_game)
