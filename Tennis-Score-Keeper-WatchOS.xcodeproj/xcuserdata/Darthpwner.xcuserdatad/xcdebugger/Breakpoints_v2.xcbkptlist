@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS WatchKit Extension/ViewControllers/ScoresInterfaceController.swift"
-            timestampString = "520930524.241638"
+            timestampString = "520931150.922162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "ScoresInterfaceController"
             landmarkType = "3">
             <Locations>

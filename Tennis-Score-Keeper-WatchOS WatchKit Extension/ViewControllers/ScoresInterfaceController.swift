@@ -136,7 +136,16 @@ class ScoresInterfaceController: WKInterfaceController {
                 player_1_game_score_label.setText("AD") //Advantage: Player 1
             }
         } else {    //Tiebreaker
+            player_1_game_score_label.setText(String(player_1_points_won_this_game))
+            
             if(player_1_points_won_this_game >= 7 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {
+                
+                player_1_game_score_label.setText("0")
+                player_2_game_score_label.setText("0")
+                
+                player_1_points_won_this_game = 0
+                player_2_points_won_this_game = 0
+                
                 current_set += 1
                 is_tiebreak = false
             }
@@ -149,7 +158,7 @@ class ScoresInterfaceController: WKInterfaceController {
     @IBAction func incrementPlayerTwoScore() {
         player_2_points_won_this_game += 1
         
-        if(is_tiebreak) {
+        if(!is_tiebreak) {
             if(player_2_points_won_this_game >= 4 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {    //Game: Player 2
                 player_1_game_score_label.setText("0")
                 player_2_game_score_label.setText("0")
@@ -225,9 +234,20 @@ class ScoresInterfaceController: WKInterfaceController {
                 player_2_game_score_label.setText("AD") //Advantage: Player 2
             }
         } else {    //Tiebreaker
+            player_2_game_score_label.setText(String(player_2_points_won_this_game))
+            
             if(player_2_points_won_this_game >= 7 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {
+                
+                player_1_game_score_label.setText("0")
+                player_2_game_score_label.setText("0")
+                
+                player_1_points_won_this_game = 0
+                player_2_points_won_this_game = 0
+                
                 current_set += 1
                 is_tiebreak = false
+                
+                
             }
         }
         
