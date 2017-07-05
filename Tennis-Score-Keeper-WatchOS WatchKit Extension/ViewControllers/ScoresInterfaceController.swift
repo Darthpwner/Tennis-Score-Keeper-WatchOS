@@ -60,6 +60,8 @@ class ScoresInterfaceController: WKInterfaceController {
     @IBAction func incrementPlayerOneScore() {
         player_1_points_won_this_game += 1
         
+        print("is_tiebreak: \(is_tiebreak)")
+        
         if(!is_tiebreak) {
             if(player_1_points_won_this_game >= 4 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {    //Game: Player 1
                 player_1_game_score_label.setText("0")
@@ -102,7 +104,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                     }
-                } else {
+                } else {    //Set 3
                     player_1_set_3_score += 1
                     player_1_set_3_score_label.setText(String(player_1_set_3_score))
                     
@@ -140,6 +142,19 @@ class ScoresInterfaceController: WKInterfaceController {
             
             if(player_1_points_won_this_game >= 7 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {
                 
+                //Update set score corresponding to set
+                if(current_set == 1) {
+                    player_1_set_1_score += 1
+                    player_1_set_1_score_label.setText(String(player_1_set_1_score))
+                } else if (current_set == 2) {
+                    player_1_set_2_score += 1
+                    player_1_set_2_score_label.setText(String(player_1_set_2_score))
+                } else {    //Set 3
+                    player_1_set_3_score += 1
+                    player_1_set_3_score_label.setText(String(player_1_set_3_score))
+                }
+                
+                
                 player_1_game_score_label.setText("0")
                 player_2_game_score_label.setText("0")
                 
@@ -157,6 +172,8 @@ class ScoresInterfaceController: WKInterfaceController {
     
     @IBAction func incrementPlayerTwoScore() {
         player_2_points_won_this_game += 1
+        
+        print("is_tiebreak: \(is_tiebreak)")
         
         if(!is_tiebreak) {
             if(player_2_points_won_this_game >= 4 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {    //Game: Player 2
@@ -184,7 +201,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         print("P2 Set 1 with 6")
                         
                         current_set += 1
-                    } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
+                    } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                     }
                 } else if(current_set == 2) {
@@ -196,11 +213,11 @@ class ScoresInterfaceController: WKInterfaceController {
                         current_set += 1
                     } else if(player_2_set_2_score == 7 && player_1_set_2_score == 5) { //7-5
                         current_set += 1
-                    } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
+                    } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                     }
                     
-                } else {
+                } else {    //Set 3
                     player_2_set_3_score += 1
                     player_2_set_3_score_label.setText(String(player_2_set_3_score))
                     
@@ -237,6 +254,20 @@ class ScoresInterfaceController: WKInterfaceController {
             player_2_game_score_label.setText(String(player_2_points_won_this_game))
             
             if(player_2_points_won_this_game >= 7 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {
+                
+                //Update set score corresponding to set
+                if(current_set == 1) {
+                    player_2_set_1_score += 1
+                    player_2_set_1_score_label.setText(String(player_1_set_1_score))
+                } else if(current_set == 2) {
+                    player_2_set_2_score += 1
+                    player_2_set_2_score_label.setText(String(player_2_set_2_score))
+                } else {    //Set 3
+                    player_2_set_3_score += 1
+                    player_2_set_3_score_label.setText(String(player_2_set_3_score))
+                }
+                
+                
                 
                 player_1_game_score_label.setText("0")
                 player_2_game_score_label.setText("0")
