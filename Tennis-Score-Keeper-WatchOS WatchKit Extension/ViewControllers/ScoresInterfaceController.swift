@@ -124,9 +124,15 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Game: P1"
                         gameAnnouncement(player: "P1")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_1_score, player_2_set_score: player_2_set_1_score)
                     } else {    //Normal Game announcement
                         // Announce "Game: P1"
                         gameAnnouncement(player: "P1")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_1_score, player_2_set_score: player_2_set_1_score)
                     }
                 } else if(current_set == 2) {
                     player_1_set_2_score += 1
@@ -163,9 +169,15 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Game: P1"
                         gameAnnouncement(player: "P1")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_2_score, player_2_set_score: player_2_set_2_score)
                     } else {    //Normal Game announcement
                         // Announce "Game: P1"
                         gameAnnouncement(player: "P1")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_2_score, player_2_set_score: player_2_set_2_score)
                     }
                 } else {    //Set 3
                     player_1_set_3_score += 1
@@ -190,9 +202,15 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Game: P1"
                         gameAnnouncement(player: "P1")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_3_score, player_2_set_score: player_2_set_3_score)
                     } else {    //Normal Game announcement
                         // Announce "Game: P1"
                         gameAnnouncement(player: "P1")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_3_score, player_2_set_score: player_2_set_3_score)
                     }
                 }
                 
@@ -331,9 +349,15 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Game: P2"
                         gameAnnouncement(player: "P2")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_1_score, player_2_set_score: player_2_set_1_score)
                     } else {    //Normal Game Announcement
                         // Announce "Game: P2"
                         gameAnnouncement(player: "P2")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_1_score, player_2_set_score: player_2_set_1_score)
                     }
                 } else if(current_set == 2) {
                     player_2_set_2_score += 1
@@ -370,9 +394,15 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Game: P2"
                         gameAnnouncement(player: "P2")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_2_score, player_2_set_score: player_2_set_2_score)
                     } else {    //Normal Game announcement
                         // Announce "Game: P2"
                         gameAnnouncement(player: "P2")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_2_score, player_2_set_score: player_2_set_2_score)
                     }
                     
                 } else {    //Set 3
@@ -400,9 +430,15 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         // Announce "Game: P2"
                         gameAnnouncement(player: "P2")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_3_score, player_2_set_score: player_2_set_3_score)
                     } else {    //Normal Game announcement
                         // Announce "Game: P2"
                         gameAnnouncement(player: "P2")
+                        
+                        // Announce set score
+                        setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_3_score, player_2_set_score: player_2_set_3_score)
                     }
                 }
                 
@@ -551,6 +587,7 @@ class ScoresInterfaceController: WKInterfaceController {
         self.increment_player_two_score_outlet.setEnabled(true)
     }
     
+    /* Delay a normal announcement */
     func delayAnnouncement() {
         // Delay the dismissal by 2 seconds
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
@@ -566,6 +603,7 @@ class ScoresInterfaceController: WKInterfaceController {
         }
     }
     
+    /* Delay for the Game, Set, Match announcement */
     func delayGameSetMatch() {
         // Delay the dismissal by 3 seconds
         let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
@@ -576,6 +614,7 @@ class ScoresInterfaceController: WKInterfaceController {
         }
     }
     
+    /* Prevents selecting any of the buttons */
     func preventButtonSelection() {
         // Prevent selection of buttons during the delay
         self.reset_button_outlet.setEnabled(false)
@@ -584,6 +623,7 @@ class ScoresInterfaceController: WKInterfaceController {
         self.increment_player_two_score_outlet.setEnabled(false)
     }
     
+    /* Alternate server each game */
     func changeServer() {
         if(player_serving == 0) {   //P2 (right side) to serve
             player_serving = 1
@@ -598,6 +638,7 @@ class ScoresInterfaceController: WKInterfaceController {
         }
     }
     
+    /* Calculate normal game scores (non-tiebreaker games) */
     func obtainGameScore() {
         //Basic P1 scores
         if(player_1_points_won_this_game == 0) {
@@ -626,6 +667,7 @@ class ScoresInterfaceController: WKInterfaceController {
         }
     }
     
+    /* Score announcements */
     // Call the game score
     func gameScoreAnnouncement(server_score: String, receiver_score: String) {
         if(!is_tiebreak) {
@@ -654,10 +696,22 @@ class ScoresInterfaceController: WKInterfaceController {
         delayAnnouncement()
     }
     
-//    func setScoreAnnouncement(current_set: Int, player_1_set_score: String, 
-//        if(pl)
-//    }
-    
+    func setScoreAnnouncement(current_set: Int, player_1_set_score: Int, player_2_set_score: Int) {
+        if(player_1_set_score == player_2_set_score) {
+            myUtterance = AVSpeechUtterance(string: "\(player_1_set_score)-All. Set \(current_set)")
+        } else if(player_1_set_score > player_2_set_score) {
+            myUtterance = AVSpeechUtterance(string: "P1 leads \(player_1_set_score) \(player_2_set_score). Set \(current_set)")
+        } else {    //P2 leads P1 in this set
+            myUtterance = AVSpeechUtterance(string: "P2 leads \(player_2_set_score) \(player_1_set_score). Set \(current_set)")
+        }
+        
+        synth.speak(myUtterance)
+        
+        preventButtonSelection()
+        delayAnnouncement()
+    }
+
+    /* Umpire announcements */
     func gameAnnouncement(player: String) {
         announcement_label.setHidden(false)
         announcement_label.setText("Game: \(player)")
