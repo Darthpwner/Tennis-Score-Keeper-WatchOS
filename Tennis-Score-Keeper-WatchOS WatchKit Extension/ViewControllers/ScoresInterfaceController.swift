@@ -227,7 +227,6 @@ class ScoresInterfaceController: WKInterfaceController {
         } else {    //Tiebreaker
             player_1_game_score_label.setText(String(player_1_points_won_this_game))
             
-            print("tiebreak P1: \(player_1_points_won_this_game + player_2_points_won_this_game % 2)\n")
             if((player_1_points_won_this_game + player_2_points_won_this_game) % 2 == 1) {
                 changeServer()
             }
@@ -483,7 +482,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     delayAnnouncement()
                     
                     player_2_set_1_score += 1
-                    player_2_set_1_score_label.setText(String(player_1_set_1_score))
+                    player_2_set_1_score_label.setText(String(player_2_set_1_score))
                 } else if(current_set == 2) {
                     set_winners[1] = 2
                     
