@@ -103,21 +103,22 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Player 1 won Set 1
                     if(player_1_set_1_score == 6 && player_2_set_1_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         
+                        current_set += 1
+                        
                         set_winners[0] = 1
                         
                         // Announce "Set 1: P1"
                         setAnnouncement(player: "P1", set_number: "1")
-                        
-                        current_set += 1
+                        matchScoreAnnouncement()
                     } else if(player_1_set_1_score == 7 && player_2_set_1_score == 5) {  //7-5
-                        print("P1 Set 1 with 7")
+                        
+                        current_set += 1
                         
                         set_winners[0] = 1
                         
                         // Announce "Set 1: P1"
                         setAnnouncement(player: "P1", set_number: "1")
-                        
-                        current_set += 1
+                        matchScoreAnnouncement()
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
@@ -141,6 +142,8 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Player 1 won Set 2
                     if(player_1_set_2_score == 6 && player_2_set_2_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         
+                        current_set += 1
+                        
                         set_winners[1] = 1
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 1 wins the match
@@ -148,11 +151,12 @@ class ScoresInterfaceController: WKInterfaceController {
                         } else {
                             // Announce "Set 2: P1"
                             setAnnouncement(player: "P1", set_number: "2")
+                            matchScoreAnnouncement()
                         }
-                        
-                        current_set += 1
                     } else if(player_1_set_2_score == 7 && player_2_set_2_score == 5) { //7-5
-                       
+                        
+                        current_set += 1
+                        
                         set_winners[1] = 1
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 1 wins the match
@@ -160,9 +164,8 @@ class ScoresInterfaceController: WKInterfaceController {
                         } else {
                             // Announce "Set 2: P1"
                             setAnnouncement(player: "P1", set_number: "2")
+                            matchScoreAnnouncement()
                         }
-                        
-                        current_set += 1
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
@@ -259,6 +262,8 @@ class ScoresInterfaceController: WKInterfaceController {
                 //Update set score corresponding to set
                 if(current_set == 1) {
                     
+                    current_set += 1
+                    
                     player_1_set_1_score += 1
                     player_1_set_1_score_label.setText(String(player_1_set_1_score))
                     
@@ -266,7 +271,10 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     // Announce "Set 1: P1"
                     setAnnouncement(player: "P1", set_number: "1")
+                    matchScoreAnnouncement()
                 } else if (current_set == 2) {
+                    
+                    current_set += 1
                     
                     player_1_set_2_score += 1
                     player_1_set_2_score_label.setText(String(player_1_set_2_score))
@@ -278,8 +286,12 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else {
                         // Announce "Set 2: P1"
                         setAnnouncement(player: "P1", set_number: "2")
+                        matchScoreAnnouncement()
                     }
                 } else {    //Set 3
+                    
+                    current_set += 1
+                    
                     player_1_set_3_score += 1
                     player_1_set_3_score_label.setText(String(player_1_set_3_score))
                     
@@ -288,7 +300,6 @@ class ScoresInterfaceController: WKInterfaceController {
                     gameSetMatchAnnouncement(player: "P1")
                 }
                 
-                current_set += 1
                 is_tiebreak = false
             } else {    // Still in the the tiebreak so call the score
                 //Announce game score
@@ -329,20 +340,23 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Player 2 won Set 1
                     if(player_2_set_1_score == 6 && player_1_set_1_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         
+                        current_set += 1
+                        
                         set_winners[0] = 2
                         
                         // Announce "Set 1: P2"
                         setAnnouncement(player: "P2", set_number: "1")
-                        
-                        current_set += 1
+                        matchScoreAnnouncement()
+                    
                     } else if(player_2_set_1_score == 7 && player_1_set_1_score == 5) {  //7-5
                         
+                        current_set += 1
+                        
                         set_winners[0] = 2
                         
                         // Announce "Set 1: P2"
                         setAnnouncement(player: "P2", set_number: "1")
-                        
-                        current_set += 1
+                        matchScoreAnnouncement()
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
@@ -366,6 +380,8 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Player 2 won Set 2
                     if(player_2_set_2_score == 6 && player_1_set_2_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         
+                        current_set += 1
+                        
                         set_winners[1] = 2
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 2 wins
@@ -373,11 +389,14 @@ class ScoresInterfaceController: WKInterfaceController {
                         } else {
                             // Announce "Set 2: P2"
                             setAnnouncement(player: "P2", set_number: "2")
+                            matchScoreAnnouncement()
                         }
                         
-                        current_set += 1
+                        
                     } else if(player_2_set_2_score == 7 && player_1_set_2_score == 5) { //7-5
                         
+                        current_set += 1
+                        
                         set_winners[1] = 2
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 2 wins
@@ -385,9 +404,8 @@ class ScoresInterfaceController: WKInterfaceController {
                         } else {
                             // Announce "Set 2: P2"
                             setAnnouncement(player: "P2", set_number: "2")
+                            matchScoreAnnouncement()
                         }
-                        
-                        current_set += 1
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
@@ -412,18 +430,18 @@ class ScoresInterfaceController: WKInterfaceController {
                     // Player 2 won Set 3
                     if(player_2_set_3_score == 6 && player_1_set_3_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         
+                        current_set += 1
+                        
                         set_winners[2] = 2
                         
                         gameSetMatchAnnouncement(player: "P2")
-                        
-                        current_set += 1
                     } else if(player_2_set_3_score == 7 && player_1_set_3_score == 5) {  //7-5
                         
+                        current_set += 1
+                        
                         set_winners[2] = 2
                         
                         gameSetMatchAnnouncement(player: "P2")
-                        
-                        current_set += 1
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
@@ -487,6 +505,8 @@ class ScoresInterfaceController: WKInterfaceController {
                 //Update set score corresponding to set
                 if(current_set == 1) {
                     
+                    current_set += 1
+                    
                     player_2_set_1_score += 1
                     player_2_set_1_score_label.setText(String(player_2_set_1_score))
                     
@@ -494,7 +514,10 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     // Announce "Set 1: P2"
                     setAnnouncement(player: "P2", set_number: "1")
+                    matchScoreAnnouncement()
                 } else if(current_set == 2) {
+                    
+                    current_set += 1
                     
                     player_2_set_2_score += 1
                     player_2_set_2_score_label.setText(String(player_2_set_2_score))
@@ -506,8 +529,11 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else {
                         // Announce "Set 2: P2"
                         setAnnouncement(player: "P2", set_number: "2")
+                        matchScoreAnnouncement()
                     }
                 } else {    //Set 3
+                    
+                    current_set += 1
 
                     player_2_set_3_score += 1
                     player_2_set_3_score_label.setText(String(player_2_set_3_score))
@@ -516,9 +542,9 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     // Announce "Set 3: P2"
                     setAnnouncement(player: "P2", set_number: "3")
+                    matchScoreAnnouncement()
                 }
                 
-                current_set += 1
                 is_tiebreak = false
             } else {    // Still in the the tiebreak so call the score
                 //Announce game score
@@ -587,10 +613,26 @@ class ScoresInterfaceController: WKInterfaceController {
         self.increment_player_two_score_outlet.setEnabled(true)
     }
     
-    /* Delay a normal announcement */
-    func delayAnnouncement() {
+    /* Delay a game score announcement */
+    func delayGameScoreAnnouncement() {
         // Delay the dismissal by 2 seconds
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            self.announcement_label.setHidden(true)
+            
+            // Allow selection of buttons after the delay
+            self.reset_button_outlet.setEnabled(true)
+            self.home_button_outlet.setEnabled(true)
+            self.increment_player_one_score_outlet.setEnabled(true)
+            self.increment_player_two_score_outlet.setEnabled(true)
+        }
+    }
+    
+    /* Delay a normal announcement */
+    func delayAnnouncement() {
+        // Delay the dismissal by 5 seconds
+        let when = DispatchTime.now() + 5 // change 5 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             self.announcement_label.setHidden(true)
@@ -693,7 +735,7 @@ class ScoresInterfaceController: WKInterfaceController {
         synth.speak(myUtterance)
         
         preventButtonSelection()
-        delayAnnouncement()
+        delayGameScoreAnnouncement()
     }
     
     func setScoreAnnouncement(current_set: Int, player_1_set_score: Int, player_2_set_score: Int) {
@@ -703,6 +745,23 @@ class ScoresInterfaceController: WKInterfaceController {
             myUtterance = AVSpeechUtterance(string: "P1 leeds \(player_1_set_score) \(player_2_set_score). Set \(current_set)")
         } else {    //P2 leads P1 in this set
             myUtterance = AVSpeechUtterance(string: "P2 leeds \(player_2_set_score) \(player_1_set_score). Set \(current_set)")
+        }
+        
+        synth.speak(myUtterance)
+        
+        preventButtonSelection()
+        delayAnnouncement()
+    }
+    
+    func matchScoreAnnouncement() {
+        if(current_set == 2) {
+            if(set_winners[0] == 1) {   // P1 won the first set
+                myUtterance = AVSpeechUtterance(string: "P1 leeds 1 set to love")
+            } else {    // P2 won the first set
+                myUtterance = AVSpeechUtterance(string: "P2 leeds 1 set to love")
+            }
+        } else {    //3rd set announcement
+            myUtterance = AVSpeechUtterance(string: "1 set all")
         }
         
         synth.speak(myUtterance)
@@ -720,6 +779,8 @@ class ScoresInterfaceController: WKInterfaceController {
         synth.speak(myUtterance)
         
         preventButtonSelection()
+
+        // This line could possibly be deprecated. Need to test
         delayAnnouncement()
     }
     
@@ -727,7 +788,7 @@ class ScoresInterfaceController: WKInterfaceController {
         announcement_label.setHidden(false)
         announcement_label.setText("Set \(set_number): \(player)")
         
-        myUtterance = AVSpeechUtterance(string: "Set \(set_number): \(player)")
+        myUtterance = AVSpeechUtterance(string: "Game and Set \(set_number): \(player)")
         synth.speak(myUtterance)
         
         preventButtonSelection()
