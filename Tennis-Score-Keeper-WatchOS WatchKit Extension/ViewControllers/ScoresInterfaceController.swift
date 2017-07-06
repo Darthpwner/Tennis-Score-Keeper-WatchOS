@@ -700,9 +700,9 @@ class ScoresInterfaceController: WKInterfaceController {
         if(player_1_set_score == player_2_set_score) {
             myUtterance = AVSpeechUtterance(string: "\(player_1_set_score)-All. Set \(current_set)")
         } else if(player_1_set_score > player_2_set_score) {
-            myUtterance = AVSpeechUtterance(string: "P1 leads \(player_1_set_score) \(player_2_set_score). Set \(current_set)")
+            myUtterance = AVSpeechUtterance(string: "P1 leeds \(player_1_set_score) \(player_2_set_score). Set \(current_set)")
         } else {    //P2 leads P1 in this set
-            myUtterance = AVSpeechUtterance(string: "P2 leads \(player_2_set_score) \(player_1_set_score). Set \(current_set)")
+            myUtterance = AVSpeechUtterance(string: "P2 leeds \(player_2_set_score) \(player_1_set_score). Set \(current_set)")
         }
         
         synth.speak(myUtterance)
