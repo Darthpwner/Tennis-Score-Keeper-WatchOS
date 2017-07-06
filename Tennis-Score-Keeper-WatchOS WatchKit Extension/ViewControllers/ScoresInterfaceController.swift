@@ -93,15 +93,11 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     // Player 1 won Set 1
                     if(player_1_set_1_score == 6 && player_2_set_1_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
-                        print("P1 Set 1 with 6")
                         
                         set_winners[0] = 1
                         
                         // Announce "Set 1: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Set 1: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        setAnnouncement(player: "P1", set_number: "1")
                         
                         current_set += 1
                     } else if(player_1_set_1_score == 7 && player_2_set_1_score == 5) {  //7-5
@@ -110,10 +106,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         set_winners[0] = 1
                         
                         // Announce "Set 1: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Set 1: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        setAnnouncement(player: "P1", set_number: "1")
                         
                         current_set += 1
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
@@ -121,16 +114,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         player_serving_to_start_tiebreak = player_serving
                         
                         // Announce "Game: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P1")
                     } else {    //Normal Game announcement
                         // Announce "Game: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P1")
                     }
                 } else if(current_set == 2) {
                     player_1_set_2_score += 1
@@ -142,16 +129,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         set_winners[1] = 1
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 1 wins the match
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match")
-                            preventButtonSelection()
-                            delayGameSetMatch()
+                            gameSetMatchAnnouncement(player: "P1")
                         } else {
                             // Announce "Set 2: P1"
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Set 2: P1")
-                            preventButtonSelection()
-                            delayAnnouncement()
+                            setAnnouncement(player: "P1", set_number: "2")
                         }
                         
                         current_set += 1
@@ -160,16 +141,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         set_winners[1] = 1
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 1 wins the match
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match")
-                            preventButtonSelection()
-                            delayGameSetMatch()
+                            gameSetMatchAnnouncement(player: "P1")
                         } else {
                             // Announce "Set 2: P1"
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Set 2: P1")
-                            preventButtonSelection()
-                            delayAnnouncement()
+                            setAnnouncement(player: "P1", set_number: "2")
                         }
                         
                         current_set += 1
@@ -178,16 +153,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         player_serving_to_start_tiebreak = player_serving
                         
                         // Announce "Game: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P1")
                     } else {    //Normal Game announcement
                         // Announce "Game: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P1")
                     }
                 } else {    //Set 3
                     player_1_set_3_score += 1
@@ -197,21 +166,13 @@ class ScoresInterfaceController: WKInterfaceController {
                     if(player_1_set_3_score == 6 && player_2_set_3_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
                         set_winners[2] = 1
                         
-                        // Announce "Set 3: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match")
-                        preventButtonSelection()
-                        delayGameSetMatch()
+                        gameSetMatchAnnouncement(player: "P1")
                         
                         current_set += 1
                     } else if(player_1_set_3_score == 7 && player_2_set_3_score == 5) {  //7-5
                         set_winners[2] = 1
                         
-                        // Announce "Set 3: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match")
-                        preventButtonSelection()
-                        delayGameSetMatch()
+                        gameSetMatchAnnouncement(player: "P1")
                         
                         current_set += 1
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
@@ -219,16 +180,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         player_serving_to_start_tiebreak = player_serving
                         
                         // Announce "Game: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P1")
                     } else {    //Normal Game announcement
                         // Announce "Game: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P1")
                     }
                 }
             } else if(player_1_points_won_this_game == 1) {
@@ -272,10 +227,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     set_winners[0] = 1
                     
                     // Announce "Set 1: P1"
-                    announcement_label.setHidden(false)
-                    announcement_label.setText("Set 1: P1")
-                    preventButtonSelection()
-                    delayAnnouncement()
+                    setAnnouncement(player: "P1", set_number: "1")
                 } else if (current_set == 2) {
                     
                     player_1_set_2_score += 1
@@ -284,16 +236,10 @@ class ScoresInterfaceController: WKInterfaceController {
                     set_winners[1] = 1
                     
                     if(set_winners[0] == set_winners[1]) {  //Player 1 wins
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match")
-                        preventButtonSelection()
-                        delayGameSetMatch()
+                        gameSetMatchAnnouncement(player: "P1")
                     } else {
                         // Announce "Set 2: P1"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Set 2: P1")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        setAnnouncement(player: "P1", set_number: "2")
                     }
                 } else {    //Set 3
                     player_1_set_3_score += 1
@@ -301,11 +247,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     set_winners[2] = 1
                     
-                    // Announce "Set 3: P1"
-                    announcement_label.setHidden(false)
-                    announcement_label.setText("Game, Set, Match")
-                    preventButtonSelection()
-                    delayGameSetMatch()
+                    gameSetMatchAnnouncement(player: "P1")
                 }
                 
                 current_set += 1
@@ -339,27 +281,19 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     // Player 2 won Set 1
                     if(player_2_set_1_score == 6 && player_1_set_1_score <= 4) {    //6-0, 6-1, 6-2, 6-3, 6-4
-                        print("P2 Set 1 with 6")
                         
                         set_winners[0] = 2
                         
                         // Announce "Set 1: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Set 1: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        setAnnouncement(player: "P2", set_number: "1")
                         
                         current_set += 1
                     } else if(player_2_set_1_score == 7 && player_1_set_1_score == 5) {  //7-5
-                        print("P2 Set 1 with 6")
                         
                         set_winners[0] = 2
                         
                         // Announce "Set 1: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Set 1: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        setAnnouncement(player: "P2", set_number: "1")
                         
                         current_set += 1
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
@@ -367,16 +301,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         player_serving_to_start_tiebreak = player_serving
                         
                         // Announce "Game: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P2")
                     } else {    //Normal Game Announcement
                         // Announce "Game: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P2")
                     }
                 } else if(current_set == 2) {
                     player_2_set_2_score += 1
@@ -388,16 +316,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         set_winners[1] = 2
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 2 wins
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match")
-                            preventButtonSelection()
-                            delayGameSetMatch()
+                            gameSetMatchAnnouncement(player: "P2")
                         } else {
                             // Announce "Set 2: P2"
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Set 2: P2")
-                            preventButtonSelection()
-                            delayAnnouncement()
+                            setAnnouncement(player: "P2", set_number: "2")
                         }
                         
                         current_set += 1
@@ -406,16 +328,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         set_winners[1] = 2
                         
                         if(set_winners[0] == set_winners[1]) {  //Player 2 wins
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Game, Set, Match")
-                            preventButtonSelection()
-                            delayGameSetMatch()
+                            gameSetMatchAnnouncement(player: "P2")
                         } else {
                             // Announce "Set 2: P2"
-                            announcement_label.setHidden(false)
-                            announcement_label.setText("Set 2: P2")
-                            preventButtonSelection()
-                            delayAnnouncement()
+                            setAnnouncement(player: "P2", set_number: "2")
                         }
                         
                         current_set += 1
@@ -424,16 +340,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         player_serving_to_start_tiebreak = player_serving
                         
                         // Announce "Game: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P2")
                     } else {    //Normal Game announcement
                         // Announce "Game: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P2")
                     }
                     
                 } else {    //Set 3
@@ -445,22 +355,14 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         set_winners[2] = 2
                         
-                        // Announce "Set 3: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match")
-                        preventButtonSelection()
-                        delayGameSetMatch()
+                        gameSetMatchAnnouncement(player: "P2")
                         
                         current_set += 1
                     } else if(player_2_set_3_score == 7 && player_1_set_3_score == 5) {  //7-5
                         
                         set_winners[2] = 2
                         
-                        // Announce "Set 3: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match")
-                        preventButtonSelection()
-                        delayGameSetMatch()
+                        gameSetMatchAnnouncement(player: "P2")
                         
                         current_set += 1
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
@@ -468,16 +370,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         player_serving_to_start_tiebreak = player_serving
                         
                         // Announce "Game: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P2")
                     } else {    //Normal Game announcement
                         // Announce "Game: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        gameAnnouncement(player: "P2")
                     }
                 }
             } else if(player_2_points_won_this_game == 1) {
@@ -521,10 +417,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     set_winners[0] = 2
                     
                     // Announce "Set 1: P2"
-                    announcement_label.setHidden(false)
-                    announcement_label.setText("Set 1: P2")
-                    preventButtonSelection()
-                    delayAnnouncement()
+                    setAnnouncement(player: "P2", set_number: "1")
                 } else if(current_set == 2) {
                     
                     player_2_set_2_score += 1
@@ -533,16 +426,10 @@ class ScoresInterfaceController: WKInterfaceController {
                     set_winners[1] = 2
                     
                     if(set_winners[0] == set_winners[1]) {  //Player 2 wins
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Game, Set, Match")
-                        preventButtonSelection()
-                        delayGameSetMatch()
+                        gameSetMatchAnnouncement(player: "P2")
                     } else {
                         // Announce "Set 2: P2"
-                        announcement_label.setHidden(false)
-                        announcement_label.setText("Set 2: P2")
-                        preventButtonSelection()
-                        delayAnnouncement()
+                        setAnnouncement(player: "P2", set_number: "2")
                     }
                 } else {    //Set 3
 
@@ -552,10 +439,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     set_winners[2] = 2
                     
                     // Announce "Set 3: P2"
-                    announcement_label.setHidden(false)
-                    announcement_label.setText("Game, Set, Match")
-                    preventButtonSelection()
-                    delayGameSetMatch()
+                    setAnnouncement(player: "P2", set_number: "3")
                 }
                 
                 current_set += 1
@@ -660,6 +544,27 @@ class ScoresInterfaceController: WKInterfaceController {
             player_1_serving_image.setHidden(false)
             player_2_serving_image.setHidden(true)
         }
+    }
+    
+    func gameAnnouncement(player: String) {
+        announcement_label.setHidden(false)
+        announcement_label.setText("Game: \(player)")
+        preventButtonSelection()
+        delayAnnouncement()
+    }
+    
+    func setAnnouncement(player: String, set_number: String) {
+        announcement_label.setHidden(false)
+        announcement_label.setText("Set \(set_number): \(player)")
+        preventButtonSelection()
+        delayAnnouncement()
+    }
+    
+    func gameSetMatchAnnouncement(player: String) {
+        announcement_label.setHidden(false)
+        announcement_label.setText("Game, Set, Match: \(player)")
+        preventButtonSelection()
+        delayGameSetMatch()
     }
     
     override func awake(withContext context: Any?) {
