@@ -799,7 +799,22 @@ class ScoresInterfaceController: WKInterfaceController {
         announcement_label.setHidden(false)
         announcement_label.setText("Game, Set, Match")
         
-        myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player)")
+        if(player == "P1") {
+            if(set_winners[0] == set_winners[1]) {  //P1 won in straight sets
+                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_1_set_1_score) \(player_2_set_1_score). \(player_1_set_2_score) \(player_2_set_2_score)")
+            } else {    //P1 won in 3 sets
+                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_1_set_1_score) \(player_2_set_1_score). \(player_1_set_2_score) \(player_2_set_2_score). \(player_1_set_3_score) \(player_2_set_3_score)")
+            }
+        } else {
+            if(set_winners[0] == set_winners[1]) {  //P2 won in straight sets
+                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_2_set_1_score) \(player_1_set_1_score). \(player_2_set_2_score) \(player_1_set_2_score)")
+            } else {    //P1 won in 3 sets
+                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_2_set_1_score) \(player_1_set_1_score). \(player_2_set_2_score) \(player_1_set_2_score). \(player_2_set_3_score) \(player_1_set_3_score)")
+            }
+        }
+        
+        
+        
         synth.speak(myUtterance)
         
         // Change color for the winner
