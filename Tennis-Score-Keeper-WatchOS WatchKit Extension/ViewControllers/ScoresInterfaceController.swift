@@ -86,16 +86,6 @@ class ScoresInterfaceController: WKInterfaceController {
                 
                 changeServer()
                 
-                // Announce "Game: P1"
-                announcement_label.setHidden(false)
-                announcement_label.setText("Game: P1")
-                preventButtonSelection()
-                delayAnnouncement()
-                
-                print("GAME P1")
-                print(player_1_points_won_this_game)
-                print(player_2_points_won_this_game)
-                
                 // Update set score
                 if(current_set == 1) {
                     player_1_set_1_score += 1
@@ -129,6 +119,18 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
+                        
+                        // Announce "Game: P1"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P1")
+                        preventButtonSelection()
+                        delayAnnouncement()
+                    } else {    //Normal Game announcement
+                        // Announce "Game: P1"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P1")
+                        preventButtonSelection()
+                        delayAnnouncement()
                     }
                 } else if(current_set == 2) {
                     player_1_set_2_score += 1
@@ -174,6 +176,18 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
+                        
+                        // Announce "Game: P1"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P1")
+                        preventButtonSelection()
+                        delayAnnouncement()
+                    } else {    //Normal Game announcement
+                        // Announce "Game: P1"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P1")
+                        preventButtonSelection()
+                        delayAnnouncement()
                     }
                 } else {    //Set 3
                     player_1_set_3_score += 1
@@ -203,6 +217,18 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
+                        
+                        // Announce "Game: P1"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P1")
+                        preventButtonSelection()
+                        delayAnnouncement()
+                    } else {    //Normal Game announcement
+                        // Announce "Game: P1"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P1")
+                        preventButtonSelection()
+                        delayAnnouncement()
                     }
                 }
             } else if(player_1_points_won_this_game == 1) {
@@ -306,16 +332,6 @@ class ScoresInterfaceController: WKInterfaceController {
                 
                 changeServer()
                 
-                // Announce "Game: P2"
-                announcement_label.setHidden(false)
-                announcement_label.setText("Game: P2")
-                preventButtonSelection()
-                delayAnnouncement()
-                
-                print("GAME P2")
-                print(player_1_points_won_this_game)
-                print(player_2_points_won_this_game)
-                
                 // Update set score
                 if(current_set == 1) {
                     player_2_set_1_score += 1
@@ -349,6 +365,18 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
+                        
+                        // Announce "Game: P2"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P2")
+                        preventButtonSelection()
+                        delayAnnouncement()
+                    } else {    //Normal Game Announcement
+                        // Announce "Game: P2"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P2")
+                        preventButtonSelection()
+                        delayAnnouncement()
                     }
                 } else if(current_set == 2) {
                     player_2_set_2_score += 1
@@ -394,6 +422,18 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
+                        
+                        // Announce "Game: P2"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P2")
+                        preventButtonSelection()
+                        delayAnnouncement()
+                    } else {    //Normal Game announcement
+                        // Announce "Game: P2"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P2")
+                        preventButtonSelection()
+                        delayAnnouncement()
                     }
                     
                 } else {    //Set 3
@@ -426,6 +466,18 @@ class ScoresInterfaceController: WKInterfaceController {
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
+                        
+                        // Announce "Game: P2"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P2")
+                        preventButtonSelection()
+                        delayAnnouncement()
+                    } else {    //Normal Game announcement
+                        // Announce "Game: P2"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Game: P2")
+                        preventButtonSelection()
+                        delayAnnouncement()
                     }
                 }
             } else if(player_2_points_won_this_game == 1) {
