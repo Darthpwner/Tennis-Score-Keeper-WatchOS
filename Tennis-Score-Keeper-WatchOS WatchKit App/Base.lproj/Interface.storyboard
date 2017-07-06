@@ -124,7 +124,7 @@
                                 <imageView width="0.20000000000000001" height="1" alignment="left" hidden="YES" image="tennis-ball" id="DsS-GH-g7w" userLabel="Player 2 Serving Image"/>
                             </items>
                         </group>
-                        <group width="1" height="0.20000000000000001" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
+                        <group width="1" height="0.17499999999999999" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
                             <items>
                                 <button width="0.25" height="0.75" alignment="left" backgroundImage="increment-score" id="Sgx-1n-ui0" userLabel="Increment Player 1 Score">
                                     <connections>
@@ -140,7 +140,7 @@
                                 </button>
                             </items>
                         </group>
-                        <label height="0.10000000000000001" alignment="left" hidden="YES" id="QyL-zO-QcS" userLabel="Announcement Label"/>
+                        <label height="0.125" alignment="left" hidden="YES" id="QyL-zO-QcS" userLabel="Announcement Label"/>
                     </items>
                     <connections>
                         <outlet property="announcement_label" destination="QyL-zO-QcS" id="HUZ-Tz-g1R"/>
