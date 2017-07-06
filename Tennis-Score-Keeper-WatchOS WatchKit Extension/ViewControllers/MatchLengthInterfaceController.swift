@@ -11,14 +11,22 @@ import Foundation
 
 
 class MatchLengthInterfaceController: WKInterfaceController {
-    @IBAction func bestOfOneButton() {
     
+    var metadata = Metadata(match_length_parameter: 1, ten_point_tiebreaker_format_parameter: 1)
+    
+    @IBAction func bestOfOneButton() {
+        metadata.match_length = 0
+        
+        // Use pushControllerWithName for a push segue
+        pushController(withName: "TenPointTiebreaker", context: metadata)
     }
     
     @IBAction func bestOfThreeButton() {
-    
+        metadata.match_length = 1
+        
+        // Use pushControllerWithName for a push segue
+        pushController(withName: "TenPointTiebreaker", context: metadata)
     }
-
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)

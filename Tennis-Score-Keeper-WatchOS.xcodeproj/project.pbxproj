@@ -13,6 +13,7 @@
 		6B2754BC1F0B744800A4C2B0 /* ScoresInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2754BB1F0B744800A4C2B0 /* ScoresInterfaceController.swift */; };
 		6B2754BE1F0B7F4F00A4C2B0 /* tennis-court.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2754BD1F0B7F4F00A4C2B0 /* tennis-court.png */; };
 		6B2754C41F0E220100A4C2B0 /* TenPointTiebreakerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2754C31F0E220100A4C2B0 /* TenPointTiebreakerInterfaceController.swift */; };
+		6B2754C61F0EB3D700A4C2B0 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2754C51F0EB3D700A4C2B0 /* Metadata.swift */; };
 		6B5C32331F0B645D00B045A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C32321F0B645D00B045A3 /* AppDelegate.swift */; };
 		6B5C32351F0B645D00B045A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C32341F0B645D00B045A3 /* ViewController.swift */; };
 		6B5C32381F0B645D00B045A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C32361F0B645D00B045A3 /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		6B2754BB1F0B744800A4C2B0 /* ScoresInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoresInterfaceController.swift; path = ViewControllers/ScoresInterfaceController.swift; sourceTree = "<group>"; };
 		6B2754BD1F0B7F4F00A4C2B0 /* tennis-court.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tennis-court.png"; path = "../../../Documents/tennis-court.png"; sourceTree = "<group>"; };
 		6B2754C31F0E220100A4C2B0 /* TenPointTiebreakerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPointTiebreakerInterfaceController.swift; sourceTree = "<group>"; };
+		6B2754C51F0EB3D700A4C2B0 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		6B5C322F1F0B645D00B045A3 /* Tennis-Score-Keeper-WatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tennis-Score-Keeper-WatchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5C32321F0B645D00B045A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5C32341F0B645D00B045A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				6B2754BA1F0B741D00A4C2B0 /* ViewControllers */,
 				6B5C326D1F0B645E00B045A3 /* InterfaceController.swift */,
+				6B2754C51F0EB3D700A4C2B0 /* Metadata.swift */,
 				6B5C326F1F0B645E00B045A3 /* ExtensionDelegate.swift */,
 				6B5C32711F0B645E00B045A3 /* NotificationController.swift */,
 				6B5C32731F0B645E00B045A3 /* Assets.xcassets */,
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2754C61F0EB3D700A4C2B0 /* Metadata.swift in Sources */,
 				6B5C32721F0B645E00B045A3 /* NotificationController.swift in Sources */,
 				6B5C32701F0B645E00B045A3 /* ExtensionDelegate.swift in Sources */,
 				6B5C326E1F0B645E00B045A3 /* InterfaceController.swift in Sources */,

@@ -56,7 +56,7 @@
         <!--Ten Point Tiebreaker-->
         <scene sceneID="R1S-Zu-Q7T">
             <objects>
-                <controller identifier="Ten Point Tiebreaker" title="10S Scores" id="okk-KT-xBP" userLabel="Ten Point Tiebreaker">
+                <controller identifier="Ten Point Tiebreaker" title="10S Scores" id="okk-KT-xBP" userLabel="Ten Point Tiebreaker" customClass="TenPointTiebreakerInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
                         <label width="1" height="0.10000000000000001" alignment="left" text="10-pt tiebreak for final set?" minimumScaleFactor="0.5" id="HPP-Ux-k3F"/>
                         <button width="1" height="0.20000000000000001" alignment="left" title="Yes" id="Mc4-0q-Mlu">

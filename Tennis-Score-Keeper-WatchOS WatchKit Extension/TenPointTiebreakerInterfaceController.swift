@@ -16,11 +16,17 @@ class TenPointTiebreakerInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        if let metadata = context as? Metadata {
+            print("match_type: \(metadata.match_length)")
+            print("ten_point_tiebreaker_format: \(metadata.ten_point_tiebreaker_format)")
+        }
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        print("Activated 10 point tiebreaker")
     }
 
     override func didDeactivate() {
