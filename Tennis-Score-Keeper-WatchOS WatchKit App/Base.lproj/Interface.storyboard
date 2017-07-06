@@ -38,7 +38,7 @@
                         <button width="1" height="0.20000000000000001" alignment="left" title="Best of 1" id="4yK-ei-94e">
                             <connections>
                                 <action selector="bestOfOneButton" destination="TBo-J6-kkh" id="5XP-1X-Z3R"/>
-                                <segue destination="27U-IZ-SVF" kind="push" id="iUF-eZ-2vA"/>
+                                <segue destination="okk-KT-xBP" kind="push" id="bfg-ih-0fm"/>
                             </connections>
                         </button>
                         <imageView width="1" height="0.5" alignment="left" image="tennis-court" id="705-on-5MB"/>
@@ -53,12 +53,12 @@
             </objects>
             <point key="canvasLocation" x="1211" y="346"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Ten Point Tiebreaker-->
         <scene sceneID="R1S-Zu-Q7T">
             <objects>
-                <controller id="okk-KT-xBP">
+                <controller identifier="Ten Point Tiebreaker" title="10S Scores" id="okk-KT-xBP" userLabel="Ten Point Tiebreaker">
                     <items>
-                        <label width="1" height="0.10000000000000001" alignment="left" text="10-pt tiebreak for 3rd set?" minimumScaleFactor="0.5" id="HPP-Ux-k3F"/>
+                        <label width="1" height="0.10000000000000001" alignment="left" text="10-pt tiebreak for final set?" minimumScaleFactor="0.5" id="HPP-Ux-k3F"/>
                         <button width="1" height="0.20000000000000001" alignment="left" title="Yes" id="Mc4-0q-Mlu">
                             <connections>
                                 <segue destination="27U-IZ-SVF" kind="push" id="mjh-LY-W2d"/>
@@ -190,6 +190,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iUF-eZ-2vA"/>
+        <segue reference="mjh-LY-W2d"/>
+        <segue reference="bfg-ih-0fm"/>
     </inferredMetricsTieBreakers>
 </document>

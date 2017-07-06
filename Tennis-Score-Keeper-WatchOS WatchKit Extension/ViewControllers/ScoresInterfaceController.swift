@@ -8,9 +8,14 @@
 
 import WatchKit
 import Foundation
+import AVFoundation //For speech output
 
 class ScoresInterfaceController: WKInterfaceController {
 
+    //Speech
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+    
     // Current set [1, 3]
     var current_set = 1
 
@@ -28,6 +33,10 @@ class ScoresInterfaceController: WKInterfaceController {
     // Game score values
     var player_1_points_won_this_game = 0
     var player_2_points_won_this_game = 0
+    
+    //For score announcements
+    var player_1_game_score_string = "Love"
+    var player_2_game_score_string = "Love"
     
     // Set score values
     var player_1_set_1_score = 0
@@ -186,6 +195,8 @@ class ScoresInterfaceController: WKInterfaceController {
                         gameAnnouncement(player: "P1")
                     }
                 }
+                
+                return
             } else if(player_1_points_won_this_game == 1) {
                 player_1_game_score_label.setText("15")
             } else if(player_1_points_won_this_game == 2) {
@@ -197,6 +208,15 @@ class ScoresInterfaceController: WKInterfaceController {
                 player_2_game_score_label.setText("40")
             } else if(player_1_points_won_this_game - player_2_points_won_this_game == 1) {
                 player_1_game_score_label.setText("AD") //Advantage: Player 1
+            }
+            
+            //Announce game score
+            obtainGameScore()
+            
+            if(player_serving == 0) {
+                gameScoreAnnouncement(server_score: player_1_game_score_string, receiver_score: player_2_game_score_string)
+            } else {
+                gameScoreAnnouncement(server_score: player_2_game_score_string, receiver_score: player_1_game_score_string)
             }
         } else {    //Tiebreaker
             player_1_game_score_label.setText(String(player_1_points_won_this_game))
@@ -376,6 +396,8 @@ class ScoresInterfaceController: WKInterfaceController {
                         gameAnnouncement(player: "P2")
                     }
                 }
+                
+                return
             } else if(player_2_points_won_this_game == 1) {
                 player_2_game_score_label.setText("15")
             } else if(player_2_points_won_this_game == 2) {
@@ -387,6 +409,15 @@ class ScoresInterfaceController: WKInterfaceController {
                 player_1_game_score_label.setText("40")
             } else if(player_2_points_won_this_game - player_1_points_won_this_game == 1) {
                 player_2_game_score_label.setText("AD") //Advantage: Player 2
+            }
+            
+            //Announce game score
+            obtainGameScore()
+            
+            if(player_serving == 0) {
+                gameScoreAnnouncement(server_score: player_1_game_score_string, receiver_score: player_2_game_score_string)
+            } else {
+                gameScoreAnnouncement(server_score: player_2_game_score_string, receiver_score: player_1_game_score_string)
             }
         } else {    //Tiebreaker
             player_2_game_score_label.setText(String(player_2_points_won_this_game))
@@ -487,6 +518,9 @@ class ScoresInterfaceController: WKInterfaceController {
         
         player_serving_to_start_tiebreak = -1
         
+        player_1_game_score_string = "Love"
+        player_2_game_score_string = "Love"
+        
         player_1_label.setTextColor(UIColor.white)
         player_2_label.setTextColor(UIColor.white)
         
@@ -549,9 +583,61 @@ class ScoresInterfaceController: WKInterfaceController {
         }
     }
     
+    func obtainGameScore() {
+        //Basic P1 scores
+        if(player_1_points_won_this_game == 0) {
+            player_1_game_score_string = "Love"
+        } else if(player_1_points_won_this_game == 1) {
+            player_1_game_score_string = "15"
+        } else if(player_1_points_won_this_game == 2) {
+            player_1_game_score_string = "30"
+        } else if(player_1_points_won_this_game == 3 || player_1_points_won_this_game == player_2_points_won_this_game) {
+            player_1_game_score_string = "40"
+        } else if(player_1_points_won_this_game - player_2_points_won_this_game == 1) {
+            player_1_game_score_string = "AD"
+        }
+        
+        //Basic P2 scores
+        if(player_2_points_won_this_game == 0) {
+            player_2_game_score_string = "Love"
+        } else if(player_2_points_won_this_game == 1) {
+            player_2_game_score_string = "15"
+        } else if(player_2_points_won_this_game == 2) {
+            player_2_game_score_string = "30"
+        } else if(player_2_points_won_this_game == 3 || player_1_points_won_this_game == player_2_points_won_this_game) {
+            player_2_game_score_string = "40"
+        } else if(player_2_points_won_this_game - player_1_points_won_this_game == 1) {
+            player_2_game_score_string = "AD"
+        }
+    }
+    
+    // Call the game score
+    func gameScoreAnnouncement(server_score: String, receiver_score: String) {
+        if(server_score == "40" && receiver_score == "40") {
+            myUtterance = AVSpeechUtterance(string: "Deuce")
+        } else if(server_score == "AD") {
+            myUtterance = AVSpeechUtterance(string: "Ad In")
+        } else if(receiver_score == "AD") {
+            myUtterance = AVSpeechUtterance(string: "Ad Out")
+        } else if(server_score == receiver_score) { //<Server score>-All
+            myUtterance = AVSpeechUtterance(string: "\(server_score)-All")
+        } else { // "<Server score>-<Receiver score>"
+             myUtterance = AVSpeechUtterance(string: "\(server_score) \(receiver_score)")
+        }
+        
+        synth.speak(myUtterance)
+        
+        preventButtonSelection()
+        delayAnnouncement()
+    }
+    
     func gameAnnouncement(player: String) {
         announcement_label.setHidden(false)
         announcement_label.setText("Game: \(player)")
+        
+        myUtterance = AVSpeechUtterance(string: "Game: \(player)")
+        synth.speak(myUtterance)
+        
         preventButtonSelection()
         delayAnnouncement()
     }
@@ -559,6 +645,10 @@ class ScoresInterfaceController: WKInterfaceController {
     func setAnnouncement(player: String, set_number: String) {
         announcement_label.setHidden(false)
         announcement_label.setText("Set \(set_number): \(player)")
+        
+        myUtterance = AVSpeechUtterance(string: "Set \(set_number): \(player)")
+        synth.speak(myUtterance)
+        
         preventButtonSelection()
         delayAnnouncement()
     }
@@ -566,6 +656,9 @@ class ScoresInterfaceController: WKInterfaceController {
     func gameSetMatchAnnouncement(player: String) {
         announcement_label.setHidden(false)
         announcement_label.setText("Game, Set, Match")
+        
+        myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player)")
+        synth.speak(myUtterance)
         
         // Change color for the winner
         if(player == "P1") {
@@ -595,6 +688,9 @@ class ScoresInterfaceController: WKInterfaceController {
             player_1_serving_image.setHidden(false)
             player_2_serving_image.setHidden(true)
         }
+        
+        //Set the Speech rate
+        myUtterance.rate = 0.3
     }
 
     override func didDeactivate() {
