@@ -272,6 +272,15 @@ class ScoresInterfaceController: WKInterfaceController {
                 
                 current_set += 1
                 is_tiebreak = false
+            } else {    // Still in the the tiebreak so call the score
+                //Announce game score
+                obtainGameScore()
+                
+                if(player_serving == 0) {
+                    gameScoreAnnouncement(server_score: String(player_1_points_won_this_game), receiver_score: String(player_2_points_won_this_game))
+                } else {
+                    gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
+                }
             }
         }
         
@@ -475,8 +484,14 @@ class ScoresInterfaceController: WKInterfaceController {
                 
                 current_set += 1
                 is_tiebreak = false
+            } else {    // Still in the the tiebreak so call the score
+                //Announce game score
                 
-                
+                if(player_serving == 0) {
+                    gameScoreAnnouncement(server_score: String(player_1_points_won_this_game), receiver_score: String(player_2_points_won_this_game))
+                } else {
+                    gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
+                }
             }
         }
         
@@ -613,16 +628,24 @@ class ScoresInterfaceController: WKInterfaceController {
     
     // Call the game score
     func gameScoreAnnouncement(server_score: String, receiver_score: String) {
-        if(server_score == "40" && receiver_score == "40") {
-            myUtterance = AVSpeechUtterance(string: "Deuce")
-        } else if(server_score == "AD") {
-            myUtterance = AVSpeechUtterance(string: "Ad In")
-        } else if(receiver_score == "AD") {
-            myUtterance = AVSpeechUtterance(string: "Ad Out")
-        } else if(server_score == receiver_score) { //<Server score>-All
-            myUtterance = AVSpeechUtterance(string: "\(server_score)-All")
-        } else { // "<Server score>-<Receiver score>"
-             myUtterance = AVSpeechUtterance(string: "\(server_score) \(receiver_score)")
+        if(!is_tiebreak) {
+            if(server_score == "40" && receiver_score == "40") {
+                myUtterance = AVSpeechUtterance(string: "Deuce")
+            } else if(server_score == "AD") {
+                myUtterance = AVSpeechUtterance(string: "Ad In")
+            } else if(receiver_score == "AD") {
+                myUtterance = AVSpeechUtterance(string: "Ad Out")
+            } else if(server_score == receiver_score) { //<Server score>-All
+                myUtterance = AVSpeechUtterance(string: "\(server_score)-All")
+            } else { // "<Server score>-<Receiver score>"
+                myUtterance = AVSpeechUtterance(string: "\(server_score) \(receiver_score)")
+            }
+        }  else {   //Announce tiebreak score
+            if(server_score == receiver_score) { //<Server score>-All
+                myUtterance = AVSpeechUtterance(string: "\(server_score)-All")
+            } else { // "<Server score>-<Receiver score>"
+                myUtterance = AVSpeechUtterance(string: "\(server_score) \(receiver_score)")
+            }
         }
         
         synth.speak(myUtterance)
@@ -630,6 +653,10 @@ class ScoresInterfaceController: WKInterfaceController {
         preventButtonSelection()
         delayAnnouncement()
     }
+    
+//    func setScoreAnnouncement(current_set: Int, player_1_set_score: String, 
+//        if(pl)
+//    }
     
     func gameAnnouncement(player: String) {
         announcement_label.setHidden(false)
