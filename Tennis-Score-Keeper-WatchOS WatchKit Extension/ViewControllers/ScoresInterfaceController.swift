@@ -17,6 +17,12 @@ class ScoresInterfaceController: WKInterfaceController {
 
     var is_tiebreak = false
     
+    // Player serving [0, 1] where 0 is P1 and 1 is P2
+    var player_serving = 0
+    
+    // Tracks which player started serving in the tiebreak to handle the start of the next set
+    var player_serving_to_start_tiebreak = -1
+    
     //TODO
     var is_10_point_tiebreak = false
     
@@ -79,6 +85,8 @@ class ScoresInterfaceController: WKInterfaceController {
                 player_1_points_won_this_game = 0
                 player_2_points_won_this_game = 0
                 
+                changeServer()
+                
                 // Announce "Game: P1"
                 announcement_label.setHidden(false)
                 announcement_label.setText("Game: P1")
@@ -121,6 +129,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         current_set += 1
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
+                        player_serving_to_start_tiebreak = player_serving
                     }
                 } else if(current_set == 2) {
                     player_1_set_2_score += 1
@@ -167,6 +176,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         current_set += 1
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
+                        player_serving_to_start_tiebreak = player_serving
                     }
                 } else {    //Set 3
                     player_1_set_3_score += 1
@@ -197,6 +207,7 @@ class ScoresInterfaceController: WKInterfaceController {
 //                        current_set += 1
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
                         is_tiebreak = true
+                        player_serving_to_start_tiebreak = player_serving
                     }
                 }
                 
@@ -216,12 +227,22 @@ class ScoresInterfaceController: WKInterfaceController {
         } else {    //Tiebreaker
             player_1_game_score_label.setText(String(player_1_points_won_this_game))
             
+            print("tiebreak P1: \(player_1_points_won_this_game + player_2_points_won_this_game % 2)\n")
+            if((player_1_points_won_this_game + player_2_points_won_this_game) % 2 == 1) {
+                changeServer()
+            }
+            
             if(player_1_points_won_this_game >= 7 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {
                 player_1_game_score_label.setText("0")
                 player_2_game_score_label.setText("0")
                 
                 player_1_points_won_this_game = 0
                 player_2_points_won_this_game = 0
+                
+                // Changes server to the player who received first to the start the tiebreaker
+                if(player_serving_to_start_tiebreak == player_serving) {
+                    changeServer()
+                }
                 
                 //Update set score corresponding to set
                 if(current_set == 1) {
@@ -290,6 +311,8 @@ class ScoresInterfaceController: WKInterfaceController {
                 player_1_points_won_this_game = 0
                 player_2_points_won_this_game = 0
                 
+                changeServer()
+                
                 // Announce "Game: P2"
                 announcement_label.setHidden(false)
                 announcement_label.setText("Game: P2")
@@ -332,6 +355,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         current_set += 1
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
+                        player_serving_to_start_tiebreak = player_serving
                     }
                 } else if(current_set == 2) {
                     player_2_set_2_score += 1
@@ -378,6 +402,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         current_set += 1
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
+                        player_serving_to_start_tiebreak = player_serving
                     }
                     
                 } else {    //Set 3
@@ -409,6 +434,7 @@ class ScoresInterfaceController: WKInterfaceController {
                         current_set += 1
                     } else if(player_1_set_3_score == 6 && player_2_set_3_score == 6) { //Enter tiebreak
                         is_tiebreak = true
+                        player_serving_to_start_tiebreak = player_serving
                     }
                 }
                 
@@ -428,6 +454,11 @@ class ScoresInterfaceController: WKInterfaceController {
         } else {    //Tiebreaker
             player_2_game_score_label.setText(String(player_2_points_won_this_game))
             
+            print("tiebreak P2: \(player_1_points_won_this_game + player_2_points_won_this_game % 2)\n")
+            if((player_1_points_won_this_game + player_2_points_won_this_game) % 2 == 1) {
+                changeServer()
+            }
+            
             if(player_2_points_won_this_game >= 7 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {
                 
                 player_1_game_score_label.setText("0")
@@ -435,6 +466,11 @@ class ScoresInterfaceController: WKInterfaceController {
                 
                 player_1_points_won_this_game = 0
                 player_2_points_won_this_game = 0
+                
+                // Changes server to the player who received first to the start the tiebreaker
+                if(player_serving_to_start_tiebreak == player_serving) {
+                    changeServer()
+                }
                 
                 //Update set score corresponding to set
                 if(current_set == 1) {
@@ -521,6 +557,17 @@ class ScoresInterfaceController: WKInterfaceController {
         
         current_set = 1
         
+        player_serving = 0
+        
+        player_serving_to_start_tiebreak = -1
+        
+        if(player_serving == 0) {   //P1 (left side) always starts serving
+            player_1_serving_image.setHidden(false)
+            player_2_serving_image.setHidden(true)
+        }
+        
+        self.announcement_label.setHidden(true)
+        
         //Allow the player to use increment buttons if they hit reset at the end of match
         self.increment_player_one_score_outlet.setEnabled(true)
         self.increment_player_two_score_outlet.setEnabled(true)
@@ -542,16 +589,22 @@ class ScoresInterfaceController: WKInterfaceController {
     }
     
     func delayGameSetMatch() {
-        // Delay the dismissal by 3 seconds
-        let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            // Allow selection of reset and home buttons after the delay
-            self.reset_button_outlet.setEnabled(true)
-            self.home_button_outlet.setEnabled(true)
-        }
+        self.announcement_label.setHidden(false)
         
         self.increment_player_one_score_outlet.setEnabled(false)
         self.increment_player_two_score_outlet.setEnabled(false)
+        
+        // Delay the dismissal by 3 seconds
+        let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.announcement_label.setHidden(false)
+            
+            // Allow selection of reset and home buttons after the delay
+            self.reset_button_outlet.setEnabled(true)
+            self.home_button_outlet.setEnabled(true)
+            self.increment_player_one_score_outlet.setEnabled(false)
+            self.increment_player_two_score_outlet.setEnabled(false)
+        }
     }
     
     func preventButtonSelection() {
@@ -560,6 +613,21 @@ class ScoresInterfaceController: WKInterfaceController {
         self.home_button_outlet.setEnabled(false)
         self.increment_player_one_score_outlet.setEnabled(false)
         self.increment_player_two_score_outlet.setEnabled(false)
+    }
+    
+    func changeServer() {
+        if(player_serving == 0) {   //P2 (right side) to serve
+            player_serving = 1
+            
+            player_1_serving_image.setHidden(true)
+            player_2_serving_image.setHidden(false)
+        } else {    //P1 (left side) to serve
+            player_serving = 0
+            
+            player_1_serving_image.setHidden(false)
+            player_2_serving_image.setHidden(true)
+        }
+
     }
     
     override func awake(withContext context: Any?) {
@@ -571,6 +639,11 @@ class ScoresInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        if(player_serving == 0) {   //P1 (left side) always starts serving
+            player_1_serving_image.setHidden(false)
+            player_2_serving_image.setHidden(true)
+        }
     }
 
     override func didDeactivate() {

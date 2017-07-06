@@ -121,7 +121,7 @@
                                 <label width="0.20000000000000001" alignment="left" text="0" textAlignment="center" id="v8j-wz-9jh" userLabel="Player 1 Game Score"/>
                                 <label width="0.20000000000000001" alignment="left" text="-" textAlignment="center" id="351-GF-u8M" userLabel="Game Score Dash"/>
                                 <label width="0.20000000000000001" alignment="left" text="0" textAlignment="center" id="Noe-Ts-KoF" userLabel="Player 2 Game Score"/>
-                                <imageView width="0.20000000000000001" height="1" alignment="left" image="tennis-ball" id="DsS-GH-g7w" userLabel="Player 2 Serving Image"/>
+                                <imageView width="0.20000000000000001" height="1" alignment="left" hidden="YES" image="tennis-ball" id="DsS-GH-g7w" userLabel="Player 2 Serving Image"/>
                             </items>
                         </group>
                         <group width="1" height="0.20000000000000001" alignment="left" id="Ac3-hj-8Sr" userLabel="Increment Score Group">
