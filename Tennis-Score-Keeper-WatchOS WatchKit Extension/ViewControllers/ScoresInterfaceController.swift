@@ -579,21 +579,12 @@ class ScoresInterfaceController: WKInterfaceController {
     }
     
     func delayGameSetMatch() {
-//        self.announcement_label.setHidden(false)
-//        
-//        self.increment_player_one_score_outlet.setEnabled(false)
-//        self.increment_player_two_score_outlet.setEnabled(false)
-        
         // Delay the dismissal by 3 seconds
         let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
-//            self.announcement_label.setHidden(false)
-            
             // Allow selection of reset and home buttons after the delay
             self.reset_button_outlet.setEnabled(true)
             self.home_button_outlet.setEnabled(true)
-//            self.increment_player_one_score_outlet.setEnabled(false)
-//            self.increment_player_two_score_outlet.setEnabled(false)
         }
     }
     
