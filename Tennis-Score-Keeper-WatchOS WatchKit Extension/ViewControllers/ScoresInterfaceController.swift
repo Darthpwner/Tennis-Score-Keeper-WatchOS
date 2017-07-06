@@ -487,6 +487,9 @@ class ScoresInterfaceController: WKInterfaceController {
         
         player_serving_to_start_tiebreak = -1
         
+        player_1_label.setTextColor(UIColor.white)
+        player_2_label.setTextColor(UIColor.white)
+        
         if(player_serving == 0) {   //P1 (left side) always starts serving
             player_1_serving_image.setHidden(false)
             player_2_serving_image.setHidden(true)
@@ -562,7 +565,18 @@ class ScoresInterfaceController: WKInterfaceController {
     
     func gameSetMatchAnnouncement(player: String) {
         announcement_label.setHidden(false)
-        announcement_label.setText("Game, Set, Match: \(player)")
+        announcement_label.setText("Game, Set, Match")
+        
+        // Change color for the winner
+        if(player == "P1") {
+            player_1_label.setTextColor(UIColor.green)
+        } else {
+            player_2_label.setTextColor(UIColor.green)
+        }
+        
+        player_1_serving_image.setHidden(true)
+        player_2_serving_image.setHidden(true)
+        
         preventButtonSelection()
         delayGameSetMatch()
     }
