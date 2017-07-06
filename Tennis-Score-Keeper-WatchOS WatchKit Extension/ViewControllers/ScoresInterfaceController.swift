@@ -9,7 +9,6 @@
 import WatchKit
 import Foundation
 
-
 class ScoresInterfaceController: WKInterfaceController {
 
     // Current set [1, 3]
@@ -226,6 +225,7 @@ class ScoresInterfaceController: WKInterfaceController {
             }
             
             if(player_1_points_won_this_game >= 7 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {
+                
                 player_1_game_score_label.setText("0")
                 player_2_game_score_label.setText("0")
                 
@@ -251,6 +251,7 @@ class ScoresInterfaceController: WKInterfaceController {
                     preventButtonSelection()
                     delayAnnouncement()
                 } else if (current_set == 2) {
+                    
                     player_1_set_2_score += 1
                     player_1_set_2_score_label.setText(String(player_1_set_2_score))
                     
@@ -261,13 +262,13 @@ class ScoresInterfaceController: WKInterfaceController {
                         announcement_label.setText("Game, Set, Match")
                         preventButtonSelection()
                         delayGameSetMatch()
+                    } else {
+                        // Announce "Set 2: P1"
+                        announcement_label.setHidden(false)
+                        announcement_label.setText("Set 2: P1")
+                        preventButtonSelection()
+                        delayAnnouncement()
                     }
-                    
-                    // Announce "Set 2: P1"
-                    announcement_label.setHidden(false)
-                    announcement_label.setText("Set 2: P1")
-                    preventButtonSelection()
-                    delayAnnouncement()
                 } else {    //Set 3
                     player_1_set_3_score += 1
                     player_1_set_3_score_label.setText(String(player_1_set_3_score))
@@ -442,7 +443,6 @@ class ScoresInterfaceController: WKInterfaceController {
         } else {    //Tiebreaker
             player_2_game_score_label.setText(String(player_2_points_won_this_game))
             
-            print("tiebreak P2: \(player_1_points_won_this_game + player_2_points_won_this_game % 2)\n")
             if((player_1_points_won_this_game + player_2_points_won_this_game) % 2 == 1) {
                 changeServer()
             }
@@ -579,10 +579,10 @@ class ScoresInterfaceController: WKInterfaceController {
     }
     
     func delayGameSetMatch() {
-        self.announcement_label.setHidden(false)
-        
-        self.increment_player_one_score_outlet.setEnabled(false)
-        self.increment_player_two_score_outlet.setEnabled(false)
+//        self.announcement_label.setHidden(false)
+//        
+//        self.increment_player_one_score_outlet.setEnabled(false)
+//        self.increment_player_two_score_outlet.setEnabled(false)
         
         // Delay the dismissal by 3 seconds
         let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
