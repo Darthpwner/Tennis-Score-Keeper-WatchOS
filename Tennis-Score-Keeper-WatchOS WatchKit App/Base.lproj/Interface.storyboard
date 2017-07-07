@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TBo-J6-kkh">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zww-RY-KQe">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,25 +9,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
-        <!--Match Type-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller title="Match Type" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <label height="20" alignment="left" text="Type of Match?" id="m3Y-ZK-WWN"/>
-                        <button width="1" alignment="left" title="Singles" id="RfN-I3-Cja"/>
-                        <button width="1" alignment="left" title="Doubles" id="PEv-RB-pT8"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="220" y="345"/>
-        </scene>
-        <!--Player Names-->
+        <!--Player One Name-->
         <scene sceneID="MPg-lf-m8J">
             <objects>
-                <controller title="Player Names" id="zww-RY-KQe"/>
+                <controller identifier="PlayerOneInterfaceController" title="Player One Name" id="zww-RY-KQe"/>
             </objects>
             <point key="canvasLocation" x="482" y="340"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="wgh-R1-7Id">
+            <objects>
+                <controller id="X4N-gU-N2J"/>
+            </objects>
+            <point key="canvasLocation" x="813" y="340"/>
         </scene>
         <!--Match Length-->
         <scene sceneID="FeO-1y-n5t">
