@@ -35,23 +35,21 @@
                 <controller identifier="MatchLengthInterfaceController" title="10S Scores" id="TBo-J6-kkh" userLabel="Match Length" customClass="MatchLengthInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
                         <label width="1" height="0.10000000000000001" alignment="left" text="Number of Sets?" id="rqY-GV-bHD"/>
-                        <button width="1" height="0.20000000000000001" alignment="left" title="Best of 1" id="4yK-ei-94e">
+                        <button width="1" height="28" alignment="left" title="Best of 1" id="4yK-ei-94e">
                             <connections>
                                 <action selector="bestOfOneButton" destination="TBo-J6-kkh" id="5XP-1X-Z3R"/>
-                                <segue destination="okk-KT-xBP" kind="push" id="bfg-ih-0fm"/>
                             </connections>
                         </button>
                         <imageView width="1" height="0.5" alignment="left" image="tennis-court" id="705-on-5MB"/>
                         <button width="1" height="0.20000000000000001" alignment="left" title="Best of 3" id="aDv-Sb-fsx">
                             <connections>
                                 <action selector="bestOfThreeButton" destination="TBo-J6-kkh" id="vFU-H1-Icq"/>
-                                <segue destination="okk-KT-xBP" kind="push" id="1KK-ar-mTT"/>
                             </connections>
                         </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1211" y="346"/>
+            <point key="canvasLocation" x="1211" y="345.5"/>
         </scene>
         <!--Ten Point Tiebreaker-->
         <scene sceneID="R1S-Zu-Q7T">
@@ -190,7 +188,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mjh-LY-W2d"/>
-        <segue reference="bfg-ih-0fm"/>
+        <segue reference="5ni-bC-5zS"/>
     </inferredMetricsTieBreakers>
 </document>
