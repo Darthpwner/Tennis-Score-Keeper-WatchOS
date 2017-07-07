@@ -54,18 +54,18 @@
         <!--Ten Point Tiebreaker-->
         <scene sceneID="R1S-Zu-Q7T">
             <objects>
-                <controller identifier="Ten Point Tiebreaker" title="10S Scores" id="okk-KT-xBP" userLabel="Ten Point Tiebreaker" customClass="TenPointTiebreakerInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
+                <controller identifier="TenPointTiebreakerInterfaceController" title="10S Scores" id="okk-KT-xBP" userLabel="Ten Point Tiebreaker" customClass="TenPointTiebreakerInterfaceController" customModule="Tennis_Score_Keeper_WatchOS_WatchKit_Extension">
                     <items>
                         <label width="1" height="0.10000000000000001" alignment="left" text="10-pt tiebreak for final set?" minimumScaleFactor="0.5" id="HPP-Ux-k3F"/>
                         <button width="1" height="0.20000000000000001" alignment="left" title="Yes" id="Mc4-0q-Mlu">
                             <connections>
-                                <segue destination="27U-IZ-SVF" kind="push" id="mjh-LY-W2d"/>
+                                <action selector="yesButtonAction" destination="okk-KT-xBP" id="Cp7-S8-vvS"/>
                             </connections>
                         </button>
                         <imageView width="1" height="0.5" alignment="left" image="tennis-court" id="MQh-qq-J9R"/>
                         <button width="1" height="0.20000000000000001" alignment="left" title="No" id="0EG-kE-DSr">
                             <connections>
-                                <segue destination="27U-IZ-SVF" kind="push" id="5ni-bC-5zS"/>
+                                <action selector="noButtonAction" destination="okk-KT-xBP" id="5Os-7c-FSQ"/>
                             </connections>
                         </button>
                     </items>
@@ -187,7 +187,4 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="5ni-bC-5zS"/>
-    </inferredMetricsTieBreakers>
 </document>

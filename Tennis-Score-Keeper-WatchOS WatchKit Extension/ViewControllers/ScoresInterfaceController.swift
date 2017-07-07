@@ -12,6 +12,9 @@ import AVFoundation //For speech output
 
 class ScoresInterfaceController: WKInterfaceController {
 
+    // Passed in metadata from previous Interface Controllers
+    var metadata = Metadata(match_length_parameter: 1, ten_point_tiebreaker_format_parameter: 1)
+    
     //Speech
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
@@ -834,7 +837,17 @@ class ScoresInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        print("context: \(String(describing: context))")    // This prints nil
+        
         // Configure interface objects here.
+        if let passed_metadata = context as? Metadata {
+            print("match_type: \(passed_metadata.match_length)")
+            print("ten_point_tiebreaker_format: \(passed_metadata.ten_point_tiebreaker_format)")
+            
+            //Get the correct values of match_length and ten_point_tiebreaker_format from previous Interface Controllers
+            metadata.match_length = passed_metadata.match_length
+            metadata.ten_point_tiebreaker_format = passed_metadata.ten_point_tiebreaker_format
+        }
     }
 
     override func willActivate() {
@@ -848,6 +861,8 @@ class ScoresInterfaceController: WKInterfaceController {
         
         //Set the Speech rate
         myUtterance.rate = 0.3
+        
+        print("Activated scores")
     }
 
     override func didDeactivate() {
