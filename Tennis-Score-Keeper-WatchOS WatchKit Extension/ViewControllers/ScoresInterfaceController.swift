@@ -760,7 +760,7 @@ class ScoresInterfaceController: WKInterfaceController {
     /* Delay a game score announcement */
     func delayGameScoreAnnouncement() {
         // Delay the dismissal by 2 seconds
-        let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             self.announcement_label.setHidden(true)
@@ -776,7 +776,7 @@ class ScoresInterfaceController: WKInterfaceController {
     /* Delay a normal announcement */
     func delayAnnouncement() {
         // Delay the dismissal by 5 seconds
-        let when = DispatchTime.now() + 1 // change 5 to desired number of seconds
+        let when = DispatchTime.now() + 5 // change 5 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             self.announcement_label.setHidden(true)
@@ -792,7 +792,7 @@ class ScoresInterfaceController: WKInterfaceController {
     /* Delay for the Game, Set, Match announcement */
     func delayGameSetMatch() {
         // Delay the dismissal by 3 seconds
-        let when = DispatchTime.now() + 1 // change 3 to desired number of seconds
+        let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Allow selection of reset and home buttons after the delay
             self.reset_button_outlet.setEnabled(true)
