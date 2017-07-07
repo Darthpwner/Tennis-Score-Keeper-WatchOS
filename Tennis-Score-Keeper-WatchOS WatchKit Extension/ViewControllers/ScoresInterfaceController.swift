@@ -13,6 +13,8 @@ import AVFoundation //For speech output
 class ScoresInterfaceController: WKInterfaceController {
 
     // Passed in metadata from previous Interface Controllers
+    //match_length: 0 means best of 1 set, 1 means best of 3 sets
+    //ten_point_tiebreaker_format: 0 means Yes, 1 means No
     var metadata = Metadata(match_length_parameter: 1, ten_point_tiebreaker_format_parameter: 1)
     
     //Speech
@@ -29,9 +31,6 @@ class ScoresInterfaceController: WKInterfaceController {
     
     // Tracks which player started serving in the tiebreak to handle the start of the next set
     var player_serving_to_start_tiebreak = -1
-    
-    //TODO
-    var is_10_point_tiebreak = false
     
     // Game score values
     var player_1_points_won_this_game = 0
