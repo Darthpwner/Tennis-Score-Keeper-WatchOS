@@ -142,6 +142,8 @@
                     </items>
                     <connections>
                         <outlet property="announcement_label" destination="QyL-zO-QcS" id="HUZ-Tz-g1R"/>
+                        <outlet property="comma_between_set_1_and_2_label" destination="Knt-zv-alb" id="gGq-BT-yhy"/>
+                        <outlet property="comma_between_set_2_and_3_label" destination="jzF-ix-jvM" id="j9H-Rc-CpC"/>
                         <outlet property="home_button_outlet" destination="fXX-1b-9ua" id="EBC-cB-VPS"/>
                         <outlet property="increment_player_one_score_outlet" destination="Sgx-1n-ui0" id="epj-mR-URp"/>
                         <outlet property="increment_player_two_score_outlet" destination="APn-AI-lhh" id="wDe-iU-tIP"/>
@@ -158,6 +160,9 @@
                         <outlet property="player_2_set_2_score_label" destination="Qgc-qL-gmI" id="e2F-eh-glk"/>
                         <outlet property="player_2_set_3_score_label" destination="WPo-aC-ocM" id="Jol-y0-rKM"/>
                         <outlet property="reset_button_outlet" destination="k7U-Ab-h8k" id="4A7-lx-v1G"/>
+                        <outlet property="set_1_dash_label" destination="yQX-GX-P56" id="nph-pf-d7D"/>
+                        <outlet property="set_2_dash_label" destination="h73-fs-u1d" id="bDf-3F-ya2"/>
+                        <outlet property="set_3_dash_label" destination="jel-ZH-vm0" id="MiP-kg-MG4"/>
                     </connections>
                 </controller>
             </objects>

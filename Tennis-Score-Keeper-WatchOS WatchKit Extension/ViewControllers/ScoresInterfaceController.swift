@@ -57,10 +57,20 @@ class ScoresInterfaceController: WKInterfaceController {
     
     /* Set Scores */
     @IBOutlet var player_1_set_1_score_label: WKInterfaceLabel!
+    @IBOutlet var set_1_dash_label: WKInterfaceLabel!
     @IBOutlet var player_2_set_1_score_label: WKInterfaceLabel!
+    
+    @IBOutlet var comma_between_set_1_and_2_label: WKInterfaceLabel!
+    
+    
     @IBOutlet var player_1_set_2_score_label: WKInterfaceLabel!
+    @IBOutlet var set_2_dash_label: WKInterfaceLabel!
     @IBOutlet var player_2_set_2_score_label: WKInterfaceLabel!
+    
+    @IBOutlet var comma_between_set_2_and_3_label: WKInterfaceLabel!
+    
     @IBOutlet var player_1_set_3_score_label: WKInterfaceLabel!
+    @IBOutlet var set_3_dash_label: WKInterfaceLabel!
     @IBOutlet var player_2_set_3_score_label: WKInterfaceLabel!
     
     /* Game Scores */
@@ -109,18 +119,26 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         set_winners[0] = 1
                         
-                        // Announce "Set 1: P1"
-                        setAnnouncement(player: "P1", set_number: "1")
-                        matchScoreAnnouncement()
+                        if(metadata.match_length == 0) {    //If best of 1 set, Player 1 wins the match
+                            gameSetMatchAnnouncement(player: "P1")
+                        } else {
+                            // Announce "Set 1: P1"
+                            setAnnouncement(player: "P1", set_number: "1")
+                            matchScoreAnnouncement()
+                        }
                     } else if(player_1_set_1_score == 7 && player_2_set_1_score == 5) {  //7-5
                         
                         current_set += 1
                         
                         set_winners[0] = 1
                         
-                        // Announce "Set 1: P1"
-                        setAnnouncement(player: "P1", set_number: "1")
-                        matchScoreAnnouncement()
+                        if(metadata.match_length == 0) {    //If best of 1 set, Player 1 wins the match
+                            gameSetMatchAnnouncement(player: "P1")
+                        } else {
+                            // Announce "Set 1: P1"
+                            setAnnouncement(player: "P1", set_number: "1")
+                            matchScoreAnnouncement()
+                        }
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
@@ -271,9 +289,13 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     set_winners[0] = 1
                     
-                    // Announce "Set 1: P1"
-                    setAnnouncement(player: "P1", set_number: "1")
-                    matchScoreAnnouncement()
+                    if(metadata.match_length == 0) {    //If best of 1 set, Player 1 wins the match
+                        gameSetMatchAnnouncement(player: "P1")
+                    } else {
+                        // Announce "Set 1: P1"
+                        setAnnouncement(player: "P1", set_number: "1")
+                        matchScoreAnnouncement()
+                    }
                 } else if (current_set == 2) {
                     
                     current_set += 1
@@ -346,19 +368,26 @@ class ScoresInterfaceController: WKInterfaceController {
                         
                         set_winners[0] = 2
                         
-                        // Announce "Set 1: P2"
-                        setAnnouncement(player: "P2", set_number: "1")
-                        matchScoreAnnouncement()
-                    
+                        if(metadata.match_length == 0) {    //If best of 1 set, Player 2 wins the match
+                            gameSetMatchAnnouncement(player: "P2")
+                        } else {
+                            // Announce "Set 1: P2"
+                            setAnnouncement(player: "P2", set_number: "1")
+                            matchScoreAnnouncement()
+                        }
                     } else if(player_2_set_1_score == 7 && player_1_set_1_score == 5) {  //7-5
                         
                         current_set += 1
                         
                         set_winners[0] = 2
                         
-                        // Announce "Set 1: P2"
-                        setAnnouncement(player: "P2", set_number: "1")
-                        matchScoreAnnouncement()
+                        if(metadata.match_length == 0) {    //If best of 1 set, Player 2 wins the match
+                            gameSetMatchAnnouncement(player: "P2")
+                        } else {
+                            // Announce "Set 1: P2"
+                            setAnnouncement(player: "P2", set_number: "1")
+                            matchScoreAnnouncement()
+                        }
                     } else if(player_1_set_1_score == 6 && player_2_set_1_score == 6) { //Enter tiebreak
                         is_tiebreak = true
                         player_serving_to_start_tiebreak = player_serving
@@ -514,9 +543,13 @@ class ScoresInterfaceController: WKInterfaceController {
                     
                     set_winners[0] = 2
                     
-                    // Announce "Set 1: P2"
-                    setAnnouncement(player: "P2", set_number: "1")
-                    matchScoreAnnouncement()
+                    if(metadata.match_length == 0) {    //If best of 1 set, Player 2 wins the match
+                        gameSetMatchAnnouncement(player: "P2")
+                    } else {
+                        // Announce "Set 1: P2"
+                        setAnnouncement(player: "P2", set_number: "1")
+                        matchScoreAnnouncement()
+                    }
                 } else if(current_set == 2) {
                     
                     current_set += 1
@@ -801,21 +834,27 @@ class ScoresInterfaceController: WKInterfaceController {
         announcement_label.setHidden(false)
         announcement_label.setText("Game, Set, Match")
         
-        if(player == "P1") {
-            if(set_winners[0] == set_winners[1]) {  //P1 won in straight sets
-                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_1_set_1_score) \(player_2_set_1_score). \(player_1_set_2_score) \(player_2_set_2_score)")
-            } else {    //P1 won in 3 sets
-                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_1_set_1_score) \(player_2_set_1_score). \(player_1_set_2_score) \(player_2_set_2_score). \(player_1_set_3_score) \(player_2_set_3_score)")
+        if(metadata.match_length == 0) {    //Best of 1 set format
+            if(player == "P1") {    //P1 wins
+                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_1_set_1_score) \(player_2_set_1_score)")
+            } else {    //P2 wins
+                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_2_set_1_score) \(player_1_set_1_score)")
             }
-        } else {
-            if(set_winners[0] == set_winners[1]) {  //P2 won in straight sets
-                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_2_set_1_score) \(player_1_set_1_score). \(player_2_set_2_score) \(player_1_set_2_score)")
-            } else {    //P1 won in 3 sets
-                myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_2_set_1_score) \(player_1_set_1_score). \(player_2_set_2_score) \(player_1_set_2_score). \(player_2_set_3_score) \(player_1_set_3_score)")
+        } else {    //Best of 3 set format
+            if(player == "P1") {
+                if(set_winners[0] == set_winners[1]) {  //P1 won in straight sets
+                    myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_1_set_1_score) \(player_2_set_1_score). \(player_1_set_2_score) \(player_2_set_2_score)")
+                } else {    //P1 won in 3 sets
+                    myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_1_set_1_score) \(player_2_set_1_score). \(player_1_set_2_score) \(player_2_set_2_score). \(player_1_set_3_score) \(player_2_set_3_score)")
+                }
+            } else {
+                if(set_winners[0] == set_winners[1]) {  //P2 won in straight sets
+                    myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_2_set_1_score) \(player_1_set_1_score). \(player_2_set_2_score) \(player_1_set_2_score)")
+                } else {    //P1 won in 3 sets
+                    myUtterance = AVSpeechUtterance(string: "Game, Set, Match: \(player). \(player_2_set_1_score) \(player_1_set_1_score). \(player_2_set_2_score) \(player_1_set_2_score). \(player_2_set_3_score) \(player_1_set_3_score)")
+                }
             }
         }
-        
-        
         
         synth.speak(myUtterance)
         
@@ -860,6 +899,18 @@ class ScoresInterfaceController: WKInterfaceController {
         
         //Set the Speech rate
         myUtterance.rate = 0.3
+        
+        // Show only first set scores if best of 1 format
+        if(metadata.match_length == 0) {
+            comma_between_set_1_and_2_label.setHidden(true)
+            player_1_set_2_score_label.setHidden(true)
+            set_2_dash_label.setHidden(true)
+            player_2_set_2_score_label.setHidden(true)
+            comma_between_set_2_and_3_label.setHidden(true)
+            player_1_set_3_score_label.setHidden(true)
+            set_3_dash_label.setHidden(true)
+            player_2_set_3_score_label.setHidden(true)
+        }
         
         print("Activated scores")
     }
