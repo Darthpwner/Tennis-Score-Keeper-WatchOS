@@ -643,6 +643,12 @@ class ScoresInterfaceController: WKInterfaceController {
         
         self.announcement_label.setHidden(true)
         
+        if(metadata.ten_point_tiebreaker_format == 0) {
+            is_tiebreak = true
+        } else {
+            is_tiebreak = false
+        }
+        
         //Allow the player to use increment buttons if they hit reset at the end of match
         self.increment_player_one_score_outlet.setEnabled(true)
         self.increment_player_two_score_outlet.setEnabled(true)
@@ -914,6 +920,13 @@ class ScoresInterfaceController: WKInterfaceController {
             player_1_set_3_score_label.setHidden(true)
             set_3_dash_label.setHidden(true)
             player_2_set_3_score_label.setHidden(true)
+        }
+        
+        //If 10 point tiebreaker format for the final set, adjust certain conditions
+        if(metadata.ten_point_tiebreaker_format == 0) {
+            if(metadata.match_length == 0) {
+                is_tiebreak = true
+            }
         }
         
         print("Activated scores")
