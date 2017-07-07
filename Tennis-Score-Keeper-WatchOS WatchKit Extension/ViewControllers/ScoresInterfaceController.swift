@@ -763,7 +763,11 @@ class ScoresInterfaceController: WKInterfaceController {
             if(server_score == receiver_score) { //<Server score>-All
                 myUtterance = AVSpeechUtterance(string: "\(server_score)-All")
             } else { // "<Server score>-<Receiver score>"
-                myUtterance = AVSpeechUtterance(string: "\(server_score) \(receiver_score)")
+                if(player_serving == 0) {   //P1 serving
+                    myUtterance = AVSpeechUtterance(string: "\(server_score) \(receiver_score), P1")
+                } else {    //P2 serving
+                    myUtterance = AVSpeechUtterance(string: "\(server_score) \(receiver_score), P2")
+                }
             }
         }
         
