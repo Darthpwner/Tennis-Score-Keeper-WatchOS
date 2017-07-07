@@ -31,11 +31,87 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-xR-XeI" userLabel="Set Stack View">
+                                        <rect key="frame" x="130" y="36" width="84" height="180"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-KJ-4IU" userLabel="Set 1 Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jzt-Ey-Cq0" userLabel="Player 1 Set 1 Score">
+                                                        <rect key="frame" x="0.0" y="0.0" width="31" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-BJ-vS2" userLabel="Set 1 Dash">
+                                                        <rect key="frame" x="31" y="0.0" width="22" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VLI-bj-cvT" userLabel="Player 2 Set 1 Score">
+                                                        <rect key="frame" x="53" y="0.0" width="31" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBY-Rj-AF0" userLabel="Set 2 Stack View">
+                                                <rect key="frame" x="0.0" y="60" width="84" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8u-Nf-sey" userLabel="Player 1 Set 2 Score">
+                                                        <rect key="frame" x="0.0" y="0.0" width="31" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3z-AY-HIL" userLabel="Set 2 Dash">
+                                                        <rect key="frame" x="31" y="0.0" width="22" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6k-W2-FnV" userLabel="Player 2 Set 2 Score">
+                                                        <rect key="frame" x="53" y="0.0" width="31" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QoA-uU-A0M" userLabel="Set 3 Stack View">
+                                                <rect key="frame" x="0.0" y="120" width="84" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Bh-AC-rmf" userLabel="Player 1 Set 3 Score">
+                                                        <rect key="frame" x="0.0" y="0.0" width="31" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OeB-i7-9ly" userLabel="Set 3 Dash">
+                                                        <rect key="frame" x="31" y="0.0" width="22" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBc-qL-jW6" userLabel="Player 2 Set 3 Score">
+                                                        <rect key="frame" x="53" y="0.0" width="31" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="uyS-wm-jyM" firstAttribute="top" secondItem="b8L-uh-Mjd" secondAttribute="top" id="9jR-eo-m1X"/>
                                     <constraint firstItem="uyS-wm-jyM" firstAttribute="centerX" secondItem="b8L-uh-Mjd" secondAttribute="centerX" id="BMP-6h-aK3"/>
+                                    <constraint firstItem="rd2-KJ-4IU" firstAttribute="centerX" secondItem="uyS-wm-jyM" secondAttribute="centerX" id="DBa-ik-OFl"/>
+                                    <constraint firstItem="5cf-xR-XeI" firstAttribute="top" secondItem="uyS-wm-jyM" secondAttribute="bottom" id="my5-7m-6wK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddl-dX-3qZ" userLabel="Game Score View">
@@ -47,10 +123,35 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDl-8o-SH3" userLabel="Game Score Stack View">
+                                        <rect key="frame" x="110" y="63.5" width="124.5" height="90"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zA-bc-x63" userLabel="Player 1 Game Score">
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="90"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sE-nU-1HX" userLabel="Game Score Dash">
+                                                <rect key="frame" x="46" y="0.0" width="32.5" height="90"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQd-aO-Myx" userLabel="Player 2 Game Score">
+                                                <rect key="frame" x="78.5" y="0.0" width="46" height="90"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="dDl-8o-SH3" firstAttribute="centerX" secondItem="3jE-fG-gcz" secondAttribute="centerX" id="9XO-Id-Mdv"/>
                                     <constraint firstItem="3jE-fG-gcz" firstAttribute="top" secondItem="ddl-dX-3qZ" secondAttribute="top" constant="22" id="Ahe-GQ-oVb"/>
+                                    <constraint firstItem="dDl-8o-SH3" firstAttribute="centerY" secondItem="ddl-dX-3qZ" secondAttribute="centerY" id="Jdu-W1-m3l"/>
                                     <constraint firstItem="3jE-fG-gcz" firstAttribute="centerX" secondItem="ddl-dX-3qZ" secondAttribute="centerX" id="Kwu-va-6Xp"/>
                                 </constraints>
                             </view>
@@ -58,8 +159,8 @@
                                 <rect key="frame" x="16" y="451.5" width="171.5" height="215.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r4O-ck-ebX">
-                                        <rect key="frame" x="70" y="89.5" width="32" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <rect key="frame" x="55" y="71.5" width="63" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -73,9 +174,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1Y-LV-7xE" userLabel="Player 2 Name View">
                                 <rect key="frame" x="187.5" y="451.5" width="171.5" height="215.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-T4-G9b">
-                                        <rect key="frame" x="68.5" y="90.5" width="35.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-T4-G9b">
+                                        <rect key="frame" x="51.5" y="72.5" width="70" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
