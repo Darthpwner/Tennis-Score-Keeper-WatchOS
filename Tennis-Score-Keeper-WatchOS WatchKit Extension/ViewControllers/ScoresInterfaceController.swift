@@ -172,6 +172,10 @@ class ScoresInterfaceController: WKInterfaceController {
                             // Announce "Set 2: P1"
                             setAnnouncement(player: "P1", set_number: "2")
                             matchScoreAnnouncement()
+                            
+                            if(metadata.ten_point_tiebreaker_format == 0) { //Start 10-point tiebreaker for the 3rd set
+                                is_tiebreak = true
+                            }
                         }
                     } else if(player_1_set_2_score == 7 && player_2_set_2_score == 5) { //7-5
                         
@@ -185,6 +189,10 @@ class ScoresInterfaceController: WKInterfaceController {
                             // Announce "Set 2: P1"
                             setAnnouncement(player: "P1", set_number: "2")
                             matchScoreAnnouncement()
+                            
+                            if(metadata.ten_point_tiebreaker_format == 0) { //Start 10-point tiebreaker for the 3rd set
+                                is_tiebreak = true
+                            }
                         }
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
@@ -266,6 +274,46 @@ class ScoresInterfaceController: WKInterfaceController {
                 changeServer()
             }
             
+            //10-point tiebreak logic
+            if(metadata.ten_point_tiebreaker_format == 0) { //10-point tiebreaker for final set
+                if(metadata.match_length == 0 || (metadata.match_length == 1 && current_set == 3)) {
+                    if(player_1_points_won_this_game >= 10 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {
+                        player_1_game_score_label.setText("0")
+                        player_2_game_score_label.setText("0")
+                        
+                        player_1_points_won_this_game = 0
+                        player_2_points_won_this_game = 0
+                        
+                        if(current_set == 1) {  //P1 wins 1st set 10-point tiebreak
+                            player_1_set_1_score += 1
+                            player_1_set_1_score_label.setText(String(player_1_set_1_score))
+                            set_winners[0] = 1
+                            
+                            gameSetMatchAnnouncement(player: "P1")
+                            return
+                        } else {    //P1 wins 3rd set 10-point tiebreak
+                            player_1_set_3_score += 1
+                            player_1_set_3_score_label.setText(String(player_1_set_3_score))
+                            set_winners[2] = 1
+                            
+                            gameSetMatchAnnouncement(player: "P1")
+                            return
+                        }
+                    }
+                } else {    // Still in the the tiebreak so call the score
+                    //Announce game score
+                    
+                    if(player_serving == 0) {
+                        gameScoreAnnouncement(server_score: String(player_1_points_won_this_game), receiver_score: String(player_2_points_won_this_game))
+                    } else {
+                        gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
+                    }
+                    
+                    return
+                }
+            }
+
+            
             if(player_1_points_won_this_game >= 7 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {
                 
                 player_1_game_score_label.setText("0")
@@ -311,6 +359,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 2: P1"
                         setAnnouncement(player: "P1", set_number: "2")
                         matchScoreAnnouncement()
+                        
+                        if(metadata.ten_point_tiebreaker_format == 0) { //Start 10-point tiebreaker for the 3rd set
+                            is_tiebreak = true
+                        }
                     }
                 } else {    //Set 3
                     
@@ -421,6 +473,10 @@ class ScoresInterfaceController: WKInterfaceController {
                             // Announce "Set 2: P2"
                             setAnnouncement(player: "P2", set_number: "2")
                             matchScoreAnnouncement()
+                            
+                            if(metadata.ten_point_tiebreaker_format == 0) { //Start 10-point tiebreaker for the 3rd set
+                                is_tiebreak = true
+                            }
                         }
                         
                         
@@ -436,6 +492,10 @@ class ScoresInterfaceController: WKInterfaceController {
                             // Announce "Set 2: P2"
                             setAnnouncement(player: "P2", set_number: "2")
                             matchScoreAnnouncement()
+                            
+                            if(metadata.ten_point_tiebreaker_format == 0) { //Start 10-point tiebreaker for the 3rd set
+                                is_tiebreak = true
+                            }
                         }
                     } else if(player_1_set_2_score == 6 && player_2_set_2_score == 6) { //Enter tiebreak
                         is_tiebreak = true
@@ -520,6 +580,45 @@ class ScoresInterfaceController: WKInterfaceController {
                 changeServer()
             }
             
+            //10-point tiebreak logic
+            if(metadata.ten_point_tiebreaker_format == 0) { //10-point tiebreaker for final set
+                if(metadata.match_length == 0 || (metadata.match_length == 1 && current_set == 3)) {
+                    if(player_2_points_won_this_game >= 10 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {
+                        player_1_game_score_label.setText("0")
+                        player_2_game_score_label.setText("0")
+                        
+                        player_1_points_won_this_game = 0
+                        player_2_points_won_this_game = 0
+                        
+                        if(current_set == 1) {  //P2 wins 1st set 10-point tiebreak
+                            player_2_set_1_score += 1
+                            player_2_set_1_score_label.setText(String(player_2_set_1_score))
+                            set_winners[0] = 2
+                            
+                            gameSetMatchAnnouncement(player: "P2")
+                            return
+                        } else {    //P2 wins 3rd set 10-point tiebreak
+                            player_2_set_3_score += 1
+                            player_2_set_3_score_label.setText(String(player_2_set_3_score))
+                            set_winners[2] = 2
+                            
+                            gameSetMatchAnnouncement(player: "P2")
+                            return
+                        }
+                    }
+                } else {    // Still in the the tiebreak so call the score
+                    //Announce game score
+                    
+                    if(player_serving == 0) {
+                        gameScoreAnnouncement(server_score: String(player_1_points_won_this_game), receiver_score: String(player_2_points_won_this_game))
+                    } else {
+                        gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
+                    }
+                    
+                    return
+                }
+            }
+            
             if(player_2_points_won_this_game >= 7 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {
                 
                 player_1_game_score_label.setText("0")
@@ -565,6 +664,10 @@ class ScoresInterfaceController: WKInterfaceController {
                         // Announce "Set 2: P2"
                         setAnnouncement(player: "P2", set_number: "2")
                         matchScoreAnnouncement()
+                        
+                        if(metadata.ten_point_tiebreaker_format == 0) { //Start 10-point tiebreaker for the 3rd set
+                            is_tiebreak = true
+                        }
                     }
                 } else {    //Set 3
                     
