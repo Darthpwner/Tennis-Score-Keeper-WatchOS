@@ -643,9 +643,9 @@ class ScoresInterfaceController: WKInterfaceController {
         
         self.announcement_label.setHidden(true)
         
-        if(metadata.ten_point_tiebreaker_format == 0) {
+        if(metadata.ten_point_tiebreaker_format == 0 && metadata.match_length == 0) {   //Best of 1 set and 10-point tiebreaker
             is_tiebreak = true
-        } else {
+        } else {    //Any other case of resetting
             is_tiebreak = false
         }
         
