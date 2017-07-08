@@ -9,10 +9,6 @@
 import UIKit
 
 class ScoreViewController: UIViewController {
-
-//    var sharedFilePath: String?
-//    var shared
-
     //Outlets
     //Set Score Outlets
     @IBOutlet weak var player_1_set_1_score_label: UILabel!
@@ -38,9 +34,20 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var player_1_label: UILabel!
     @IBOutlet weak var player_2_label: UILabel!
     
+    //Sharing Data
+    var sharedFilePath: String?
+    var sharedDefaults: UserDefaults?
+    let fileManager = FileManager.default
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let sharedContainer = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.darthpwner.Tennis-Scorekeeper")
+        
+        let dirPath = sharedContainer?.path
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

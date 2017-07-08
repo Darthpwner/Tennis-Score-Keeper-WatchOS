@@ -26,6 +26,10 @@ class ScoresInterfaceController: WKInterfaceController {
 
     var is_tiebreak = false
     
+    // Player who won the match [0, 1] where 0 is P1 and 1 is P2
+    // Used to send data back to iOS app
+    var player_won = -1
+    
     // Player serving [0, 1] where 0 is P1 and 1 is P2
     var player_serving = 0
     
@@ -733,6 +737,8 @@ class ScoresInterfaceController: WKInterfaceController {
         
         player_serving_to_start_tiebreak = -1
         
+        player_won = -1
+        
         player_1_game_score_string = "Love"
         player_2_game_score_string = "Love"
         
@@ -974,8 +980,10 @@ class ScoresInterfaceController: WKInterfaceController {
         // Change color for the winner
         if(player == "P1") {
             player_1_label.setTextColor(UIColor.green)
+            player_won = 0
         } else {
             player_2_label.setTextColor(UIColor.green)
+            player_won = 1
         }
         
         player_1_serving_image.setHidden(true)
