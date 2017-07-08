@@ -307,6 +307,10 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                             set_winners[0] = 1
                             
                             gameSetMatchAnnouncement(player: "P1")
+                            
+                            // Link data together
+                            updateApplicationContext()
+                            
                             return
                         } else {    //P1 wins 3rd set 10-point tiebreak
                             player_1_set_3_score += 1
@@ -314,6 +318,10 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                             set_winners[2] = 1
                             
                             gameSetMatchAnnouncement(player: "P1")
+                            
+                            // Link data together
+                            updateApplicationContext()
+                            
                             return
                         }
                     } else {    // Still in the the tiebreak so call the score
@@ -624,6 +632,10 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                             set_winners[0] = 2
                             
                             gameSetMatchAnnouncement(player: "P2")
+                            
+                            // Link data together
+                            updateApplicationContext()
+                            
                             return
                         } else {    //P2 wins 3rd set 10-point tiebreak
                             player_2_set_3_score += 1
@@ -631,6 +643,10 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                             set_winners[2] = 2
                             
                             gameSetMatchAnnouncement(player: "P2")
+                            
+                            // Link data together
+                            updateApplicationContext()
+                            
                             return
                         }
                     } else {    // Still in the the tiebreak so call the score
