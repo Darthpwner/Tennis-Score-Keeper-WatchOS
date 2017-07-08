@@ -10,21 +10,9 @@ import UIKit
 import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
 class ScoreViewController: UIViewController, WCSessionDelegate {
-    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
-    @available(iOS 9.3, *)
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
     
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
+    var session: WCSession!
     
-    func sessionDidDeactivate(_ session: WCSession) {
-        // Begin the activation process for the new Apple Watch.
-        WCSession.default().activate()
-    }
-
     //Outlets
     //Set Score Outlets
     @IBOutlet weak var player_1_set_1_score_label: UILabel!
@@ -51,17 +39,19 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var player_2_label: UILabel!
     
     //Sharing Data
-    var sharedFilePath: String?
-    var sharedDefaults: UserDefaults?
-    let fileManager = FileManager.default
+//    var sharedFilePath: String?
+//    var sharedDefaults: UserDefaults?
+//    let fileManager = FileManager.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let sharedContainer = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.darthpwner.Tennis-Scorekeeper")
-        
-        let dirPath = sharedContainer?.path
+        if(WCSession.isSupported()) {
+            session = WCSession.default()
+            session.delegate = self
+            session.activate()
+        }
         
         
     }
@@ -71,6 +61,20 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    // For WCSession
+    
+    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+    @available(iOS 9.3, *)
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        // Begin the activation process for the new Apple Watch.
+        WCSession.default().activate()
+    }
 
 }
 
