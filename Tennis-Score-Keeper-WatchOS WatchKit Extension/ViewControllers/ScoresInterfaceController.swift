@@ -406,13 +406,13 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                     gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
                 }
             }
+            
+            // Link data together
+            updateApplicationContext()
         }
         
 //        print(player_1_points_won_this_game)
 //        print(player_2_points_won_this_game)
-        
-        // Link data together
-        updateApplicationContext()
     }
     
     @IBAction func incrementPlayerTwoScore() {
@@ -724,13 +724,13 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                     gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
                 }
             }
+            
+            // Link data together
+            updateApplicationContext()
         }
         
 //        print(player_1_points_won_this_game)
 //        print(player_2_points_won_this_game)
-        
-        // Link data together
-        updateApplicationContext()
     }
     
     /* Reset */
