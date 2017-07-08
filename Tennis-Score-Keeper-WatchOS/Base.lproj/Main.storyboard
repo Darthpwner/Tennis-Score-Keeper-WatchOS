@@ -173,7 +173,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-TD-Sip" userLabel="Player 1 Name View">
                                 <rect key="frame" x="16" y="451.5" width="171.5" height="215.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r4O-ck-ebX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r4O-ck-ebX" userLabel="Player 1 Label">
                                         <rect key="frame" x="55" y="71.5" width="63" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -189,7 +189,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1Y-LV-7xE" userLabel="Player 2 Name View">
                                 <rect key="frame" x="187.5" y="451.5" width="171.5" height="215.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-T4-G9b">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-T4-G9b" userLabel="Player 2 Label">
                                         <rect key="frame" x="51.5" y="72.5" width="70" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -224,6 +224,24 @@
                             <constraint firstItem="SeA-Ql-XSD" firstAttribute="top" secondItem="7eQ-TD-Sip" secondAttribute="bottom" id="zzo-uw-QSC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="game_score_dash_label" destination="2sE-nU-1HX" id="uKB-qQ-w4T"/>
+                        <outlet property="player_1_game_score_label" destination="9zA-bc-x63" id="bp7-SF-Yup"/>
+                        <outlet property="player_1_label" destination="r4O-ck-ebX" id="9Ct-4z-FhB"/>
+                        <outlet property="player_1_serving_image" destination="ya0-o0-gck" id="AaM-eA-pdS"/>
+                        <outlet property="player_1_set_1_score_label" destination="jzt-Ey-Cq0" id="uZn-rq-pWQ"/>
+                        <outlet property="player_1_set_2_score_label" destination="U8u-Nf-sey" id="k9D-uz-PcV"/>
+                        <outlet property="player_1_set_3_score_label" destination="2Bh-AC-rmf" id="zPT-Pu-VAL"/>
+                        <outlet property="player_2_game_score_label" destination="UQd-aO-Myx" id="RS9-7L-UqK"/>
+                        <outlet property="player_2_label" destination="gz7-T4-G9b" id="Whl-DR-X5w"/>
+                        <outlet property="player_2_serving_image" destination="etD-jQ-xfh" id="Qp0-Lv-Ytw"/>
+                        <outlet property="player_2_set_1_score_label" destination="VLI-bj-cvT" id="uMb-pA-72V"/>
+                        <outlet property="player_2_set_2_score_label" destination="j6k-W2-FnV" id="lLz-L5-GD5"/>
+                        <outlet property="player_2_set_3_score_label" destination="gBc-qL-jW6" id="87k-qc-8mH"/>
+                        <outlet property="set_1_dash_label" destination="pIS-BJ-vS2" id="sUo-yO-7h9"/>
+                        <outlet property="set_2_dash_label" destination="f3z-AY-HIL" id="U8C-Cr-A7r"/>
+                        <outlet property="set_3_dash_label" destination="OeB-i7-9ly" id="nRf-bq-YMz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Azv-Ru-8wP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

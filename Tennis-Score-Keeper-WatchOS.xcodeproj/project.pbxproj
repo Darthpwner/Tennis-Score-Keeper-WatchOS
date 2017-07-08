@@ -119,6 +119,9 @@
 		6B5C32711F0B645E00B045A3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		6B5C32731F0B645E00B045A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B5C32751F0B645E00B045A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BD7F5F71F10667F00064302 /* Tennis-Score-Keeper-WatchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tennis-Score-Keeper-WatchOS.entitlements"; sourceTree = "<group>"; };
+		6BD7F5F81F1067A500064302 /* Tennis-Score-Keeper-WatchOS WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tennis-Score-Keeper-WatchOS WatchKit App.entitlements"; sourceTree = "<group>"; };
+		6BD7F5F91F1067AE00064302 /* Tennis-Score-Keeper-WatchOS WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tennis-Score-Keeper-WatchOS WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,7 @@
 		6B5C32311F0B645D00B045A3 /* Tennis-Score-Keeper-WatchOS */ = {
 			isa = PBXGroup;
 			children = (
+				6BD7F5F71F10667F00064302 /* Tennis-Score-Keeper-WatchOS.entitlements */,
 				6B5C32321F0B645D00B045A3 /* AppDelegate.swift */,
 				6B5C32341F0B645D00B045A3 /* ScoreViewController.swift */,
 				6B5C32361F0B645D00B045A3 /* Main.storyboard */,
@@ -231,6 +235,7 @@
 		6B5C325B1F0B645E00B045A3 /* Tennis-Score-Keeper-WatchOS WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				6BD7F5F81F1067A500064302 /* Tennis-Score-Keeper-WatchOS WatchKit App.entitlements */,
 				6B2754B11F0B715600A4C2B0 /* Images */,
 				6B5C325F1F0B645E00B045A3 /* Assets.xcassets */,
 				6B5C325C1F0B645E00B045A3 /* Interface.storyboard */,
@@ -242,6 +247,7 @@
 		6B5C326A1F0B645E00B045A3 /* Tennis-Score-Keeper-WatchOS WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6BD7F5F91F1067AE00064302 /* Tennis-Score-Keeper-WatchOS WatchKit Extension.entitlements */,
 				6B2754BA1F0B741D00A4C2B0 /* ViewControllers */,
 				6B5C326D1F0B645E00B045A3 /* InterfaceController.swift */,
 				6B2754C51F0EB3D700A4C2B0 /* Metadata.swift */,
@@ -368,6 +374,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 2MALMEWT6X;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6B5C32421F0B645E00B045A3 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -385,11 +396,21 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 2MALMEWT6X;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6B5C32651F0B645E00B045A3 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 2MALMEWT6X;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -654,6 +675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Tennis-Score-Keeper-WatchOS WatchKit Extension/Tennis-Score-Keeper-WatchOS WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = 2MALMEWT6X;
 				INFOPLIST_FILE = "Tennis-Score-Keeper-WatchOS WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -671,6 +693,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Tennis-Score-Keeper-WatchOS WatchKit Extension/Tennis-Score-Keeper-WatchOS WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = 2MALMEWT6X;
 				INFOPLIST_FILE = "Tennis-Score-Keeper-WatchOS WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -689,6 +712,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tennis-Score-Keeper-WatchOS WatchKit App/Tennis-Score-Keeper-WatchOS WatchKit App.entitlements";
 				DEVELOPMENT_TEAM = 2MALMEWT6X;
 				IBSC_MODULE = Tennis_Score_Keeper_WatchOS_WatchKit_Extension;
 				INFOPLIST_FILE = "Tennis-Score-Keeper-WatchOS WatchKit App/Info.plist";
@@ -707,6 +731,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tennis-Score-Keeper-WatchOS WatchKit App/Tennis-Score-Keeper-WatchOS WatchKit App.entitlements";
 				DEVELOPMENT_TEAM = 2MALMEWT6X;
 				IBSC_MODULE = Tennis_Score_Keeper_WatchOS_WatchKit_Extension;
 				INFOPLIST_FILE = "Tennis-Score-Keeper-WatchOS WatchKit App/Info.plist";
@@ -724,6 +749,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tennis-Score-Keeper-WatchOS/Tennis-Score-Keeper-WatchOS.entitlements";
 				DEVELOPMENT_TEAM = 2MALMEWT6X;
 				INFOPLIST_FILE = "Tennis-Score-Keeper-WatchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -737,6 +763,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tennis-Score-Keeper-WatchOS/Tennis-Score-Keeper-WatchOS.entitlements";
 				DEVELOPMENT_TEAM = 2MALMEWT6X;
 				INFOPLIST_FILE = "Tennis-Score-Keeper-WatchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
