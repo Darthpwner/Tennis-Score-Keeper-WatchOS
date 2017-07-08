@@ -13,6 +13,10 @@ import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
 class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    // Used to send information to the iOS app
+    var applicationDict = [String: Int]()
+    
+    // Starts a session to communicate with the iOS app
     var session: WCSession!
     
     // Passed in metadata from previous Interface Controllers
@@ -105,6 +109,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
         print("is_tiebreak: \(is_tiebreak)")
         
         if(!is_tiebreak) {
+            
             if(player_1_points_won_this_game >= 4 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {    //Game: Player 1
                 player_1_game_score_label.setText("0")
                 player_2_game_score_label.setText("0")
@@ -251,6 +256,8 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                         setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_3_score, player_2_set_score: player_2_set_3_score)
                     }
                 }
+                // Link data together
+                updateApplicationContext()
                 
                 return
             } else if(player_1_points_won_this_game == 1) {
@@ -274,6 +281,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             } else {
                 gameScoreAnnouncement(server_score: player_2_game_score_string, receiver_score: player_1_game_score_string)
             }
+            
+            // Link data together
+            updateApplicationContext()
         } else {    //Tiebreaker
             player_1_game_score_label.setText(String(player_1_points_won_this_game))
             
@@ -315,12 +325,14 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                             gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
                         }
                         
+                        // Link data together
+                        updateApplicationContext()
+                        
                         return
                     }
                 }
             }
 
-            
             if(player_1_points_won_this_game >= 7 && player_1_points_won_this_game - player_2_points_won_this_game >= 2) {
                 
                 player_1_game_score_label.setText("0")
@@ -398,6 +410,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
         
         print(player_1_points_won_this_game)
         print(player_2_points_won_this_game)
+        
+        // Link data together
+        updateApplicationContext()
     }
     
     @IBAction func incrementPlayerTwoScore() {
@@ -557,6 +572,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                         setScoreAnnouncement(current_set: current_set, player_1_set_score: player_1_set_3_score, player_2_set_score: player_2_set_3_score)
                     }
                 }
+
+                // Link data together
+                updateApplicationContext()
                 
                 return
             } else if(player_2_points_won_this_game == 1) {
@@ -580,6 +598,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             } else {
                 gameScoreAnnouncement(server_score: player_2_game_score_string, receiver_score: player_1_game_score_string)
             }
+            
+            // Link data together
+            updateApplicationContext()
         } else {    //Tiebreaker
             player_2_game_score_label.setText(String(player_2_points_won_this_game))
             
@@ -620,6 +641,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                         } else {
                             gameScoreAnnouncement(server_score: String(player_2_points_won_this_game), receiver_score: String(player_1_points_won_this_game))
                         }
+                        
+                        // Link data together
+                        updateApplicationContext()
                         
                         return
                     }
@@ -704,6 +728,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
         
         print(player_1_points_won_this_game)
         print(player_2_points_won_this_game)
+        
+        // Link data together
+        updateApplicationContext()
     }
     
     /* Reset */
@@ -764,6 +791,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
         //Allow the player to use increment buttons if they hit reset at the end of match
         self.increment_player_one_score_outlet.setEnabled(true)
         self.increment_player_two_score_outlet.setEnabled(true)
+        
+        // Link data together
+        updateApplicationContext()
     }
     
     /* Delay a game score announcement */
@@ -996,6 +1026,24 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
         delayGameSetMatch()
     }
     
+    func updateApplicationContext() {
+        // Link data to the iOS app
+        applicationDict = ["player_1_set_1_score_label": player_1_set_1_score, "player_2_set_1_score_label": player_2_set_1_score, "player_1_set_2_score_label": player_1_set_2_score, "player_2_set_2_score_label": player_2_set_2_score, "player_1_set_3_score_label": player_1_set_3_score, "player_2_set_3_score_label": player_2_set_3_score, "player_1_game_score_label": player_1_points_won_this_game, "player_2_game_score_label": player_2_points_won_this_game,
+            "player_serving": player_serving,
+            "player_won": player_won,
+            "is_tiebreak": Int(NSNumber(value:is_tiebreak)),
+            "match_length": metadata.match_length,
+            "ten_point_tiebreaker_format": metadata.ten_point_tiebreaker_format
+        ]
+        
+        // Update application context
+        do {
+            try session.updateApplicationContext(applicationDict)
+        } catch {
+            print("error")
+        }
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -1042,6 +1090,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                 is_tiebreak = true
             }
         }
+        
+        // Link data together
+        updateApplicationContext()
         
         print("Activated scores")
     }

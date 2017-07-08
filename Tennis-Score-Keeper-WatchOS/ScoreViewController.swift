@@ -11,6 +11,7 @@ import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
 class ScoreViewController: UIViewController, WCSessionDelegate {
     
+    // Starts a session to communicate with the Watch app
     var session: WCSession!
     
     //Outlets
