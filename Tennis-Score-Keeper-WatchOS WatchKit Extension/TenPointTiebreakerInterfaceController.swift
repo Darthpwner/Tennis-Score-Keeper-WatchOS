@@ -31,12 +31,12 @@ class TenPointTiebreakerInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        print("context: \(String(describing: context))")    // This prints nil
+//        print("context: \(String(describing: context))")    // This prints nil
         
         // Configure interface objects here.
         if let passed_metadata = context as? Metadata {
-            print("match_type: \(passed_metadata.match_length)")
-            print("ten_point_tiebreaker_format: \(passed_metadata.ten_point_tiebreaker_format)")
+//            print("match_type: \(passed_metadata.match_length)")
+//            print("ten_point_tiebreaker_format: \(passed_metadata.ten_point_tiebreaker_format)")
             
             // Get the correct value of match_length from previous Interface Controller
             metadata.match_length = passed_metadata.match_length
@@ -47,7 +47,7 @@ class TenPointTiebreakerInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        print("Activated 10 point tiebreaker")
+//        print("Activated 10 point tiebreaker")
     }
 
     override func didDeactivate() {

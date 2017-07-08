@@ -106,7 +106,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBAction func incrementPlayerOneScore() {
         player_1_points_won_this_game += 1
         
-        print("is_tiebreak: \(is_tiebreak)")
+//        print("is_tiebreak: \(is_tiebreak)")
         
         if(!is_tiebreak) {
             
@@ -408,8 +408,8 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             }
         }
         
-        print(player_1_points_won_this_game)
-        print(player_2_points_won_this_game)
+//        print(player_1_points_won_this_game)
+//        print(player_2_points_won_this_game)
         
         // Link data together
         updateApplicationContext()
@@ -418,7 +418,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBAction func incrementPlayerTwoScore() {
         player_2_points_won_this_game += 1
         
-        print("is_tiebreak: \(is_tiebreak)")
+//        print("is_tiebreak: \(is_tiebreak)")
         
         if(!is_tiebreak) {
             if(player_2_points_won_this_game >= 4 && player_2_points_won_this_game - player_1_points_won_this_game >= 2) {    //Game: Player 2
@@ -726,8 +726,8 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             }
         }
         
-        print(player_1_points_won_this_game)
-        print(player_2_points_won_this_game)
+//        print(player_1_points_won_this_game)
+//        print(player_2_points_won_this_game)
         
         // Link data together
         updateApplicationContext()
@@ -1039,6 +1039,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
         // Update application context
         do {
             try session.updateApplicationContext(applicationDict)
+            print("Updated Application Context with applicationDict\n")
         } catch {
             print("error")
         }
@@ -1047,12 +1048,12 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        print("context: \(String(describing: context))")    // This prints nil
+//        print("context: \(String(describing: context))")    // This prints nil
         
         // Configure interface objects here.
         if let passed_metadata = context as? Metadata {
-            print("match_type: \(passed_metadata.match_length)")
-            print("ten_point_tiebreaker_format: \(passed_metadata.ten_point_tiebreaker_format)")
+//            print("match_type: \(passed_metadata.match_length)")
+//            print("ten_point_tiebreaker_format: \(passed_metadata.ten_point_tiebreaker_format)")
             
             //Get the correct values of match_length and ten_point_tiebreaker_format from previous Interface Controllers
             metadata.match_length = passed_metadata.match_length
@@ -1094,7 +1095,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
         // Link data together
         updateApplicationContext()
         
-        print("Activated scores")
+//        print("Activated scores")
     }
 
     override func didDeactivate() {
