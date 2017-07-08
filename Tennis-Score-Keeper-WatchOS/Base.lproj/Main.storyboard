@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -123,8 +124,11 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis-ball.png" translatesAutoresizingMaskIntoConstraints="NO" id="ya0-o0-gck" userLabel="Player 1 Serving Image">
+                                        <rect key="frame" x="57.5" y="92" width="51.5" height="32"/>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDl-8o-SH3" userLabel="Game Score Stack View">
-                                        <rect key="frame" x="110" y="63.5" width="124.5" height="90"/>
+                                        <rect key="frame" x="109" y="63.5" width="124.5" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9zA-bc-x63" userLabel="Player 1 Game Score">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="90"/>
@@ -146,13 +150,24 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis-ball.png" translatesAutoresizingMaskIntoConstraints="NO" id="etD-jQ-xfh" userLabel="Player 2 Serving Image">
+                                        <rect key="frame" x="233.5" y="92" width="51.5" height="32"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="etD-jQ-xfh" firstAttribute="leading" secondItem="dDl-8o-SH3" secondAttribute="trailing" id="0zE-AJ-DAq"/>
+                                    <constraint firstItem="ya0-o0-gck" firstAttribute="height" secondItem="ddl-dX-3qZ" secondAttribute="height" multiplier="0.15" id="7ic-6h-Bvu"/>
                                     <constraint firstItem="dDl-8o-SH3" firstAttribute="centerX" secondItem="3jE-fG-gcz" secondAttribute="centerX" id="9XO-Id-Mdv"/>
                                     <constraint firstItem="3jE-fG-gcz" firstAttribute="top" secondItem="ddl-dX-3qZ" secondAttribute="top" constant="22" id="Ahe-GQ-oVb"/>
                                     <constraint firstItem="dDl-8o-SH3" firstAttribute="centerY" secondItem="ddl-dX-3qZ" secondAttribute="centerY" id="Jdu-W1-m3l"/>
                                     <constraint firstItem="3jE-fG-gcz" firstAttribute="centerX" secondItem="ddl-dX-3qZ" secondAttribute="centerX" id="Kwu-va-6Xp"/>
+                                    <constraint firstItem="dDl-8o-SH3" firstAttribute="leading" secondItem="ya0-o0-gck" secondAttribute="trailing" id="duW-x3-f7H"/>
+                                    <constraint firstItem="etD-jQ-xfh" firstAttribute="centerY" secondItem="ddl-dX-3qZ" secondAttribute="centerY" id="fFR-wZ-h1Y"/>
+                                    <constraint firstItem="etD-jQ-xfh" firstAttribute="height" secondItem="ddl-dX-3qZ" secondAttribute="height" multiplier="0.15" id="lxb-m0-XYR"/>
+                                    <constraint firstItem="etD-jQ-xfh" firstAttribute="width" secondItem="ddl-dX-3qZ" secondAttribute="width" multiplier="0.15" id="ng3-s9-iue"/>
+                                    <constraint firstItem="ya0-o0-gck" firstAttribute="centerY" secondItem="ddl-dX-3qZ" secondAttribute="centerY" id="vPD-9T-qpv"/>
+                                    <constraint firstItem="ya0-o0-gck" firstAttribute="width" secondItem="ddl-dX-3qZ" secondAttribute="width" multiplier="0.15" id="yKW-m3-9As"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-TD-Sip" userLabel="Player 1 Name View">
@@ -215,4 +230,7 @@
             <point key="canvasLocation" x="-50.399999999999999" y="45.42728635682159"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tennis-ball.png" width="300" height="300"/>
+    </resources>
 </document>
