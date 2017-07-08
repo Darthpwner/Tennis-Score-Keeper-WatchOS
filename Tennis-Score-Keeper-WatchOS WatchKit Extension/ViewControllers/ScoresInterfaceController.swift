@@ -9,9 +9,12 @@
 import WatchKit
 import Foundation
 import AVFoundation //For speech output
+import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
-class ScoresInterfaceController: WKInterfaceController {
+class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    var session: WCSession!
+    
     // Passed in metadata from previous Interface Controllers
     //match_length: 0 means best of 1 set, 1 means best of 3 sets
     //ten_point_tiebreaker_format: 0 means Yes, 1 means No
@@ -1048,4 +1051,19 @@ class ScoresInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    // For WCSession
+    override init() {
+        super.init()
+        if(WCSession.isSupported()) {
+            session = WCSession.default()
+            session.delegate = self
+            session.activate()
+        }
+    }
+    
+    func session(_ session: WCSession,
+                 activationDidCompleteWith activationState: WCSessionActivationState,
+                 error: Error?) {
+        
+    }
 }
