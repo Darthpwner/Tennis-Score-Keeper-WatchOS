@@ -9,7 +9,7 @@
 import UIKit
 import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
-class ScoreViewController: UIViewController, WCSessionDelegate {
+class ScoreViewController: UIViewController, WCSessionDelegate {    
     
     // Starts a session to communicate with the Watch app
     var session: WCSession!
@@ -48,10 +48,13 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        print("iOS: WCSession.isSupported(): \(WCSession.isSupported())")
         if(WCSession.isSupported()) {
             session = WCSession.default()
             session.delegate = self
             session.activate()
+            
+            print("session.activate(): \(session.activate)")
         }
         
         
@@ -67,13 +70,29 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
     /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
     @available(iOS 9.3, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
+        print("SESSION: \(session)")
+        print("ACTIVATION_STATE: \(activationState)")
+        print("ERROR: \(error)")
     }
     
-    func sessionDidBecomeInactive(_ session: WCSession) {}
+    // Receives data from Watch app
+    @nonobjc func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        let x = applicationContext["player_1_set_1_score"] as? String
+        print("FUCK")
+        
+        //Use this to update the UI instantaneously (otherwise, takes a little while)
+        DispatchQueue.main.async() {
+            print("x: \(String(describing: x))")
+        }
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("sessionDidBecomeInactive session: \(session)")
+    }
     
     func sessionDidDeactivate(_ session: WCSession) {
         // Begin the activation process for the new Apple Watch.
+        print("sessionDidDeactivate session: \(session)")
         WCSession.default().activate()
     }
 

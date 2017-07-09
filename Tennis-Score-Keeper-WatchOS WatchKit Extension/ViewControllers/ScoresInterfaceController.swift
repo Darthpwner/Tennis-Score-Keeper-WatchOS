@@ -13,6 +13,8 @@ import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
 class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    
+    
     // Used to send information to the iOS app
     var applicationDict = [String: Int]()
     
@@ -1122,10 +1124,16 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
     // For WCSession
     override init() {
         super.init()
+        
+        print("WATCH: WCSession.isSupported(): \(WCSession.isSupported())")
         if(WCSession.isSupported()) {
             session = WCSession.default()
             session.delegate = self
-            session.activate()
+            session.activate()  // Check if this activates
+            print("\n\nINIT ENTERED!!!\n\n")
+            session.activate()  // Check if this activates
+            
+//            print("session.activate(): \(session.activate())")
         }
     }
     
@@ -1133,5 +1141,8 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                  activationDidCompleteWith activationState: WCSessionActivationState,
                  error: Error?) {
         
+        print("session: \(session)\n")
+        print("activationState: \(activationState)\n")
+        print("error: \(error)\n")
     }
 }
