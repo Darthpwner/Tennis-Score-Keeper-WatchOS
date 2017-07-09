@@ -14,6 +14,7 @@
 		6B2754BE1F0B7F4F00A4C2B0 /* tennis-court.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2754BD1F0B7F4F00A4C2B0 /* tennis-court.png */; };
 		6B2754C41F0E220100A4C2B0 /* TenPointTiebreakerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2754C31F0E220100A4C2B0 /* TenPointTiebreakerInterfaceController.swift */; };
 		6B2754C61F0EB3D700A4C2B0 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2754C51F0EB3D700A4C2B0 /* Metadata.swift */; };
+		6B4EB0B91F121236003485BF /* tennis-ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4EB0B81F121236003485BF /* tennis-ball.png */; };
 		6B5C32331F0B645D00B045A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C32321F0B645D00B045A3 /* AppDelegate.swift */; };
 		6B5C32351F0B645D00B045A3 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C32341F0B645D00B045A3 /* ScoreViewController.swift */; };
 		6B5C32381F0B645D00B045A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C32361F0B645D00B045A3 /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		6B2754BD1F0B7F4F00A4C2B0 /* tennis-court.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tennis-court.png"; path = "../../../Documents/tennis-court.png"; sourceTree = "<group>"; };
 		6B2754C31F0E220100A4C2B0 /* TenPointTiebreakerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPointTiebreakerInterfaceController.swift; sourceTree = "<group>"; };
 		6B2754C51F0EB3D700A4C2B0 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		6B4EB0B81F121236003485BF /* tennis-ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tennis-ball.png"; path = "../../../Documents/tennis-ball.png"; sourceTree = "<group>"; };
 		6B5C322F1F0B645D00B045A3 /* Tennis-Score-Keeper-WatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tennis-Score-Keeper-WatchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5C32321F0B645D00B045A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5C32341F0B645D00B045A3 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		6B4EB0B71F12121C003485BF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6B4EB0B81F121236003485BF /* tennis-ball.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		6B5C32261F0B645D00B045A3 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 		6B5C32311F0B645D00B045A3 /* Tennis-Score-Keeper-WatchOS */ = {
 			isa = PBXGroup;
 			children = (
+				6B4EB0B71F12121C003485BF /* Images */,
 				6BD7F5F71F10667F00064302 /* Tennis-Score-Keeper-WatchOS.entitlements */,
 				6B5C32321F0B645D00B045A3 /* AppDelegate.swift */,
 				6B5C32341F0B645D00B045A3 /* ScoreViewController.swift */,
@@ -444,6 +455,7 @@
 				6B5C323D1F0B645D00B045A3 /* LaunchScreen.storyboard in Resources */,
 				6B5C323A1F0B645D00B045A3 /* Assets.xcassets in Resources */,
 				6B5C32381F0B645D00B045A3 /* Main.storyboard in Resources */,
+				6B4EB0B91F121236003485BF /* tennis-ball.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

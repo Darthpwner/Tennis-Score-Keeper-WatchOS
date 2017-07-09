@@ -150,7 +150,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis-ball.png" translatesAutoresizingMaskIntoConstraints="NO" id="etD-jQ-xfh" userLabel="Player 2 Serving Image">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis-ball.png" translatesAutoresizingMaskIntoConstraints="NO" id="etD-jQ-xfh" userLabel="Player 2 Serving Image">
                                         <rect key="frame" x="233.5" y="92" width="51.5" height="32"/>
                                     </imageView>
                                 </subviews>

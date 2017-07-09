@@ -7,29 +7,14 @@
 //
 
 import UIKit
-import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        print("APP DELEGATE ENTERED DUDE")
-        
-        print("WCSession.isSupported(): \(WCSession.isSupported())")
-        if WCSession.isSupported() {
-            let session = WCSession.default()
-            session.delegate = self
-            session.activate()
-        WCSession.default().transferUserInfo(["player_1_set_1_score" : 0])
-
-            
-            print("session.activate(): \(session.activate)")
-        }
-
         
         return true
     }
@@ -55,37 +40,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    // For WCSession
-    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
-    @available(iOS 9.3, *)
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("SESSION: \(session)")
-        print("ACTIVATION_STATE: \(activationState)")
-        print("ERROR: \(String(describing: error))")
-    }
-    
-    @nonobjc func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        let x = applicationContext["player_1_set_1_score"] as? String
-        print("FUCK")
-        
-        //Use this to update the UI instantaneously (otherwise, takes a little while)
-        DispatchQueue.main.async() {
-            print("x: \(String(describing: x))")
-        }
-    }
-    
-    @available(iOS 9.0, *)
-    func transferUserInfo(userInfo: [String : AnyObject]) -> WCSessionUserInfoTransfer? {
-        return WCSession.default().transferUserInfo(userInfo)
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {}
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        // Begin the activation process for the new Apple Watch.
-        WCSession.default().activate()
-    }
-
 }
 

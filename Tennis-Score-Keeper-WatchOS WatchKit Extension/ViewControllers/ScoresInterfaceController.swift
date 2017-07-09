@@ -1131,9 +1131,6 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             session.delegate = self
             session.activate()  // Check if this activates
             print("\n\nINIT ENTERED!!!\n\n")
-            session.activate()  // Check if this activates
-            
-//            print("session.activate(): \(session.activate())")
         }
     }
     

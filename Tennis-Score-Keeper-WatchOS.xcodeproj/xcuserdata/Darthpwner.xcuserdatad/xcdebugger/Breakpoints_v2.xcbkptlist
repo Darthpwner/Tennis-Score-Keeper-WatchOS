@@ -391,29 +391,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS/AppDelegate.swift"
-            timestampString = "521185035.234416"
+            timestampString = "521277664.634911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "AppDelegate"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tennis-Score-Keeper-WatchOS/AppDelegate.swift"
-            timestampString = "521275341.021507"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "session(_:activationDidCompleteWith:error:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -583,11 +567,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS WatchKit Extension/ViewControllers/ScoresInterfaceController.swift"
-            timestampString = "521275521.210368"
+            timestampString = "521277944.145896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1144"
-            endingLineNumber = "1144"
+            startingLineNumber = "1141"
+            endingLineNumber = "1141"
             landmarkName = "session(_:activationDidCompleteWith:error:)"
             landmarkType = "7">
          </BreakpointContent>
