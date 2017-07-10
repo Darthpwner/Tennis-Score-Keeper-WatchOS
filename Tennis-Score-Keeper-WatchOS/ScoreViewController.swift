@@ -79,18 +79,45 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("applicationContext: \(applicationContext)")
         
-        print("applicationContext[player_1_game_score_label]: \(String(describing: applicationContext["player_1_game_score_label"]))")
-        
         let player_1_game_score_label = applicationContext["player_1_game_score_label"]!
         let player_2_game_score_label = applicationContext["player_2_game_score_label"]!
+        var player_1_game_score_string = ""
+        var player_2_game_score_string = ""
+        
         print("FUCK")
+        
+        //Basic P1 scores
+        if(player_1_game_score_label as! Int == 0) {
+            player_1_game_score_string = "0"
+        } else if(player_1_game_score_label as! Int == 1) {
+            player_1_game_score_string = "15"
+        } else if(player_1_game_score_label as! Int == 2) {
+            player_1_game_score_string = "30"
+        } else if((player_1_game_score_label as! Int) == 3 || (player_1_game_score_label as! Int) == (player_2_game_score_label as! Int)) {
+            player_1_game_score_string = "40"
+        } else if((player_1_game_score_label as! Int) - (player_2_game_score_label as! Int) == 1) {
+            player_1_game_score_string = "AD"
+        }
+        
+        //Basic P2 scores
+        if(player_2_game_score_label as! Int == 0) {
+            player_2_game_score_string = "0"
+        } else if(player_2_game_score_label as! Int == 1) {
+            player_2_game_score_string = "15"
+        } else if(player_2_game_score_label as! Int == 2) {
+            player_2_game_score_string = "30"
+        } else if((player_2_game_score_label as! Int) == 3 || (player_1_game_score_label as! Int)  == (player_2_game_score_label as! Int)) {
+            player_2_game_score_string = "40"
+        } else if((player_2_game_score_label as! Int) - (player_1_game_score_label as! Int) == 1) {
+            player_2_game_score_string = "AD"
+        }
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         DispatchQueue.main.async() {
-        print("player_1_game_score_label: \(String(describing: player_1_game_score_label))")
-            self.player_1_game_score_label.text = ("\(String(describing: player_1_game_score_label))")
-            print("player_2_game_score_label: \(String(describing: player_2_game_score_label))")
-            self.player_2_game_score_label.text = ("\(String(describing: player_2_game_score_label))")
+//        print("player_1_game_score_label: \(String(describing: player_1_game_score_label))")
+            self.player_1_game_score_label.text = ("\(player_1_game_score_string)")
+//            print("player_2_game_score_label: \(String(describing: player_2_game_score_label))")
+            self.player_2_game_score_label.text = ("\(player_2_game_score_string)")
         }
     }
     

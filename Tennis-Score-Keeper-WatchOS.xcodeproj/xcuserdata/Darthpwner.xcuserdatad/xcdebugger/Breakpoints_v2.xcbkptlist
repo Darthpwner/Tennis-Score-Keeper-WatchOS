@@ -391,11 +391,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS/ScoreViewController.swift"
-            timestampString = "521422020.054778"
+            timestampString = "521422999.487974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "ScoreViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -615,11 +615,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS/ScoreViewController.swift"
-            timestampString = "521415666.485679"
+            timestampString = "521422999.487974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "session(_:didReceiveApplicationContext:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -631,11 +631,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS/ScoreViewController.swift"
-            timestampString = "521417736.209258"
+            timestampString = "521422999.487974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "session(_:didReceiveApplicationContext:)"
             landmarkType = "7">
             <Locations>
@@ -679,11 +679,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS/ScoreViewController.swift"
-            timestampString = "521417736.209258"
+            timestampString = "521422999.487974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "session(_:didReceiveApplicationContext:)"
             landmarkType = "7">
             <Locations>
@@ -727,11 +727,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS/ScoreViewController.swift"
-            timestampString = "521415673.698546"
+            timestampString = "521422999.487974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "session(_:didReceiveApplicationContext:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -743,12 +743,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tennis-Score-Keeper-WatchOS/ScoreViewController.swift"
-            timestampString = "521422014.008876"
+            timestampString = "521422999.487974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "session(_:didReceiveApplicationContext:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tennis-Score-Keeper-WatchOS WatchKit Extension/ViewControllers/ScoresInterfaceController.swift"
+            timestampString = "521422542.083967"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "910"
+            endingLineNumber = "910"
+            landmarkName = "gameScoreAnnouncement(server_score:receiver_score:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
