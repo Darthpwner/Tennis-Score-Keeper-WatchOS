@@ -81,8 +81,8 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         
         print("applicationContext[player_1_game_score_label]: \(String(describing: applicationContext["player_1_game_score_label"]))")
         
-        let player_1_game_score_label = applicationContext["player_1_game_score_label"]
-        let player_2_game_score_label = applicationContext["player_2_game_score_label"]
+        let player_1_game_score_label = applicationContext["player_1_game_score_label"]!
+        let player_2_game_score_label = applicationContext["player_2_game_score_label"]!
         print("FUCK")
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
