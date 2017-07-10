@@ -70,21 +70,23 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
     /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
     @available(iOS 9.3, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("SESSION: \(session)")
-        print("ACTIVATION_STATE: \(activationState)")
-        print("ERROR: \(error)")
+//        print("SESSION: \(session)")
+//        print("ACTIVATION_STATE: \(activationState)")
+//        print("ERROR: \(error)")
     }
     
     // Receives data from Watch app
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        let x = applicationContext["player_1_set_1_score"] as? String
-        let y = applicationContext["player_1_game_score_label"] as? String
+        let player_1_game_score_label = applicationContext["player_1_game_score_label"] as? String
+        let player_2_game_score_label = applicationContext["player_2_game_score_label"] as? String
         print("FUCK")
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         DispatchQueue.main.async() {
-            print("x: \(String(describing: x))")
-            self.player_1_game_score_label.text = y
+        print("player_1_game_score_label: \(String(describing: player_1_game_score_label))")
+            self.player_1_game_score_label.text = player_1_game_score_label
+            print("player_2_game_score_label: \(String(describing: player_2_game_score_label))")
+            self.player_2_game_score_label.text = player_2_game_score_label
         }
     }
     
