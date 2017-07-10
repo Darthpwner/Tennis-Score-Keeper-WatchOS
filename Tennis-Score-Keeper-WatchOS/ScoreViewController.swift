@@ -97,6 +97,7 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
             player_1_game_score_string = "40"
         } else if((player_1_game_score_label as! Int) - (player_2_game_score_label as! Int) == 1) {
             player_1_game_score_string = "AD"
+            player_2_game_score_string = "40"
         }
         
         //Basic P2 scores
@@ -110,6 +111,7 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
             player_2_game_score_string = "40"
         } else if((player_2_game_score_label as! Int) - (player_1_game_score_label as! Int) == 1) {
             player_2_game_score_string = "AD"
+            player_1_game_score_string = "40"
         }
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
