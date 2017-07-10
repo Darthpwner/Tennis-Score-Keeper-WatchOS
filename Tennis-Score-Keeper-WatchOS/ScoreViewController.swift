@@ -76,13 +76,15 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
     }
     
     // Receives data from Watch app
-    @nonobjc func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         let x = applicationContext["player_1_set_1_score"] as? String
+        let y = applicationContext["player_1_game_score_label"] as? String
         print("FUCK")
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         DispatchQueue.main.async() {
             print("x: \(String(describing: x))")
+            self.player_1_game_score_label.text = y
         }
     }
     

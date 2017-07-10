@@ -12,11 +12,6 @@ import AVFoundation //For speech output
 import WatchConnectivity    //To have iOS app and Watch app talk to each other
 
 class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
-
-    
-    
-    // Used to send information to the iOS app
-    var applicationDict = [String: Int]()
     
     // Starts a session to communicate with the iOS app
     var session: WCSession!
@@ -1046,7 +1041,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     func updateApplicationContext() {
         // Link data to the iOS app
-        applicationDict = ["player_1_set_1_score_label": player_1_set_1_score, "player_2_set_1_score_label": player_2_set_1_score, "player_1_set_2_score_label": player_1_set_2_score, "player_2_set_2_score_label": player_2_set_2_score, "player_1_set_3_score_label": player_1_set_3_score, "player_2_set_3_score_label": player_2_set_3_score, "player_1_game_score_label": player_1_points_won_this_game, "player_2_game_score_label": player_2_points_won_this_game,
+        let applicationDict = ["player_1_set_1_score_label": player_1_set_1_score, "player_2_set_1_score_label": player_2_set_1_score, "player_1_set_2_score_label": player_1_set_2_score, "player_2_set_2_score_label": player_2_set_2_score, "player_1_set_3_score_label": player_1_set_3_score, "player_2_set_3_score_label": player_2_set_3_score, "player_1_game_score_label": player_1_points_won_this_game, "player_2_game_score_label": player_2_points_won_this_game,
             "player_serving": player_serving,
             "player_won": player_won,
             "is_tiebreak": Int(NSNumber(value:is_tiebreak)),
@@ -1059,7 +1054,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             try session.updateApplicationContext(applicationDict)
             print("Updated Application Context with applicationDict\n")
         } catch {
-            print("error")
+            print("Error. Failed to update in updateApplicationContext()")
         }
     }
     
@@ -1138,8 +1133,9 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                  activationDidCompleteWith activationState: WCSessionActivationState,
                  error: Error?) {
         
-        print("session: \(session)\n")
-        print("activationState: \(activationState)\n")
-        print("error: \(error)\n")
+//        print("session: \(session)\n")
+//        print("activationState: \(activationState)\n")
+//        print("error: \(error)\n")
     }
+    
 }
