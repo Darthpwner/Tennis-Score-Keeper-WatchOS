@@ -1049,13 +1049,16 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             "ten_point_tiebreaker_format": metadata.ten_point_tiebreaker_format
         ]
         
-        // Update application context
-        do {
-            try session.updateApplicationContext(applicationDict)
-            print("Updated Application Context with applicationDict\n")
-        } catch {
-            print("Error. Failed to update in updateApplicationContext()")
-        }
+        //
+        DispatchQueue.main.async(execute: {
+            // Update application context
+            do {
+                try self.session.updateApplicationContext(applicationDict)
+                print("Updated Application Context with applicationDict\n")
+            } catch {
+                print("Error. Failed to update in updateApplicationContext()")
+            }
+        })
     }
     
     override func awake(withContext context: Any?) {

@@ -77,8 +77,12 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
     
     // Receives data from Watch app
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        let player_1_game_score_label = applicationContext["player_1_game_score_label"] as? String
-        let player_2_game_score_label = applicationContext["player_2_game_score_label"] as? String
+        print("applicationContext: \(applicationContext)")
+        
+        print("applicationContext[player_1_game_score_label]: \(String(describing: applicationContext["player_1_game_score_label"]))")
+        
+        let player_1_game_score_label = applicationContext["player_1_game_score_label"] as! String
+        let player_2_game_score_label = applicationContext["player_2_game_score_label"] as! String
         print("FUCK")
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
@@ -86,8 +90,7 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         print("player_1_game_score_label: \(String(describing: player_1_game_score_label))")
             self.player_1_game_score_label.text = player_1_game_score_label
             print("player_2_game_score_label: \(String(describing: player_2_game_score_label))")
-            self.player_2_game_score_label.text = player_2_game_score_label
-        }
+            self.player_2_game_score_label.text = player_2_game_score_label         }
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
