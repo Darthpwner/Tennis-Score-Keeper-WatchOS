@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E7D0808E40E5FFDBF5919CEC91F4C662B7BE9A02",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ED5ED7CB566C76A5AE296BC105A775CC7C9B3D53" : 9223372036854775807,
+    "E7D0808E40E5FFDBF5919CEC91F4C662B7BE9A02" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4AC8C9DA-33D7-4733-A398-9E1E9241DA2B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ED5ED7CB566C76A5AE296BC105A775CC7C9B3D53" : "",
+    "E7D0808E40E5FFDBF5919CEC91F4C662B7BE9A02" : "Tennis-Score-Keeper-WatchOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Tennis-Score-Keeper-WatchOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Tennis-Score-Keeper-WatchOS.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Darthpwner\/Tennis-Score-Keeper-WatchOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E7D0808E40E5FFDBF5919CEC91F4C662B7BE9A02"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Darthpwner\/Liferay-Coding-Challenge.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED5ED7CB566C76A5AE296BC105A775CC7C9B3D53"
+    }
+  ]
+}
