@@ -98,6 +98,7 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         let player_won = applicationContext["player_won"]!
         let is_tiebreak = applicationContext["is_tiebreak"]!
         let match_length = applicationContext["match_length"]!
+        // Might not be necessary
         let ten_point_tiebreaker_format = applicationContext["ten_point_tiebreaker_format"]!
         
         print("FUCK")
@@ -132,6 +133,17 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         DispatchQueue.main.async() {
+            //If best of 1 set, hide the other set labels
+            if(match_length as! Int == 0) {
+                self.player_1_set_2_score_label.isHidden = true
+                self.set_2_dash_label.isHidden = true
+                self.player_2_set_2_score_label.isHidden = true
+                
+                self.player_1_set_3_score_label.isHidden = true
+                self.set_3_dash_label.isHidden = true
+                self.player_2_set_3_score_label.isHidden = true
+            }
+            
             // Update Set Scores
             self.player_1_set_1_score_label.text = ("\(player_1_set_1_score)")
             self.player_2_set_1_score_label.text = ("\(player_2_set_1_score)")
@@ -147,11 +159,24 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
             self.player_2_game_score_label.text = ("\(player_2_game_score_string)")
             
             // Update Miscellaneous
+            // Change server after each game
             if(player_serving as! Int == 0) {
                 self.player_1_serving_image.isHidden = false
                 self.player_2_serving_image.isHidden = true
             } else {
                 self.player_1_serving_image.isHidden = true
+                self.player_2_serving_image.isHidden = false
+            }
+            
+            // Check if a player won and hide the serving image when match is over
+            if(player_won as! Int == 0) {
+                self.player_1_label.textColor = UIColor.green
+                self.player_1_serving_image.isHidden = false
+                self.player_2_serving_image.isHidden = false
+                
+            } else if(player_won as! Int == 1) {
+                self.player_2_label.textColor = UIColor.green
+                self.player_1_serving_image.isHidden = false
                 self.player_2_serving_image.isHidden = false
             }
         }
