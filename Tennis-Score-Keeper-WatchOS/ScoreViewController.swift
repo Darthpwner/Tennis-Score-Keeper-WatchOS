@@ -188,6 +188,9 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
                 self.player_2_label.textColor = UIColor.green
                 self.player_1_serving_image.isHidden = true
                 self.player_2_serving_image.isHidden = true
+            } else {    // Reset the color if the match is NOT over!
+                self.player_1_label.textColor = UIColor.white
+                self.player_2_label.textColor = UIColor.white
             }
         }
     }
