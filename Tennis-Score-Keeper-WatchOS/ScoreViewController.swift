@@ -147,7 +147,13 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
             self.player_2_game_score_label.text = ("\(player_2_game_score_string)")
             
             // Update Miscellaneous
-            
+            if(player_serving as! Int == 0) {
+                self.player_1_serving_image.isHidden = false
+                self.player_2_serving_image.isHidden = true
+            } else {
+                self.player_1_serving_image.isHidden = true
+                self.player_2_serving_image.isHidden = false
+            }
         }
     }
     
