@@ -142,6 +142,14 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
                 self.player_1_set_3_score_label.isHidden = true
                 self.set_3_dash_label.isHidden = true
                 self.player_2_set_3_score_label.isHidden = true
+            } else {
+                self.player_1_set_2_score_label.isHidden = false
+                self.set_2_dash_label.isHidden = false
+                self.player_2_set_2_score_label.isHidden = false
+                
+                self.player_1_set_3_score_label.isHidden = false
+                self.set_3_dash_label.isHidden = false
+                self.player_2_set_3_score_label.isHidden = false
             }
             
             // Update Set Scores
