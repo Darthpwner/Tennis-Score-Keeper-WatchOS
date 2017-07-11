@@ -64,7 +64,7 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // For WCSession
     
     /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
@@ -88,47 +88,49 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         let player_2_set_3_score = applicationContext["player_2_set_3_score_label"]!
         
         // Game Scores
-        let player_1_game_score_label = applicationContext["player_1_game_score_label"]!
-        let player_2_game_score_label = applicationContext["player_2_game_score_label"]!
-        var player_1_game_score_string = ""
-        var player_2_game_score_string = ""
+        let player_1_game_score = applicationContext["player_1_game_score_label"]!
+        let player_2_game_score = applicationContext["player_2_game_score_label"]!
+        var player_1_game_score_string = ("\(player_1_game_score)")
+        var player_2_game_score_string = ("\(player_2_game_score)")
         
         // Miscellaneous
         let player_serving = applicationContext["player_serving"]!
         let player_won = applicationContext["player_won"]!
         let is_tiebreak = applicationContext["is_tiebreak"]!
         let match_length = applicationContext["match_length"]!
-        // Might not be necessary
-        let ten_point_tiebreaker_format = applicationContext["ten_point_tiebreaker_format"]!
         
-        print("FUCK")
+        print("\nSEPARATOR\n")
         
-        //Basic P1 scores
-        if(player_1_game_score_label as! Int == 0) {
-            player_1_game_score_string = "0"
-        } else if(player_1_game_score_label as! Int == 1) {
-            player_1_game_score_string = "15"
-        } else if(player_1_game_score_label as! Int == 2) {
-            player_1_game_score_string = "30"
-        } else if((player_1_game_score_label as! Int) == 3 || (player_1_game_score_label as! Int) == (player_2_game_score_label as! Int)) {
-            player_1_game_score_string = "40"
-        } else if((player_1_game_score_label as! Int) - (player_2_game_score_label as! Int) == 1) {
-            player_1_game_score_string = "AD"
-            player_2_game_score_string = "40"
-        }
+        //Obtain game score
         
-        //Basic P2 scores
-        if(player_2_game_score_label as! Int == 0) {
-            player_2_game_score_string = "0"
-        } else if(player_2_game_score_label as! Int == 1) {
-            player_2_game_score_string = "15"
-        } else if(player_2_game_score_label as! Int == 2) {
-            player_2_game_score_string = "30"
-        } else if((player_2_game_score_label as! Int) == 3 || (player_1_game_score_label as! Int)  == (player_2_game_score_label as! Int)) {
-            player_2_game_score_string = "40"
-        } else if((player_2_game_score_label as! Int) - (player_1_game_score_label as! Int) == 1) {
-            player_2_game_score_string = "AD"
-            player_1_game_score_string = "40"
+        if(!(is_tiebreak as! Bool)) {
+            //Basic P1 scores
+            if(player_1_game_score as! Int == 0) {
+                player_1_game_score_string = "0"
+            } else if(player_1_game_score as! Int == 1) {
+                player_1_game_score_string = "15"
+            } else if(player_1_game_score as! Int == 2) {
+                player_1_game_score_string = "30"
+            } else if((player_1_game_score as! Int) == 3 || (player_1_game_score as! Int) == (player_2_game_score as! Int)) {
+                player_1_game_score_string = "40"
+            } else if((player_1_game_score as! Int) - (player_2_game_score as! Int) == 1) {
+                player_1_game_score_string = "AD"
+                player_2_game_score_string = "40"
+            }
+            
+            //Basic P2 scores
+            if(player_2_game_score as! Int == 0) {
+                player_2_game_score_string = "0"
+            } else if(player_2_game_score as! Int == 1) {
+                player_2_game_score_string = "15"
+            } else if(player_2_game_score as! Int == 2) {
+                player_2_game_score_string = "30"
+            } else if((player_2_game_score as! Int) == 3 || (player_1_game_score as! Int)  == (player_2_game_score as! Int)) {
+                player_2_game_score_string = "40"
+            } else if((player_2_game_score as! Int) - (player_1_game_score as! Int) == 1) {
+                player_2_game_score_string = "AD"
+                player_1_game_score_string = "40"
+            }
         }
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
@@ -179,13 +181,13 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
             // Check if a player won and hide the serving image when match is over
             if(player_won as! Int == 0) {
                 self.player_1_label.textColor = UIColor.green
-                self.player_1_serving_image.isHidden = false
-                self.player_2_serving_image.isHidden = false
+                self.player_1_serving_image.isHidden = true
+                self.player_2_serving_image.isHidden = true
                 
             } else if(player_won as! Int == 1) {
                 self.player_2_label.textColor = UIColor.green
-                self.player_1_serving_image.isHidden = false
-                self.player_2_serving_image.isHidden = false
+                self.player_1_serving_image.isHidden = true
+                self.player_2_serving_image.isHidden = true
             }
         }
     }

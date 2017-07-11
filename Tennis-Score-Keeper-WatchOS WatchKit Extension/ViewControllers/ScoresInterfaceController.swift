@@ -722,9 +722,7 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
                     
                     set_winners[2] = 2
                     
-                    // Announce "Set 3: P2"
-                    setAnnouncement(player: "P2", set_number: "3")
-                    matchScoreAnnouncement()
+                    gameSetMatchAnnouncement(player: "P2")
                 }
                 
                 is_tiebreak = false
@@ -1046,7 +1044,6 @@ class ScoresInterfaceController: WKInterfaceController, WCSessionDelegate {
             "player_won": player_won,
             "is_tiebreak": Int(NSNumber(value:is_tiebreak)),
             "match_length": metadata.match_length,
-            "ten_point_tiebreaker_format": metadata.ten_point_tiebreaker_format
         ]
         
         //
