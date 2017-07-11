@@ -79,10 +79,26 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("applicationContext: \(applicationContext)")
         
+        // Set Scores
+        let player_1_set_1_score = applicationContext["player_1_set_1_score_label"]!
+        let player_2_set_1_score = applicationContext["player_2_set_1_score_label"]!
+        let player_1_set_2_score = applicationContext["player_1_set_2_score_label"]!
+        let player_2_set_2_score = applicationContext["player_2_set_2_score_label"]!
+        let player_1_set_3_score = applicationContext["player_1_set_3_score_label"]!
+        let player_2_set_3_score = applicationContext["player_2_set_3_score_label"]!
+        
+        // Game Scores
         let player_1_game_score_label = applicationContext["player_1_game_score_label"]!
         let player_2_game_score_label = applicationContext["player_2_game_score_label"]!
         var player_1_game_score_string = ""
         var player_2_game_score_string = ""
+        
+        // Miscellaneous
+        let player_serving = applicationContext["player_serving"]!
+        let player_won = applicationContext["player_won"]!
+        let is_tiebreak = applicationContext["is_tiebreak"]!
+        let match_length = applicationContext["match_length"]!
+        let ten_point_tiebreaker_format = applicationContext["ten_point_tiebreaker_format"]!
         
         print("FUCK")
         
@@ -116,10 +132,22 @@ class ScoreViewController: UIViewController, WCSessionDelegate {
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         DispatchQueue.main.async() {
-//        print("player_1_game_score_label: \(String(describing: player_1_game_score_label))")
+            // Update Set Scores
+            self.player_1_set_1_score_label.text = ("\(player_1_set_1_score)")
+            self.player_2_set_1_score_label.text = ("\(player_2_set_1_score)")
+            
+            self.player_1_set_2_score_label.text = ("\(player_1_set_2_score)")
+            self.player_2_set_2_score_label.text = ("\(player_2_set_2_score)")
+            
+            self.player_1_set_3_score_label.text = ("\(player_1_set_3_score)")
+            self.player_2_set_3_score_label.text = ("\(player_2_set_3_score)")
+            
+            // Update Game Scores
             self.player_1_game_score_label.text = ("\(player_1_game_score_string)")
-//            print("player_2_game_score_label: \(String(describing: player_2_game_score_label))")
             self.player_2_game_score_label.text = ("\(player_2_game_score_string)")
+            
+            // Update Miscellaneous
+            
         }
     }
     
